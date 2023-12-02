@@ -1,26 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Hangman</title>
-		<link rel="stylesheet" href="assests/css/style.css" />
-	</head>
-	<body>
-		<article id="game-area">
-			<section id="title">
-				<h1 id="title-text">Hangman</h1>
-			</section>
-			<section class="game-area-inner">
-				<div class="game-area-inner-music">
-					<i class="fa-solid fa-volume-high"></i>
-					<i class="fa-solid fa-volume-xmark"></i>
-				</div>
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Hangman</title>
+	<link rel="stylesheet" href="assests/css/style.css" />
+</head>
+
+<body>
+	<article id="game-area">
+		<section id="title">
+			<h1 id="title-text">Hangman</h1>
+		</section>
+		<section class="game-area-inner">
+			<div class="game-area-inner-music">
+				<i class="fa-solid fa-volume-high"></i>
+				<i class="fa-solid fa-volume-xmark"></i>
+			</div>
+			<div>
 				<div class="game-area-inner-img">
-					<img
-						src="assests/img/hangman-placeholder-img.webp"
-						alt="image showing hangman game"
-					/>
+					<img class="game-area-inner-img-inner" src="assests/img/hangman-placeholder-img.webp"
+						alt="image showing hangman game" />
 				</div>
 				<div class="game-area-inner-rules">
 					<p>
@@ -38,19 +39,18 @@
 						tenetur error sit iste vel ipsam labore provident repellat?
 					</p>
 				</div>
-			</section>
-			<section class="play-game-button">
-				<button type="submit">
-					<i class="fa-solid fa-play"></i>Test your luck
-				</button>
-			</section>
-		</article>
-		<!-- fontawesome script -->
-		<script
-			src="https://kit.fontawesome.com/f62ecf7247.js"
-			crossorigin="anonymous"
-		></script>
-		<!-- javascript file -->
-		<script src="assests/javascript/script.js"></script>
-	</body>
+			</div>
+		</section>
+		<section class="play-game-button">
+			<button class="play-game-button-inner" type="submit">
+				<i class="fa-solid fa-play"></i>Test your luck
+			</button>
+		</section>
+	</article>
+	<!-- fontawesome script -->
+	<script src="https://kit.fontawesome.com/f62ecf7247.js" crossorigin="anonymous"></script>
+	<!-- javascript file -->
+	<script src="assests/javascript/script.js"></script>
+</body>
+
 </html>

@@ -1,3 +1,4 @@
+/* basic website styling */
 html {
 	box-sizing: border-box;
 	font-size: 62.5%; /*1rem = 10px, 10px/16px = 62.5%*/
@@ -14,4 +15,51 @@ body {
 	background-size: cover;
 	background-attachment: fixed;
 	background-position: center 0%;
+	color: #fee086;
 }
+
+article {
+	border: 2px solid black;
+	width: 70%;
+	margin: auto;
+	background-color: rgba(36, 11, 103, 0.7);
+}
+
+/* index page styling */
+
+h1 {
+	font-size: 5rem;
+	text-decoration: underline;
+	text-align: center;
+}
+
+.game-area-inner {
+	display: flex;
+	flex-direction: column;
+}
+
+.game-area-inner-img {
+	width: 50%;
+	float: left;
+}
+
+.game-area-inner-rules {
+	width: 50%;
+	float: right;
+}
+
+.game-area-inner-img-inner {
+	width: 100%;
+}
+
+.play-game-button {
+	padding: 3rem 0rem;
+}
+
+.play-game-button-inner {
+	margin: auto;
+	display: block;
+	padding: 2rem;
+	border-radius: 5rem;
+}
+/* game page styling */
