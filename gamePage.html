@@ -1,56 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Hangman</title>
-		<link rel="stylesheet" href="assests/css/style.css" />
-	</head>
-	<body>
-		<article class="play-area">
-			<section id="play-area-title">
-				<h1 id="play-area-title-text">Hangman - game page</h1>
-			</section>
-			<section class="play-area-top">
-				<div class="play-area-top-music">
-					<i class="fa-solid fa-volume-high"></i>
-					<i class="fa-solid fa-volume-xmark"></i>
-				</div>
-				<div class="play-area-top-time">12:12</div>
-				<div class="play-area-top-word-select">
-					<label for="guess-word">Choose the word length</label>
-					<select name="guess-word" id="guess-word">
-						<option value="6">6 Letters</option>
-						<option value="7">7 Letters</option>
-						<option value="8">8 Letters</option>
-						<option value="9">9 Letters</option>
-						<option value="10">10 Letters</option>
-					</select>
-				</div>
-				<div class="play-area-top-restart">
-					<i class="fa-solid fa-rotate-right"></i>
-				</div>
-			</section>
-			<section class="play-area-main">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Hangman</title>
+	<link rel="stylesheet" href="assests/css/style.css" />
+</head>
+
+<body>
+	<article class="play-area">
+		<section id="play-area-title">
+			<h1 id="play-area-title-text">Hangman - game page</h1>
+		</section>
+		<section class="play-area-top">
+			<div class="play-area-top-music">
+				<i class="fa-solid fa-volume-high"></i>
+				<i class="fa-solid fa-volume-xmark"></i>
+			</div>
+			<div class="play-area-top-time">12:12</div>
+			<div class="play-area-top-word-select">
+				<label for="guess-word">Choose the word length</label>
+				<select name="guess-word" id="guess-word">
+					<option value="6">6 Letters</option>
+					<option value="7">7 Letters</option>
+					<option value="8">8 Letters</option>
+					<option value="9">9 Letters</option>
+					<option value="10">10 Letters</option>
+				</select>
+			</div>
+
+		</section>
+		<section class="play-area-main">
+			<div class="play-area-main-wrapper">
 				<div class="play-area-main-counter">
 					<p>Lives left: <strong>7</strong></p>
 				</div>
 				<div class="play-area-main-rules">
 					<i class="fa-solid fa-gear"></i>
 				</div>
-				<img
-					src="assests/img/hangman-placeholder-img.webp"
-					alt="image showing hangman game"
-				/>
-			</section>
-			<section class="play-area-letters">contains alphabet letters</section>
-		</article>
-		<!-- fontawesome script -->
-		<script
-			src="https://kit.fontawesome.com/f62ecf7247.js"
-			crossorigin="anonymous"
-		></script>
-		<!-- javascript file -->
-		<script src="assests/javascript/script.js"></script>
-	</body>
+			</div>
+			<img class="play-area-main-img" src="assests/img/hangman-placeholder-img.webp"
+				alt="image showing hangman game" />
+			<div class="play-area-top-restart">
+				<i class="fa-solid fa-rotate-right"></i>
+			</div>
+		</section>
+		<section class="play-area-letters">contains alphabet letters</section>
+	</article>
+	<!-- fontawesome script -->
+	<script src="https://kit.fontawesome.com/f62ecf7247.js" crossorigin="anonymous"></script>
+	<!-- javascript file -->
+	<script src="assests/javascript/script.js"></script>
+</body>
+
 </html>
