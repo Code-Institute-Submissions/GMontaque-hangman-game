@@ -78,3 +78,8 @@ h1 {
 	display: flex;
 	justify-content: space-between;
 }
+
+/* game rules pop up section */
+.display-none {
+	display: none;
+}
