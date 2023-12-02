@@ -62,9 +62,22 @@ function startTimer() {
 	}
 }
 
+
+//creates alphabet letters
+function createLetters() {
+	for (i = 0; i < 26; i++) {
+		let li = document.getElementsByClassName("play-area-letters")[0];
+		li.innerHTML += `<button class="letterBtn">${(i + 10).toString(36).toUpperCase()}</button>`;
+	}
+}
+
+createLetters();
+
 // alphabet letters
-let buttonA = document.getElementById("letterA");
-buttonA.addEventListener("click", startGame);
+let buttonLetter = document.getElementsByClassName("letterBtn");
+for (let letter of buttonLetter) {
+	letter.addEventListener("click", startGame);
+}
 
 // starts game
 function startGame() {
@@ -131,3 +144,4 @@ function wordGuess() {
 }
 
 console.log(wordGuess());
+
