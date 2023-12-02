@@ -26,7 +26,10 @@
 					</button>
 				</div>
 				<!-- stopwatch timer -->
-				<div class="play-area-top-time">12:12</div>
+				<div class="play-area-top-time">
+					<p><span id="seconds">00</span>:<span id="tens">00</span></p>
+					<button id="button-stop">Stop</button>
+				</div>
 				<!-- user chooses word length to guess -->
 				<div class="play-area-top-word-select">
 					<label for="guess-word">Choose the word length</label>
@@ -63,7 +66,10 @@
 				</div>
 			</section>
 			<!-- displays full 26 letters -->
-			<section class="play-area-letters">contains alphabet letters</section>
+			<section class="play-area-letters">
+				contains alphabet letters
+				<button id="letterA">A</button>
+			</section>
 		</article>
 		<!-- fontawesome script -->
 		<script
