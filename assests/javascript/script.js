@@ -70,6 +70,64 @@ buttonA.addEventListener("click", startGame);
 function startGame() {
 	clearInterval(Interval);
 	Interval = setInterval(startTimer, 10);
+	// gets word length value
 	let wordLength = document.getElementById("guess-word");
 	console.log(wordLength.value);
 }
+
+// game rules
+let gameRules = document.getElementsByClassName("play-area-main-rules-btn")[0];
+gameRules.addEventListener("click", displayGameRules);
+
+function displayGameRules() {
+	let gameRules = document.getElementsByClassName(
+		"play-area-main-gameRules"
+	)[0];
+
+	if (gameRules.classList.contains("display-none")) {
+		gameRules.classList.remove("display-none");
+	} else {
+		gameRules.classList.add("display-none");
+	}
+}
+
+// returns word for user to guess
+function wordGuess() {
+	let wordNumLength = document.getElementById("guess-word").value;
+	let randomNum = Math.floor(Math.random() * 9);
+
+	let wordLength6 = [
+		"baaing",
+		"babble",
+		"babied",
+		"babies",
+		"babkas",
+		"baboon",
+	];
+	let wordLength7 = [
+		"cabalas",
+		"cabanas",
+		"cabanes",
+		"cabaret",
+		"cabbage",
+		"cabbagy",
+	];
+	let wordLength8 = [
+		"habanera",
+		"habanero",
+		"habenula",
+		"habitans",
+		"habitant",
+		"habitats",
+	];
+
+	if (parseInt(wordNumLength) === 6) {
+		return wordLength6[randomNum];
+	} else if (parseInt(wordNumLength) === 7) {
+		return wordLength7[randomNum];
+	} else if (parseInt(wordNumLength) === 8) {
+		return wordLength8[randomNum];
+	}
+}
+
+console.log(wordGuess());
