@@ -1,64 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Hangman</title>
+		<!-- css styling -->
+		<link rel="stylesheet" href="assests/css/style.css" />
+	</head>
 
-<head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Hangman</title>
-	<!-- css styling -->
-	<link rel="stylesheet" href="assests/css/style.css" />
-</head>
+	<body>
+		<!-- content area -->
+		<article id="game-area">
+			<!-- game header title-->
+			<section id="title">
+				<h1 id="title-text">Hangman</h1>
+			</section>
+			<!-- inner area -->
+			<section class="game-area-inner">
+				<!-- buttons to toggle music -->
+				<div class="game-area-inner-music">
+					<button id="play-btn"><i class="fa-solid fa-volume-high"></i></button>
 
-<body>
-	<!-- content area -->
-	<article id="game-area">
-		<!-- game header title-->
-		<section id="title">
-			<h1 id="title-text">Hangman</h1>
-		</section>
-		<!-- inner area -->
-		<section class="game-area-inner">
-			<!-- buttons to toggle music -->
-			<div class="game-area-inner-music">
-				<i class="fa-solid fa-volume-high"></i>
-				<i class="fa-solid fa-volume-xmark"></i>
-			</div>
-			<div>
-				<!-- image example of hangman game -->
-				<div class="game-area-inner-img">
-					<img class="game-area-inner-img-inner" src="assests/img/hangman-placeholder-img.webp"
-						alt="image showing hangman game" />
+					<button id="stop-btn">
+						<i class="fa-solid fa-volume-xmark"></i>
+					</button>
 				</div>
-				<!-- hangman game rules -->
-				<div class="game-area-inner-rules">
-					<p>
-						Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione
-						molestias, impedit at accusamus veritatis nulla? Voluptatem
-						exercitationem esse delectus dolorem fugiat atque facilis quasi ad
-						perferendis nihil, reprehenderit illum cum deserunt nobis
-						necessitatibus incidunt consequatur. Cum eos nihil repellat
-						recusandae, porro, earum hic esse alias sapiente deserunt nulla
-						fugiat aut similique iure. Atque expedita dolor vel modi nostrum
-						incidunt ipsa tempore explicabo aliquid nobis, eius, magnam quo
-						impedit nihil dolore reprehenderit. Recusandae deleniti nam tenetur
-						amet. Placeat tempora quis incidunt vero sunt consectetur
-						accusantium, nulla quibusdam magnam. Perspiciatis, officiis odio id
-						tenetur error sit iste vel ipsam labore provident repellat?
-					</p>
+				<div>
+					<!-- image example of hangman game -->
+					<div class="game-area-inner-img">
+						<img
+							class="game-area-inner-img-inner"
+							src="assests/img/hangman-placeholder-img.webp"
+							alt="image showing hangman game"
+						/>
+					</div>
+					<!-- hangman game rules -->
+					<div class="game-area-inner-rules">
+						<p>
+							Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione
+							molestias, impedit at accusamus veritatis nulla? Voluptatem
+							exercitationem esse delectus dolorem fugiat atque facilis quasi ad
+							perferendis nihil, reprehenderit illum cum deserunt nobis
+							necessitatibus incidunt consequatur. Cum eos nihil repellat
+							recusandae, porro, earum hic esse alias sapiente deserunt nulla
+							fugiat aut similique iure. Atque expedita dolor vel modi nostrum
+							incidunt ipsa tempore explicabo aliquid nobis, eius, magnam quo
+							impedit nihil dolore reprehenderit. Recusandae deleniti nam
+							tenetur amet. Placeat tempora quis incidunt vero sunt consectetur
+							accusantium, nulla quibusdam magnam. Perspiciatis, officiis odio
+							id tenetur error sit iste vel ipsam labore provident repellat?
+						</p>
+					</div>
 				</div>
-			</div>
-		</section>
-		<!-- play game button -->
-		<section class="play-game-button">
-			<button class="play-game-button-inner" type="submit">
-				<i class="fa-solid fa-play"></i>Test your luck
-			</button>
-		</section>
-	</article>
-	<!-- fontawesome script -->
-	<script src="https://kit.fontawesome.com/f62ecf7247.js" crossorigin="anonymous"></script>
-	<!-- javascript file -->
-	<script src="assests/javascript/script.js"></script>
-</body>
-
+			</section>
+			<!-- play game button -->
+			<section class="play-game-button">
+				<button class="play-game-button-inner" type="submit">
+					<i class="fa-solid fa-play"></i>Test your luck
+				</button>
+			</section>
+		</article>
+		<!-- fontawesome script -->
+		<script
+			src="https://kit.fontawesome.com/f62ecf7247.js"
+			crossorigin="anonymous"
+		></script>
+		<!-- javascript file -->
+		<script src="assests/javascript/script.js"></script>
+	</body>
 </html>
