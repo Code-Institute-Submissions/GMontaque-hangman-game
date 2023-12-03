@@ -143,6 +143,9 @@ function reduceLives(lives) {
 	}
 }
 
+// disable letter once used
+function disableLetter() {}
+
 // generates word to guess
 let wordToGuess;
 
@@ -161,7 +164,7 @@ function checkLetterGuess(uGuess, checkGame) {
 	} else {
 		reduceLives(currentGameLives);
 	}
-
+	disableLetter(uGuess);
 	console.log("word to guess:", wordToGuess, "userGuess:", uGuess);
 }
 
