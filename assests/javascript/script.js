@@ -1,16 +1,17 @@
 // play and stop music
-
 let musicStart = document.getElementById("play-btn");
 let musicStop = document.getElementById("stop-btn");
 musicStart.addEventListener("click", play);
 musicStop.addEventListener("click", stop);
 let mySound = new Audio("../assests/audio/gameplay-soundtrack.mp3");
 
+// starts music
 function play() {
 	console.log("sound");
 	mySound.play();
 }
 
+// stops music
 function stop() {
 	console.log("sound stop");
 	mySound.pause();
@@ -23,11 +24,6 @@ let appendTens = document.getElementById("tens");
 let appendSeconds = document.getElementById("seconds");
 let buttonStop = document.getElementById("button-stop");
 let Interval;
-
-// buttonStart.onclick = function () {
-// 	clearInterval(Interval);
-// 	Interval = setInterval(startTimer, 10);
-// };
 
 buttonStop.onclick = function () {
 	clearInterval(Interval);
@@ -132,13 +128,18 @@ function wordGuess() {
 	console.log(wordNumLength);
 }
 
+// fucntion reduce lives counter on wrong guess
 function reduceLives(lives) {
 	document.getElementById("gameLives").innerHTML = lives - 1;
 }
 
+// function checcks users answer against word to guess
 function checkLetterGuess(uGuess) {
+	// word to be guessed
 	let wordToGuess = wordGuess();
+	// current game lives counter
 	let currentGameLives = document.getElementById("gameLives").innerHTML;
+	// checks if user guess is in word to guess
 	if (wordToGuess.includes(uGuess)) {
 		alert(uGuess);
 	} else {
@@ -156,6 +157,7 @@ let gameStarted = false;
 
 // starts game
 function startGame(e) {
+	// letter user has selected
 	let userGuess = e.target.value;
 	if (gameStarted === false) {
 		// starts clock timer
