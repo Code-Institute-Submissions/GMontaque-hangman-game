@@ -1,106 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Hangman</title>
+		<!-- css styling -->
+		<link rel="stylesheet" href="assests/css/style.css" />
+	</head>
 
-<head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Hangman</title>
-	<!-- css styling -->
-	<link rel="stylesheet" href="assests/css/style.css" />
-</head>
+	<body>
+		<!-- game play area -->
+		<article class="play-area">
+			<!-- game header title-->
+			<section id="play-area-title">
+				<h1 id="play-area-title-text">Hangman - game page</h1>
+			</section>
+			<!-- inner play area -->
+			<section class="play-area-top">
+				<!-- buttons to toggle music -->
+				<div class="play-area-top-music">
+					<button id="play-btn"><i class="fa-solid fa-volume-high"></i></button>
 
-<body>
-	<!-- game play area -->
-	<article class="play-area">
-		<!-- game header title-->
-		<section id="play-area-title">
-			<h1 id="play-area-title-text">Hangman - game page</h1>
-		</section>
-		<!-- inner play area -->
-		<section class="play-area-top">
-			<!-- buttons to toggle music -->
-			<div class="play-area-top-music">
-				<button id="play-btn"><i class="fa-solid fa-volume-high"></i></button>
-
-				<button id="stop-btn">
-					<i class="fa-solid fa-volume-xmark"></i>
-				</button>
-			</div>
-			<!-- stopwatch timer -->
-			<div class="play-area-top-time">
-				<p><span id="seconds">00</span>:<span id="tens">00</span></p>
-				<button id="button-stop">Stop</button>
-			</div>
-			<!-- user chooses word length to guess -->
-			<div class="play-area-top-word-select">
-				<label for="guess-word">Choose the word length</label>
-				<select name="guess-word" id="guess-word">
-					<option value="7">6 Letters</option>
-					<option value="7">7 Letters</option>
-					<option value="8">8 Letters</option>
-					<option value="9">9 Letters</option>
-					<option value="10">10 Letters</option>
-				</select>
-			</div>
-		</section>
-		<!-- inner game area with hangman image -->
-		<section class="play-area-main">
-			<div class="play-area-main-wrapper">
-				<!-- remaining live/guess counter -->
-				<div class="play-area-main-counter">
-					<p>Lives left: <strong id="gameLives">7</strong></p>
-				</div>
-				<!-- rules button -->
-				<div class="play-area-main-rules">
-					<button class="play-area-main-rules-btn">
-						<i class="fa-solid fa-gear"></i>
+					<button id="stop-btn">
+						<i class="fa-solid fa-volume-xmark"></i>
 					</button>
 				</div>
-			</div>
-			<!-- hangman image -->
-			<img class="play-area-main-img" src="assests/img/hangman-placeholder-img.webp"
-				alt="image showing hangman game" />
-			<!-- restart game button -->
-			<div class="play-area-top-restart">
-				<i class="fa-solid fa-rotate-right"></i>
-			</div>
-		</section>
-		<section class="play-area-main-gameRules display-none">
-			<h1>Game Rules</h1>
-			<div>
-				<!-- image example of hangman game -->
-				<div class="game-area-inner-img">
-					<img class="game-area-inner-img-inner" src="assests/img/hangman-placeholder-img.webp"
-						alt="image showing hangman game" />
+				<!-- stopwatch timer -->
+				<div class="play-area-top-time">
+					<p><span id="seconds">00</span>:<span id="tens">00</span></p>
+					<button id="button-stop">Stop</button>
 				</div>
-				<!-- hangman game rules -->
-				<div class="game-area-inner-rules">
-					<p>
-						Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione
-						molestias, impedit at accusamus veritatis nulla? Voluptatem
-						exercitationem esse delectus dolorem fugiat atque facilis quasi ad
-						perferendis nihil, reprehenderit illum cum deserunt nobis
-						necessitatibus incidunt consequatur. Cum eos nihil repellat
-						recusandae, porro, earum hic esse alias sapiente deserunt nulla
-						fugiat aut similique iure. Atque expedita dolor vel modi nostrum
-						incidunt ipsa tempore explicabo aliquid nobis, eius, magnam quo
-						impedit nihil dolore reprehenderit. Recusandae deleniti nam
-						tenetur amet. Placeat tempora quis incidunt vero sunt consectetur
-						accusantium, nulla quibusdam magnam. Perspiciatis, officiis odio
-						id tenetur error sit iste vel ipsam labore provident repellat?
-					</p>
+				<!-- user chooses word length to guess -->
+				<div class="play-area-top-word-select">
+					<label for="guess-word">Choose the word length</label>
+					<select name="guess-word" id="guess-word">
+						<option value="6">6 Letters</option>
+						<option value="7">7 Letters</option>
+						<option value="8">8 Letters</option>
+						<option value="9">9 Letters</option>
+						<option value="10">10 Letters</option>
+					</select>
 				</div>
-			</div>
-		</section>
-		<!-- displays full 26 letters -->
-		<section class="play-area-letters">
-			<h1 class="display-none">letter buttons</h1>
-		</section>
-	</article>
-	<!-- fontawesome script -->
-	<script src="https://kit.fontawesome.com/f62ecf7247.js" crossorigin="anonymous"></script>
-	<!-- javascript file -->
-	<script src="assests/javascript/script.js"></script>
-</body>
-
+			</section>
+			<!-- inner game area with hangman image -->
+			<section class="play-area-main">
+				<div class="play-area-main-wrapper">
+					<!-- remaining live/guess counter -->
+					<div class="play-area-main-counter">
+						<p>Lives left: <strong id="gameLives">7</strong></p>
+					</div>
+					<!-- rules button -->
+					<div class="play-area-main-rules">
+						<button class="play-area-main-rules-btn">
+							<i class="fa-solid fa-gear"></i>
+						</button>
+					</div>
+				</div>
+				<!-- hangman image -->
+				<img
+					class="play-area-main-img"
+					src="assests/img/hangman-placeholder-img.webp"
+					alt="image showing hangman game"
+				/>
+				<!-- restart game button -->
+				<div class="play-area-top-restart">
+					<i class="fa-solid fa-rotate-right"></i>
+				</div>
+			</section>
+			<section class="play-area-main-gameRules display-none">
+				<h1>Game Rules</h1>
+				<div>
+					<!-- image example of hangman game -->
+					<div class="game-area-inner-img">
+						<img
+							class="game-area-inner-img-inner"
+							src="assests/img/hangman-placeholder-img.webp"
+							alt="image showing hangman game"
+						/>
+					</div>
+					<!-- hangman game rules -->
+					<div class="game-area-inner-rules">
+						<p>
+							Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione
+							molestias, impedit at accusamus veritatis nulla? Voluptatem
+							exercitationem esse delectus dolorem fugiat atque facilis quasi ad
+							perferendis nihil, reprehenderit illum cum deserunt nobis
+							necessitatibus incidunt consequatur. Cum eos nihil repellat
+							recusandae, porro, earum hic esse alias sapiente deserunt nulla
+							fugiat aut similique iure. Atque expedita dolor vel modi nostrum
+							incidunt ipsa tempore explicabo aliquid nobis, eius, magnam quo
+							impedit nihil dolore reprehenderit. Recusandae deleniti nam
+							tenetur amet. Placeat tempora quis incidunt vero sunt consectetur
+							accusantium, nulla quibusdam magnam. Perspiciatis, officiis odio
+							id tenetur error sit iste vel ipsam labore provident repellat?
+						</p>
+					</div>
+				</div>
+			</section>
+			<!-- displays full 26 letters -->
+			<section class="play-area-letters">
+				<h1 class="display-none">letter buttons</h1>
+			</section>
+		</article>
+		<!-- fontawesome script -->
+		<script
+			src="https://kit.fontawesome.com/f62ecf7247.js"
+			crossorigin="anonymous"
+		></script>
+		<!-- javascript file -->
+		<script src="assests/javascript/script.js"></script>
+	</body>
 </html>

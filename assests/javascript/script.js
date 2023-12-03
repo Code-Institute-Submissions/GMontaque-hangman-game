@@ -144,11 +144,14 @@ function reduceLives(lives) {
 }
 
 // generates word to guess
-let wordToGuess = wordGuess();
+let wordToGuess;
 
 // function checcks users answer against word to guess
-function checkLetterGuess(uGuess) {
+function checkLetterGuess(uGuess, checkGame) {
 	// word to be guessed
+	if (checkGame === "start") {
+		wordToGuess = wordGuess();
+	}
 
 	// current game lives counter
 	let currentGameLives = document.getElementById("gameLives").innerHTML;
@@ -158,7 +161,8 @@ function checkLetterGuess(uGuess) {
 	} else {
 		reduceLives(currentGameLives);
 	}
-	console.log(wordToGuess, "userGuess", uGuess);
+
+	console.log("word to guess:", wordToGuess, "userGuess:", uGuess);
 }
 
 // alphabet letters
@@ -178,8 +182,8 @@ function startGame(e) {
 		clearInterval(Interval);
 		Interval = setInterval(startTimer, 10);
 		gameStarted = true;
-		checkLetterGuess(userGuess);
+		checkLetterGuess(userGuess, "start");
 	} else {
-		checkLetterGuess(userGuess);
+		checkLetterGuess(userGuess, "gameRunning");
 	}
 }
