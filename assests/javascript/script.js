@@ -62,31 +62,18 @@ function startTimer() {
 	}
 }
 
-
 //creates alphabet letters
 function createLetters() {
 	for (i = 0; i < 26; i++) {
 		let li = document.getElementsByClassName("play-area-letters")[0];
-		li.innerHTML += `<button class="letterBtn">${(i + 10).toString(36).toUpperCase()}</button>`;
+		li.innerHTML += `<button class="letterBtn" 
+		value="${(i + 10).toString(36)}">${(i + 10)
+			.toString(36)
+			.toUpperCase()}</button>`;
 	}
 }
 
 createLetters();
-
-// alphabet letters
-let buttonLetter = document.getElementsByClassName("letterBtn");
-for (let letter of buttonLetter) {
-	letter.addEventListener("click", startGame);
-}
-
-// starts game
-function startGame() {
-	clearInterval(Interval);
-	Interval = setInterval(startTimer, 10);
-	// gets word length value
-	let wordLength = document.getElementById("guess-word");
-	console.log(wordLength.value);
-}
 
 // game rules
 let gameRules = document.getElementsByClassName("play-area-main-rules-btn")[0];
@@ -143,5 +130,26 @@ function wordGuess() {
 	}
 }
 
-console.log(wordGuess());
+let storedWordGuess = wordGuess();
 
+// alphabet letters
+let buttonLetter = document.getElementsByClassName("letterBtn");
+for (let letter of buttonLetter) {
+	letter.addEventListener("click", startGame);
+}
+
+let gameStarted = false;
+
+// starts game
+function startGame(e) {
+	let userGuess = e.target.value;
+	if (gameStarted === false) {
+		// starts clock timer
+		clearInterval(Interval);
+		Interval = setInterval(startTimer, 10);
+		gameStarted = true;
+		console.log(userGuess);
+	} else {
+		console.log(userGuess);
+	}
+}
