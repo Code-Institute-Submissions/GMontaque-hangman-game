@@ -132,6 +132,14 @@ function wordGuess() {
 
 let storedWordGuess = wordGuess();
 
+function checkLetterGuess(uGuess) {
+	let wordToGuess = storedWordGuess;
+	if (wordToGuess.includes(uGuess)) {
+		alert(uGuess);
+	}
+	console.log(wordToGuess);
+}
+
 // alphabet letters
 let buttonLetter = document.getElementsByClassName("letterBtn");
 for (let letter of buttonLetter) {
@@ -148,8 +156,8 @@ function startGame(e) {
 		clearInterval(Interval);
 		Interval = setInterval(startTimer, 10);
 		gameStarted = true;
-		console.log(userGuess);
+		checkLetterGuess(userGuess);
 	} else {
-		console.log(userGuess);
+		checkLetterGuess(userGuess);
 	}
 }
