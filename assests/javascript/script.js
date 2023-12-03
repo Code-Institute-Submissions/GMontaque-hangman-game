@@ -91,7 +91,7 @@ function displayGameRules() {
 function wordGuess() {
 	let wordNumLength = document.getElementById("guess-word").value;
 
-	let randomNum = Math.floor(Math.random() * 9);
+	let randomNum = Math.floor(Math.random() * 6);
 
 	let wordLength6 = [
 		"baaing",
