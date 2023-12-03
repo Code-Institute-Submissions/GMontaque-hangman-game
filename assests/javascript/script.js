@@ -130,13 +130,21 @@ function wordGuess() {
 
 // fucntion reduce lives counter on wrong guess
 function reduceLives(lives) {
-	document.getElementById("gameLives").innerHTML = lives - 1;
+	if (lives == 1) {
+		document.getElementById("gameLives").innerHTML = lives - 1;
+		// gameOver();
+	} else {
+		document.getElementById("gameLives").innerHTML = lives - 1;
+	}
 }
+
+// generates word to guess
+let wordToGuess = wordGuess();
 
 // function checcks users answer against word to guess
 function checkLetterGuess(uGuess) {
 	// word to be guessed
-	let wordToGuess = wordGuess();
+
 	// current game lives counter
 	let currentGameLives = document.getElementById("gameLives").innerHTML;
 	// checks if user guess is in word to guess
@@ -145,6 +153,7 @@ function checkLetterGuess(uGuess) {
 	} else {
 		reduceLives(currentGameLives);
 	}
+	console.log(wordToGuess, "userGuess", uGuess);
 }
 
 // alphabet letters
