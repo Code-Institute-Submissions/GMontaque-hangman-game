@@ -128,11 +128,16 @@ function wordGuess() {
 	console.log(wordNumLength);
 }
 
+// end game function
+function gameOver() {
+	console.log("game over");
+}
+
 // fucntion reduce lives counter on wrong guess
 function reduceLives(lives) {
 	if (lives == 1) {
 		document.getElementById("gameLives").innerHTML = lives - 1;
-		// gameOver();
+		gameOver();
 	} else {
 		document.getElementById("gameLives").innerHTML = lives - 1;
 	}
