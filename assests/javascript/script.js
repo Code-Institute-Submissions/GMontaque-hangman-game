@@ -94,6 +94,7 @@ function displayGameRules() {
 // returns word for user to guess
 function wordGuess() {
 	let wordNumLength = document.getElementById("guess-word").value;
+
 	let randomNum = Math.floor(Math.random() * 9);
 
 	let wordLength6 = [
@@ -128,16 +129,21 @@ function wordGuess() {
 	} else if (parseInt(wordNumLength) === 8) {
 		return wordLength8[randomNum];
 	}
+	console.log(wordNumLength);
 }
 
-let storedWordGuess = wordGuess();
+function reduceLives(lives) {
+	document.getElementById("gameLives").innerHTML = lives - 1;
+}
 
 function checkLetterGuess(uGuess) {
-	let wordToGuess = storedWordGuess;
+	let wordToGuess = wordGuess();
+	let currentGameLives = document.getElementById("gameLives").innerHTML;
 	if (wordToGuess.includes(uGuess)) {
 		alert(uGuess);
+	} else {
+		reduceLives(currentGameLives);
 	}
-	console.log(wordToGuess);
 }
 
 // alphabet letters
