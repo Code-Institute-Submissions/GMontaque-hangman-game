@@ -144,13 +144,17 @@ function reduceLives(lives) {
 }
 
 // disable letter once used
-function disableLetter() {}
+function disableLetter(e) {
+	// pass the inital click event when letter button pressed and adds class and attribute to that element
+	e.target.classList.add("btnPressed");
+	e.target.setAttribute("disabled", "");
+}
 
 // generates word to guess
 let wordToGuess;
 
 // function checcks users answer against word to guess
-function checkLetterGuess(uGuess, checkGame) {
+function checkLetterGuess(uGuess, checkGame, e) {
 	// word to be guessed
 	if (checkGame === "start") {
 		wordToGuess = wordGuess();
@@ -164,7 +168,7 @@ function checkLetterGuess(uGuess, checkGame) {
 	} else {
 		reduceLives(currentGameLives);
 	}
-	disableLetter(uGuess);
+	disableLetter(e);
 	console.log("word to guess:", wordToGuess, "userGuess:", uGuess);
 }
 
@@ -185,8 +189,9 @@ function startGame(e) {
 		clearInterval(Interval);
 		Interval = setInterval(startTimer, 10);
 		gameStarted = true;
-		checkLetterGuess(userGuess, "start");
+		// clicked letter passed in funtion with user guess value
+		checkLetterGuess(userGuess, "start", e);
 	} else {
-		checkLetterGuess(userGuess, "gameRunning");
+		checkLetterGuess(userGuess, "gameRunning", e);
 	}
 }
