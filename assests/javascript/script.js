@@ -188,6 +188,21 @@ function disableLetter(e) {
 	e.target.setAttribute("disabled", "");
 }
 
+// updates blank squares on page
+function checkAnswer(uGuess) {
+	let letterGuessed = uGuess;
+	let wordGuessArray = wordToGuess.split("");
+	let blankSquares = document.getElementsByClassName("blankSquares-letters");
+
+	for (let prop in wordGuessArray) {
+		if (wordGuessArray[prop] === letterGuessed) {
+			blankSquares[prop].innerHTML = letterGuessed.toUpperCase();
+		}
+	}
+
+	console.log("check:", letterGuessed, wordGuessArray);
+}
+
 // generates word to guess
 let wordToGuess;
 
@@ -203,6 +218,7 @@ function checkLetterGuess(uGuess, checkGame, e) {
 	// checks if user guess is in word to guess
 	if (wordToGuess.includes(uGuess)) {
 		alert(uGuess);
+		checkAnswer(uGuess);
 	} else {
 		reduceLives(currentGameLives);
 	}
