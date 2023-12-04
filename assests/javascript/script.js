@@ -60,7 +60,7 @@ function startTimer() {
 
 //creates alphabet letters
 function createLetters() {
-	for (i = 0; i < 26; i++) {
+	for (let i = 0; i < 26; i++) {
 		let li = document.getElementsByClassName("play-area-letters")[0];
 		li.innerHTML += `<button class="letterBtn" 
 		value="${(i + 10).toString(36)}">${(i + 10)
@@ -126,6 +126,26 @@ function wordGuess() {
 		return wordLength8[randomNum];
 	}
 	console.log(wordNumLength);
+}
+
+// print empty boxes which will contain correct letters on page load
+window.onload = function () {
+	loadBlanks();
+};
+
+// prints empty boxes if user makes a change to word length to guess
+let autoGuessWord = document.getElementById("guess-word");
+
+autoGuessWord.addEventListener("change", loadBlanks);
+
+function loadBlanks() {
+	let guess = document.getElementById("guess-word").value;
+	let blankSquares = document.getElementsByClassName("blankSquares")[0];
+	blankSquares.innerHTML = "";
+	for (let i = 0; i < guess; i++) {
+		blankSquares.innerHTML += `<div class="blankSquares-letters">${i}<i class="fa-solid fa-question"></i></div>`;
+	}
+	console.log(guess);
 }
 
 // end game function
