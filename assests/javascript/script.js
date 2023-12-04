@@ -137,13 +137,29 @@ window.onload = function () {
 let autoGuessWord = document.getElementById("guess-word");
 
 autoGuessWord.addEventListener("change", loadBlanks);
+let blanksTemplate = [];
+console.log(blanksTemplate);
 
 function loadBlanks() {
 	let guess = document.getElementById("guess-word").value;
 	let blankSquares = document.getElementsByClassName("blankSquares")[0];
-	blankSquares.innerHTML = "";
-	for (let i = 0; i < guess; i++) {
-		blankSquares.innerHTML += `<div class="blankSquares-letters">${i}<i class="fa-solid fa-question"></i></div>`;
+	blankSquares.innerHTML = blanksTemplate;
+	if (blanksTemplate.length == 0) {
+		for (let i = 0; i < guess; i++) {
+			blankSquares.innerHTML += `<div class="blankSquares-letters">${i}<i class="fa-solid fa-question"></i></div>`;
+		}
+	} else {
+		blankSquares.innerHTML = "";
+		blanksTemplate.length = 0;
+		for (let i = 0; i < guess; i++) {
+			blanksTemplate.push(
+				`<div class="blankSquares-letters">${i}<i class="fa-solid fa-question"></i></div>`
+			);
+		}
+
+		for (let i = 0; i < blanksTemplate.length; i++) {
+			blankSquares.innerHTML += `<div class="blankSquares-letters">${i}<i class="fa-solid fa-question"></i></div>`;
+		}
 	}
 	console.log(guess);
 }
@@ -177,7 +193,7 @@ let wordToGuess;
 
 // function checcks users answer against word to guess
 function checkLetterGuess(uGuess, checkGame, e) {
-	// word to be guessed
+	// gets word to be guessed
 	if (checkGame === "start") {
 		wordToGuess = wordGuess();
 	}
