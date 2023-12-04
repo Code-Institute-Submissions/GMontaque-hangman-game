@@ -151,6 +151,8 @@ function loadBlanks() {
 // end game function
 function gameOver() {
 	console.log("game over");
+	let looseSound = new Audio("../assests/audio/wah-wah-sad-trombone-6347.mp3");
+	looseSound.play();
 }
 
 // fucntion reduce lives counter on wrong guess
