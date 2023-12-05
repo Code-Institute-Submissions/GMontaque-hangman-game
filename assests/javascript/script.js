@@ -33,6 +33,12 @@ buttonStop.onclick = function () {
 	seconds = "00";
 	appendTens.innerHTML = tens;
 	appendSeconds.innerHTML = seconds;
+	// reloads blank squares
+	loadBlanks();
+	// resets game to start on letter press
+	gameStarted = false;
+	// reset game lives
+	document.getElementById("gameLives").innerHTML = 7;
 };
 
 function startTimer() {
@@ -134,11 +140,6 @@ window.onload = function () {
 };
 
 // prints empty boxes if user makes a change to word length to guess
-window.onload = function () {
-	loadBlanks();
-};
-
-// prints empty boxes if user makes a change to word length to guess
 let autoGuessWord = document.getElementById("guess-word");
 
 autoGuessWord.addEventListener("change", loadBlanks);
@@ -177,7 +178,7 @@ function reduceLives(lives) {
 	}
 }
 
-// disable letter once used
+// disables letter once used
 function disableLetter(e) {
 	// pass the inital click event when letter button pressed and adds class and attribute to that element
 	e.target.classList.add("btnPressed");
