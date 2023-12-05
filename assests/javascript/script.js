@@ -153,10 +153,17 @@ function loadBlanks() {
 	console.log(guess);
 }
 
-// end game function
-function gameOver() {
+// loose game function
+function looseGame() {
 	console.log("game over");
 	let looseSound = new Audio("../assests/audio/wah-wah-sad-trombone-6347.mp3");
+	looseSound.play();
+}
+
+// win game function
+function winGame() {
+	console.log("game won");
+	let looseSound = new Audio("../assests/audio/user-wins.mp3");
 	looseSound.play();
 }
 
@@ -164,7 +171,7 @@ function gameOver() {
 function reduceLives(lives) {
 	if (lives == 1) {
 		document.getElementById("gameLives").innerHTML = lives - 1;
-		gameOver();
+		looseGame();
 	} else {
 		document.getElementById("gameLives").innerHTML = lives - 1;
 	}
@@ -178,17 +185,23 @@ function disableLetter(e) {
 }
 
 // updates blank squares on page
+let lettersLeftToGuess = parseInt(document.getElementById("guess-word").value);
 function checkAnswer(uGuess) {
 	let letterGuessed = uGuess;
 	let wordGuessArray = wordToGuess.split("");
 	let blankSquares = document.getElementsByClassName("blankSquares-letters");
 
+	console.log(lettersLeftToGuess);
 	for (let prop in wordGuessArray) {
 		if (wordGuessArray[prop] === letterGuessed) {
 			blankSquares[prop].innerHTML = letterGuessed.toUpperCase();
+			lettersLeftToGuess--;
 		}
 	}
 
+	if (lettersLeftToGuess == 0) {
+		winGame();
+	}
 	console.log("check:", letterGuessed, wordGuessArray);
 }
 
