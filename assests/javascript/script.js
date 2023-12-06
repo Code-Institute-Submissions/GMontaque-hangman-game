@@ -22,12 +22,13 @@ let seconds = 0;
 let tens = 0;
 let appendTens = document.getElementById("tens");
 let appendSeconds = document.getElementById("seconds");
-let buttonStop = document.getElementById("button-stop");
+let buttonReset = document.getElementsByClassName(
+	"play-area-top-restart-btn"
+)[0];
 let Interval;
 
-buttonStop.addEventListener("click", stopReset);
+buttonReset.addEventListener("click", stopReset);
 function stopReset() {
-	clearInterval(Interval);
 	// reset stop watch
 	clearInterval(Interval);
 	tens = "00";
@@ -40,6 +41,10 @@ function stopReset() {
 	gameStarted = false;
 	// reset game lives
 	document.getElementById("gameLives").innerHTML = 7;
+	// reset alphabet letters
+	let li = document.getElementsByClassName("play-area-letters")[0];
+	li.innerHTML = "";
+	createLetters();
 }
 
 function startTimer() {
