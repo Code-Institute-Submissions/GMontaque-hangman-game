@@ -25,7 +25,8 @@ let appendSeconds = document.getElementById("seconds");
 let buttonStop = document.getElementById("button-stop");
 let Interval;
 
-buttonStop.onclick = function () {
+buttonStop.addEventListener("click", stopReset);
+function stopReset() {
 	clearInterval(Interval);
 	// reset stop watch
 	clearInterval(Interval);
@@ -39,7 +40,7 @@ buttonStop.onclick = function () {
 	gameStarted = false;
 	// reset game lives
 	document.getElementById("gameLives").innerHTML = 7;
-};
+}
 
 function startTimer() {
 	tens++;
@@ -73,9 +74,8 @@ function createLetters() {
 			.toString(36)
 			.toUpperCase()}</button>`;
 	}
+	activateLetter();
 }
-
-createLetters();
 
 // game rules
 let gameRules = document.getElementsByClassName("play-area-main-rules-btn")[0];
@@ -135,9 +135,6 @@ function wordGuess() {
 }
 
 // print empty boxes which will contain correct letters on page load
-window.onload = function () {
-	loadBlanks();
-};
 
 // prints empty boxes if user makes a change to word length to guess
 let autoGuessWord = document.getElementById("guess-word");
@@ -230,9 +227,11 @@ function checkLetterGuess(uGuess, checkGame, e) {
 }
 
 // alphabet letters
-let buttonLetter = document.getElementsByClassName("letterBtn");
-for (let letter of buttonLetter) {
-	letter.addEventListener("click", startGame);
+function activateLetter() {
+	let buttonLetter = document.getElementsByClassName("letterBtn");
+	for (let letter of buttonLetter) {
+		letter.addEventListener("click", startGame);
+	}
 }
 
 let gameStarted = false;
@@ -252,3 +251,8 @@ function startGame(e) {
 		checkLetterGuess(userGuess, "gameRunning", e);
 	}
 }
+
+window.onload = function () {
+	loadBlanks();
+	createLetters();
+};
