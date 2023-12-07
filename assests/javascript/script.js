@@ -56,6 +56,8 @@ function stopReset() {
 	const canvas = document.getElementById("hangman");
 	const context = canvas.getContext("2d");
 	context.clearRect(0, 0, canvas.width, canvas.height);
+	// reset letters left to guess
+	lettersLeftToGuess = parseInt(document.getElementById("guess-word").value);
 }
 
 function startTimer() {
@@ -279,7 +281,6 @@ function checkAnswer(uGuess) {
 	}
 
 	if (lettersLeftToGuess == 0) {
-		lettersLeftToGuess = parseInt(document.getElementById("guess-word").value);
 		winGame();
 	}
 	console.log("letter geuss:", letterGuessed, "word to guess", wordGuessArray);
