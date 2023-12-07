@@ -200,6 +200,7 @@ function checkAnswer(uGuess) {
 	}
 
 	if (lettersLeftToGuess == 0) {
+		lettersLeftToGuess = parseInt(document.getElementById("guess-word").value);
 		winGame();
 	}
 	console.log("check:", letterGuessed, wordGuessArray);
