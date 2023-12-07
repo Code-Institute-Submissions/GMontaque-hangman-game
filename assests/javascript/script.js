@@ -250,13 +250,16 @@ function disableLetter(e) {
 }
 
 // updates blank squares on page
-let lettersLeftToGuess = parseInt(document.getElementById("guess-word").value);
+let lettersLeftToGuess = document.getElementById("guess-word");
+lettersLeftToGuess.addEventListener("change", () => {
+	lettersLeftToGuess = parseInt(document.getElementById("guess-word").value);
+});
+
 function checkAnswer(uGuess) {
 	let letterGuessed = uGuess;
 	let wordGuessArray = wordToGuess.split("");
 	let blankSquares = document.getElementsByClassName("blankSquares-letters");
 
-	console.log(lettersLeftToGuess);
 	for (let prop in wordGuessArray) {
 		if (wordGuessArray[prop] === letterGuessed) {
 			blankSquares[prop].innerHTML = letterGuessed.toUpperCase();
@@ -268,7 +271,7 @@ function checkAnswer(uGuess) {
 		lettersLeftToGuess = parseInt(document.getElementById("guess-word").value);
 		winGame();
 	}
-	console.log("check:", letterGuessed, wordGuessArray);
+	console.log("letter geuss:", letterGuessed, "word to guess", wordGuessArray);
 }
 
 // generates word to guess
@@ -291,7 +294,6 @@ function checkLetterGuess(uGuess, checkGame, e) {
 		reduceLives(currentGameLives);
 	}
 	disableLetter(e);
-	console.log("word to guess:", wordToGuess, "userGuess:", uGuess);
 }
 
 // alphabet letters
