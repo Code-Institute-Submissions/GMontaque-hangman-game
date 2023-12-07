@@ -1,4 +1,7 @@
-/* basic website styling */
+/******************* Website Font *******************/
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+/******************* basic website styling *******************/
 html {
 	box-sizing: border-box;
 	font-size: 62.5%; /*1rem = 10px, 10px/16px = 62.5%*/
@@ -16,6 +19,7 @@ body {
 	background-attachment: fixed;
 	background-position: center 0%;
 	color: #fee086;
+	font-family: "Press Start 2P", sans-serif;
 }
 
 article {
@@ -25,7 +29,16 @@ article {
 	background-color: rgba(36, 11, 103, 0.7);
 }
 
-/* index page styling */
+/* styling for music buttons */
+.display-none {
+	display: none;
+}
+.hidden {
+	visibility: hidden;
+	float: right;
+}
+
+/****************** Index Page ******************/
 
 h1 {
 	font-size: 5rem;
@@ -63,7 +76,7 @@ h1 {
 	padding: 2rem;
 	border-radius: 5rem;
 }
-/* game page styling */
+/****************** Game Page *******************/
 
 .play-area-top {
 	display: flex;
@@ -79,17 +92,10 @@ h1 {
 	justify-content: space-between;
 }
 
-/* game rules pop up section */
-.display-none {
-	display: none;
-}
-
+/* apply when user selects a letter guess */
 .btnPressed {
 	color: red;
 	background-color: blue;
 }
 
-.hidden {
-	visibility: hidden;
-	float: right;
-}
+/* game rules pop up section */
