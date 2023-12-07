@@ -45,6 +45,9 @@ function stopReset() {
 	let li = document.getElementsByClassName("play-area-letters")[0];
 	li.innerHTML = "";
 	createLetters();
+	// remove disable off word length drop down
+	let wordNumLength = document.getElementById("guess-word");
+	wordNumLength.removeAttribute("disabled");
 }
 
 function startTimer() {
@@ -101,9 +104,7 @@ function displayGameRules() {
 // returns word for user to guess
 function wordGuess() {
 	let wordNumLength = document.getElementById("guess-word").value;
-
 	let randomNum = Math.floor(Math.random() * 6);
-
 	let wordLength6 = [
 		"baaing",
 		"babble",
@@ -136,14 +137,10 @@ function wordGuess() {
 	} else if (parseInt(wordNumLength) === 8) {
 		return wordLength8[randomNum];
 	}
-	console.log(wordNumLength);
 }
 
-// print empty boxes which will contain correct letters on page load
-
-// prints empty boxes if user makes a change to word length to guess
+// print empty boxes which will contain correct letters on page load and if user makes a change to word length to guess
 let autoGuessWord = document.getElementById("guess-word");
-
 autoGuessWord.addEventListener("change", loadBlanks);
 
 function loadBlanks() {
@@ -243,6 +240,9 @@ let gameStarted = false;
 
 // starts game
 function startGame(e) {
+	// disable word length drop down
+	let wordNumLength = document.getElementById("guess-word");
+	wordNumLength.setAttribute("disabled", "");
 	// letter user has selected
 	let userGuess = e.target.value;
 	if (gameStarted === false) {
