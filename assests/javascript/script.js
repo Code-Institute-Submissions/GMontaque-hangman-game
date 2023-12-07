@@ -7,12 +7,16 @@ let mySound = new Audio("../assests/audio/gameplay-soundtrack.mp3");
 
 // starts music
 function play() {
+	musicStop.classList.remove("hidden");
+	musicStart.classList.add("hidden");
 	console.log("sound");
 	mySound.play();
 }
 
 // stops music
 function stop() {
+	musicStop.classList.add("hidden");
+	musicStart.classList.remove("hidden");
 	console.log("sound stop");
 	mySound.pause();
 }

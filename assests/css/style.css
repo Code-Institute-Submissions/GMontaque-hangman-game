@@ -88,3 +88,8 @@ h1 {
 	color: red;
 	background-color: blue;
 }
+
+.hidden {
+	visibility: hidden;
+	float: right;
+}
