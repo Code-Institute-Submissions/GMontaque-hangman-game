@@ -20,8 +20,10 @@ function stop() {
 // stop watch function
 let seconds = 0;
 let tens = 0;
+let minutes = 0;
 let appendTens = document.getElementById("tens");
 let appendSeconds = document.getElementById("seconds");
+let appendMinutes = document.getElementById("minutes");
 let buttonReset = document.getElementsByClassName(
 	"play-area-top-restart-btn"
 )[0];
@@ -33,8 +35,10 @@ function stopReset() {
 	clearInterval(Interval);
 	tens = "00";
 	seconds = "00";
+	minutes = "00";
 	appendTens.innerHTML = tens;
 	appendSeconds.innerHTML = seconds;
+	appendMinutes.innerHTML = minutes;
 	// reloads blank squares
 	loadBlanks();
 	// resets game to start on letter press
@@ -74,6 +78,13 @@ function startTimer() {
 
 	if (seconds > 9) {
 		appendSeconds.innerHTML = seconds;
+	}
+
+	if (seconds == 60) {
+		minutes++;
+		appendMinutes.innerHTML = "0" + minutes;
+		seconds = 0;
+		appendSeconds.innerHTML = "0" + 0;
 	}
 }
 
