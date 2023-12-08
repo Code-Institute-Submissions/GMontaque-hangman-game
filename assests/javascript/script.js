@@ -98,7 +98,7 @@ function startTimer() {
 function createLetters() {
 	for (let i = 0; i < 26; i++) {
 		let li = document.getElementsByClassName("play-area-letters")[0];
-		li.innerHTML += `<button class="letterBtn" 
+		li.innerHTML += `<button class="letterBtn btn btn-padding" 
 		value="${(i + 10).toString(36)}">${(i + 10)
 			.toString(36)
 			.toUpperCase()}</button>`;

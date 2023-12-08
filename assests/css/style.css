@@ -38,6 +38,32 @@ article {
 	float: right;
 }
 
+.btn-padding {
+	padding: 10px;
+}
+
+/* general button styling */
+.btn {
+	font-weight: 900;
+	text-align: center;
+	display: inline-block;
+	margin: 5px;
+	font-weight: bold;
+	border: none;
+	background-color: #fee086;
+	text-shadow: -1px -1px black, 1px 1px white;
+	color: rgb(36, 11, 103);
+	border-radius: 7px;
+	box-shadow: 0 0.2em gray;
+	cursor: pointer;
+}
+
+.btn:active {
+	box-shadow: none;
+	position: relative;
+	top: 0.2em;
+}
+
 /****************** Index Page ******************/
 
 h1 {
@@ -75,8 +101,10 @@ h1 {
 .play-game-button-inner {
 	margin: auto;
 	display: block;
-	padding: 2rem;
-	border-radius: 5rem;
+	padding: 16px 39px;
+}
+.play-game-button-inner a {
+	text-decoration: none;
 }
 
 .line-height {
