@@ -24,7 +24,7 @@ body {
 
 article {
 	border: 2px solid black;
-	width: 70%;
+	width: 90%;
 	margin: auto;
 	background-color: rgba(36, 11, 103, 0.7);
 }
@@ -41,7 +41,7 @@ article {
 /****************** Index Page ******************/
 
 h1 {
-	font-size: 5rem;
+	font-size: 3rem;
 	text-decoration: underline;
 	text-align: center;
 }
@@ -52,18 +52,20 @@ h1 {
 }
 
 .game-area-inner-img {
-	width: 50%;
-	float: left;
+	width: 100%;
 }
 
 .game-area-inner-rules {
-	width: 50%;
-	float: right;
+	width: 100%;
 }
 
-.game-area-inner-img-inner,
-.play-area-main-img {
-	width: 20%;
+.game-area-inner-mainStyling {
+	display: flex;
+	flex-direction: column;
+}
+
+.game-area-inner-img-self {
+	width: 100%;
 }
 
 .play-game-button {
@@ -75,6 +77,10 @@ h1 {
 	display: block;
 	padding: 2rem;
 	border-radius: 5rem;
+}
+
+.line-height {
+	line-height: 1.6;
 }
 /****************** Game Page *******************/
 
@@ -99,3 +105,24 @@ h1 {
 }
 
 /* game rules pop up section */
+
+@media (min-width: 768px) {
+	article {
+		width: 70%;
+	}
+	h1 {
+		font-size: 5rem;
+	}
+	.game-area-inner-mainStyling {
+		display: block;
+	}
+	.game-area-inner-img {
+		width: 50%;
+		float: left;
+	}
+
+	.game-area-inner-rules {
+		width: 50%;
+		float: right;
+	}
+}
