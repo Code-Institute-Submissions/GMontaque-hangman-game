@@ -25,7 +25,7 @@ body {
 article {
 	border: 2px solid black;
 	width: 90%;
-	margin: auto;
+	margin: 5rem auto auto auto;
 	background-color: rgba(36, 11, 103, 0.7);
 }
 
@@ -44,7 +44,6 @@ article {
 
 /* general button styling */
 .btn {
-	font-weight: 900;
 	text-align: center;
 	display: inline-block;
 	margin: 5px;
@@ -68,8 +67,9 @@ article {
 
 h1 {
 	font-size: 3rem;
-	text-decoration: underline;
+	margin-bottom: 2rem;
 	text-align: center;
+	margin-top: 2rem;
 }
 
 .game-area-inner {
