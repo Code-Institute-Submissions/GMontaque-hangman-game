@@ -6,6 +6,7 @@ html {
 	box-sizing: border-box;
 	font-size: 62.5%; /*1rem = 10px, 10px/16px = 62.5%*/
 }
+
 *,
 *::after,
 *::before {
@@ -13,6 +14,7 @@ html {
 	padding: 0;
 	box-sizing: inherit;
 }
+
 body {
 	background: url(../img/website-background-image.jpg) no-repeat 100% 80%;
 	background-size: cover;
@@ -25,14 +27,16 @@ body {
 article {
 	border: 2px solid black;
 	width: 90%;
-	margin: 5rem auto auto auto;
+	margin: 5rem auto 5rem auto;
 	background-color: rgba(36, 11, 103, 0.7);
+	overflow: hidden;
 }
 
 /* styling for music buttons */
 .display-none {
 	display: none;
 }
+
 .hidden {
 	visibility: hidden;
 	float: right;
@@ -63,6 +67,10 @@ article {
 	top: 0.2em;
 }
 
+.game-area-inner-music {
+	margin-left: 5rem;
+}
+
 /****************** Index Page ******************/
 
 h1 {
@@ -91,7 +99,9 @@ h1 {
 }
 
 .game-area-inner-img-self {
-	width: 100%;
+	width: 65%;
+	margin: auto;
+	display: block;
 }
 
 .play-game-button {
@@ -103,6 +113,7 @@ h1 {
 	display: block;
 	padding: 16px 39px;
 }
+
 .play-game-button-inner a {
 	text-decoration: none;
 }
@@ -110,12 +121,14 @@ h1 {
 .line-height {
 	line-height: 1.6;
 }
+
 /****************** Game Page *******************/
 
 .play-area-top {
 	display: flex;
 	justify-content: space-between;
 }
+
 .play-area-top-select {
 	display: flex;
 	flex-direction: column;
@@ -150,24 +163,63 @@ h1 {
 }
 
 /* media query */
+@media (min-width: 426px) {
+	.game-area-inner-img-self {
+		width: 55%;
+	}
+
+	article {
+		height: 93vh;
+		margin: 3rem auto auto auto;
+	}
+}
 
 @media (min-width: 769px) {
 	article {
 		width: 70%;
+		height: 93vh;
 	}
+
 	h1 {
 		font-size: 5rem;
+		margin-top: 4rem;
 	}
+
 	.game-area-inner-mainStyling {
 		display: block;
 	}
+
 	.game-area-inner-img {
 		width: 50%;
 		float: left;
+	}
+	.game-area-inner-img-self {
+		width: 95%;
 	}
 
 	.game-area-inner-rules {
 		width: 50%;
 		float: right;
+		padding-right: 4rem;
+		padding-top: 3rem;
+	}
+
+	.play-area-main {
+		float: left;
+		width: 50%;
+	}
+	/* .play-game-button {
+		padding: 3rem 0rem;
+	} */
+
+	.play-area-letters {
+		float: right;
+		width: 50%;
+	}
+}
+
+@media (min-width: 1441px) {
+	.play-game-button {
+		padding: 0;
 	}
 }
