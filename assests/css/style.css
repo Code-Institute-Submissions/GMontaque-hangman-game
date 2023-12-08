@@ -132,9 +132,26 @@ h1 {
 	background-color: blue;
 }
 
-/* game rules pop up section */
+.blankSquares {
+	display: flex;
+	width: 5rem;
+}
 
-@media (min-width: 768px) {
+.blankSquares-letters {
+	border: 2px solid black;
+	width: fit-content;
+	font-size: 5rem;
+	padding: 1rem;
+}
+
+.letterBtn {
+	font-size: 3rem;
+	width: 5rem;
+}
+
+/* media query */
+
+@media (min-width: 769px) {
 	article {
 		width: 70%;
 	}

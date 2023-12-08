@@ -169,7 +169,7 @@ function loadBlanks() {
 	let blankSquares = document.getElementsByClassName("blankSquares")[0];
 	blankSquares.innerHTML = "";
 	for (let i = 0; i < guess; i++) {
-		blankSquares.innerHTML += `<div class="blankSquares-letters">${i}<i class="fa-solid fa-question"></i></div>`;
+		blankSquares.innerHTML += `<div class="blankSquares-letters"><i class="fa-solid fa-question"></i></div>`;
 	}
 	console.log(guess);
 }
