@@ -3,37 +3,70 @@ let musicStart = document.getElementById("play-btn");
 let musicStop = document.getElementById("stop-btn");
 musicStart.addEventListener("click", play);
 musicStop.addEventListener("click", stop);
+
+// game background music
 let mySound = new Audio("../assests/audio/gameplay-soundtrack.mp3");
 
-// starts music
-function play() {
-	musicStop.classList.remove("hidden");
-	musicStart.classList.add("hidden");
-	console.log("sound");
-	mySound.play();
-}
-
-// stops music
-function stop() {
-	musicStop.classList.add("hidden");
-	musicStart.classList.remove("hidden");
-	console.log("sound stop");
-	mySound.pause();
-}
-
-// stop watch function
+// variables for stopwatch
 let seconds = 0;
 let tens = 0;
 let minutes = 0;
 let appendTens = document.getElementById("tens");
 let appendSeconds = document.getElementById("seconds");
 let appendMinutes = document.getElementById("minutes");
+let Interval;
+// button resets game
 let buttonReset = document.getElementsByClassName(
 	"play-area-top-restart-btn"
 )[0];
-let Interval;
-
 buttonReset.addEventListener("click", stopReset);
+// button to show game rules
+let gameRules = document.getElementsByClassName("play-area-main-rules-btn")[0];
+gameRules.addEventListener("click", displayGameRules);
+
+// checks value of select element for any change
+let autoGuessWord = document.getElementById("guess-word");
+autoGuessWord.addEventListener("change", loadBlanks);
+
+// counter of letters left to guess - used by checkAnswer function
+let lettersLeftToGuess = document.getElementById("guess-word");
+lettersLeftToGuess.addEventListener("change", () => {
+	lettersLeftToGuess = parseInt(document.getElementById("guess-word").value);
+});
+
+// stores word to guess - used by checkLetterGuess function
+let wordToGuess;
+
+// counter used by startGame function to check if game is already running
+let gameStarted = false;
+
+/**
+ * function plays game music when called
+ */
+function play() {
+	// add and remove class to show or hide element
+	musicStop.classList.remove("hidden");
+	musicStart.classList.add("hidden");
+	console.log("sound");
+	// plays sound
+	mySound.play();
+}
+
+/**
+ * function stops game music when called
+ */
+function stop() {
+	// add and remove class to show or hide element
+	musicStop.classList.add("hidden");
+	musicStart.classList.remove("hidden");
+	console.log("sound stop");
+	// plays sound
+	mySound.pause();
+}
+
+/**
+ * function creates stopwatch
+ */
 function stopReset() {
 	// reset stop watch
 	clearInterval(Interval);
@@ -53,7 +86,7 @@ function stopReset() {
 	let li = document.getElementsByClassName("play-area-letters")[0];
 	li.innerHTML = "";
 	createLetters();
-	// remove disable off word length drop down
+	// remove disable attribute off word length select element
 	let wordNumLength = document.getElementById("guess-word");
 	wordNumLength.removeAttribute("disabled");
 	// reset canvas
@@ -64,6 +97,9 @@ function stopReset() {
 	lettersLeftToGuess = parseInt(document.getElementById("guess-word").value);
 }
 
+/**
+ * function works with stopwatch updates number values
+ */
 function startTimer() {
 	tens++;
 
@@ -94,10 +130,14 @@ function startTimer() {
 	}
 }
 
-//creates alphabet letters
-function createLetters(word) {
+/**
+ * creates 26 alphabet letters which are displayed to play the game
+ */
+function createLetters() {
+	// creates overlay to display win or loose message at end of game
 	let li = document.getElementsByClassName("play-area-letters")[0];
 	li.innerHTML += `<div class="end-game-message display-none"></div>`;
+	// loops to create letters
 	for (let i = 0; i < 26; i++) {
 		li.innerHTML += `<button class="letterBtn btn btn-padding" 
 		value="${(i + 10).toString(36)}">${(i + 10)
@@ -107,10 +147,9 @@ function createLetters(word) {
 	activateLetter();
 }
 
-// game rules
-let gameRules = document.getElementsByClassName("play-area-main-rules-btn")[0];
-gameRules.addEventListener("click", displayGameRules);
-
+/**
+ * creates game rules overlay on game page
+ */
 function displayGameRules() {
 	let gameRules = document.getElementsByClassName(
 		"play-area-main-gameRules"
@@ -123,9 +162,13 @@ function displayGameRules() {
 	}
 }
 
-// returns word for user to guess
+/**
+ * returns word for user to guess
+ */
 function wordGuess() {
+	// select element result
 	let wordNumLength = document.getElementById("guess-word").value;
+	// generates random number between 0 and 5
 	let randomNum = Math.floor(Math.random() * 6);
 	let wordLength6 = [
 		"baaing",
@@ -151,7 +194,7 @@ function wordGuess() {
 		"habitant",
 		"habitats",
 	];
-
+	// returns random word
 	if (parseInt(wordNumLength) === 6) {
 		return wordLength6[randomNum];
 	} else if (parseInt(wordNumLength) === 7) {
@@ -161,10 +204,9 @@ function wordGuess() {
 	}
 }
 
-// print empty boxes which will contain correct letters on page load and if user makes a change to word length to guess
-let autoGuessWord = document.getElementById("guess-word");
-autoGuessWord.addEventListener("change", loadBlanks);
-
+/**
+ * Load blanks square which represent the word to guess
+ */
 function loadBlanks() {
 	let guess = document.getElementById("guess-word").value;
 	let blankSquares = document.getElementsByClassName("blankSquares")[0];
@@ -175,31 +217,41 @@ function loadBlanks() {
 	console.log(guess);
 }
 
-// loose game function
+/**
+ * function called when user looses game
+ */
 function looseGame(word) {
 	console.log("game over");
+	// prints message tell user they lost and the word they didn't guess
 	let winnerMessage = document.getElementsByClassName("end-game-message")[0];
 	winnerMessage.innerHTML += `Unlucky you did guess the word which was ${word} <br> Press Restart to play again`;
 	winnerMessage.classList.remove("display-none");
+	// plays loosing sound
 	let looseSound = new Audio("../assests/audio/wah-wah-sad-trombone-6347.mp3");
 	looseSound.play();
 }
 
-// win game function
+/**
+ * function called when user wins game
+ */
 function winGame() {
 	console.log("game won");
+	// prints message tell user they lost and the word they didn't guess
 	let winnerMessage = document.getElementsByClassName("end-game-message")[0];
 	winnerMessage.innerHTML += `Congratluations you won <br> Press Restart to play again`;
 	winnerMessage.classList.remove("display-none");
+	// plays winning sound
 	let winSound = new Audio("../assests/audio/user-wins.mp3");
 	winSound.play();
 }
 
-// fucntion reduce lives counter on wrong guess
+/**
+ * function reduces lives counter for a wrong guess and creates hangman
+ */
 function reduceLives(lives) {
 	const canvas = document.getElementById("hangman");
 	const context = canvas.getContext("2d");
-
+	// depending on number of lives updates hangman in webpage
 	switch (parseInt(lives)) {
 		case 7:
 			context.strokeStyle = "#444";
@@ -215,6 +267,7 @@ function reduceLives(lives) {
 			break;
 
 		case 6:
+			// display hangman head
 			context.lineWidth = 5;
 			context.beginPath();
 			context.arc(100, 50, 25, 0, Math.PI * 2, true);
@@ -223,6 +276,7 @@ function reduceLives(lives) {
 			break;
 
 		case 5:
+			// display hangman body
 			context.beginPath();
 			context.moveTo(100, 75);
 			context.lineTo(100, 140);
@@ -230,6 +284,7 @@ function reduceLives(lives) {
 			break;
 
 		case 4:
+			// display hangman left arm
 			context.beginPath();
 			context.moveTo(100, 85);
 			context.lineTo(60, 100);
@@ -237,6 +292,7 @@ function reduceLives(lives) {
 			break;
 
 		case 3:
+			// display hangman right arm
 			context.beginPath();
 			context.moveTo(100, 85);
 			context.lineTo(140, 100);
@@ -244,6 +300,7 @@ function reduceLives(lives) {
 			break;
 
 		case 2:
+			// display hangman left leg
 			context.beginPath();
 			context.moveTo(100, 140);
 			context.lineTo(80, 190);
@@ -251,6 +308,7 @@ function reduceLives(lives) {
 			break;
 
 		case 1:
+			// display hangman left right
 			context.beginPath();
 			context.moveTo(100, 140);
 			context.lineTo(125, 190);
@@ -266,42 +324,45 @@ function reduceLives(lives) {
 	}
 }
 
-// disables letter once used
+/**
+ * disables the letter the user has clicked
+ */
 function disableLetter(e) {
 	// pass the inital click event when letter button pressed and adds class and attribute to that element
 	e.target.classList.add("btnPressed");
 	e.target.setAttribute("disabled", "");
 }
 
-// updates blank squares on page
-let lettersLeftToGuess = document.getElementById("guess-word");
-
-lettersLeftToGuess.addEventListener("change", () => {
-	lettersLeftToGuess = parseInt(document.getElementById("guess-word").value);
-});
-
+/**
+ * checks if the user has guessed all correct letters - using variable lettersLeftToGuess as counter
+ */
 function checkAnswer(uGuess) {
+	// letter user guessed
 	let letterGuessed = uGuess;
+	// word user is trying to guess
 	let wordGuessArray = wordToGuess.split("");
+	// print blank squares on webpage
 	let blankSquares = document.getElementsByClassName("blankSquares-letters");
 
 	for (let prop in wordGuessArray) {
 		if (wordGuessArray[prop] === letterGuessed) {
+			// updates blank square in specific index with correct user letter guess
 			blankSquares[prop].innerHTML = letterGuessed.toUpperCase();
+			// reduces letters lettersLeftToGuess counter by one
 			lettersLeftToGuess--;
 		}
 	}
 
+	// check if lettersLeftToGuess is zero, user wins
 	if (lettersLeftToGuess == 0) {
 		winGame();
 	}
 	console.log("letter geuss:", letterGuessed, "word to guess", wordGuessArray);
 }
 
-// generates word to guess
-let wordToGuess;
-
-// function checcks users answer against word to guess
+/**
+ * function checks users answer against word to guess
+ */
 function checkLetterGuess(uGuess, checkGame, e) {
 	// gets word to be guessed
 	if (checkGame === "start") {
@@ -317,10 +378,13 @@ function checkLetterGuess(uGuess, checkGame, e) {
 	} else {
 		reduceLives(currentGameLives);
 	}
+	// disables letter that user pressed
 	disableLetter(e);
 }
 
-// alphabet letters
+/**
+ * adds event listener to all letters user can press, starts the game
+ */
 function activateLetter() {
 	let buttonLetter = document.getElementsByClassName("letterBtn");
 	for (let letter of buttonLetter) {
@@ -328,15 +392,16 @@ function activateLetter() {
 	}
 }
 
-let gameStarted = false;
-
-// starts game
+/**
+ * when called function starts the game
+ */
 function startGame(e) {
 	// disable word length drop down
 	let wordNumLength = document.getElementById("guess-word");
 	wordNumLength.setAttribute("disabled", "");
 	// letter user has selected
 	let userGuess = e.target.value;
+	// checks if the gamme has started
 	if (gameStarted === false) {
 		// starts clock timer
 		clearInterval(Interval);
@@ -345,10 +410,14 @@ function startGame(e) {
 		// clicked letter passed in funtion with user guess value
 		checkLetterGuess(userGuess, "start", e);
 	} else {
+		// clicked letter passed in funtion with user guess value
 		checkLetterGuess(userGuess, "gameRunning", e);
 	}
 }
 
+/**
+ * loads functions when page loads
+ */
 window.onload = function () {
 	lettersLeftToGuess = parseInt(document.getElementById("guess-word").value);
 	loadBlanks();
