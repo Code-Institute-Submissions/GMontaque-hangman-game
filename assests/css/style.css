@@ -30,6 +30,7 @@ article {
 	margin: 5rem auto 5rem auto;
 	background-color: rgba(36, 11, 103, 0.7);
 	overflow: hidden;
+	padding: 0rem 1rem;
 }
 
 /* styling for music buttons */
@@ -127,16 +128,32 @@ h1 {
 .play-area-top {
 	display: flex;
 	justify-content: space-between;
-}
-
-.play-area-top-select {
-	display: flex;
-	flex-direction: column;
+	flex-wrap: wrap;
+	align-items: center;
 }
 
 .play-area-main-wrapper {
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
+}
+
+#guess-word {
+	background: #fee086;
+	color: #240b67;
+	padding: 0.5rem;
+	border-radius: 5rem;
+	font-weight: 800;
+}
+
+#hangman {
+	margin: auto;
+	display: block;
+}
+
+.play-area-letters {
+	padding: 1rem;
+	text-align: center;
 }
 
 /* apply when user selects a letter guess */
@@ -147,13 +164,13 @@ h1 {
 
 .blankSquares {
 	display: flex;
-	width: 5rem;
+	justify-content: center;
+	margin-top: 2rem;
 }
 
 .blankSquares-letters {
 	border: 2px solid black;
-	width: fit-content;
-	font-size: 5rem;
+	font-size: 3rem;
 	padding: 1rem;
 }
 
@@ -163,6 +180,23 @@ h1 {
 }
 
 /* media query */
+@media (max-width: 321px) {
+	.play-area-top-word-select {
+		display: block;
+		margin: auto;
+	}
+}
+
+@media (max-width: 376px) {
+	.play-area-top {
+		justify-content: space-around;
+	}
+
+	.play-area-top-word-select {
+		padding-top: 1rem;
+	}
+}
+
 @media (min-width: 426px) {
 	.game-area-inner-img-self {
 		width: 55%;
@@ -176,7 +210,7 @@ h1 {
 
 @media (min-width: 769px) {
 	article {
-		width: 70%;
+		width: 80%;
 		height: 93vh;
 	}
 
@@ -208,12 +242,17 @@ h1 {
 		float: left;
 		width: 50%;
 	}
-	/* .play-game-button {
-		padding: 3rem 0rem;
-	} */
+
+	.blankSquares-letters {
+		font-size: 4rem;
+	}
 
 	.play-area-letters {
 		float: right;
+		width: 50%;
+	}
+	.blankSquares {
+		width: 5rem;
 		width: 50%;
 	}
 }
@@ -221,5 +260,10 @@ h1 {
 @media (min-width: 1441px) {
 	.play-game-button {
 		padding: 0;
+	}
+
+	article {
+		width: 70%;
+		height: 93vh;
 	}
 }
