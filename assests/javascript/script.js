@@ -163,48 +163,6 @@ function displayGameRules() {
 }
 
 /**
- * returns word for user to guess
- */
-function wordGuess() {
-	// select element result
-	let wordNumLength = document.getElementById("guess-word").value;
-	// generates random number between 0 and 5
-	let randomNum = Math.floor(Math.random() * 6);
-	let wordLength6 = [
-		"baaing",
-		"babble",
-		"babied",
-		"babies",
-		"babkas",
-		"baboon",
-	];
-	let wordLength7 = [
-		"cabalas",
-		"cabanas",
-		"cabanes",
-		"cabaret",
-		"cabbage",
-		"cabbagy",
-	];
-	let wordLength8 = [
-		"habanera",
-		"habanero",
-		"habenula",
-		"habitans",
-		"habitant",
-		"habitats",
-	];
-	// returns random word
-	if (parseInt(wordNumLength) === 6) {
-		return wordLength6[randomNum];
-	} else if (parseInt(wordNumLength) === 7) {
-		return wordLength7[randomNum];
-	} else if (parseInt(wordNumLength) === 8) {
-		return wordLength8[randomNum];
-	}
-}
-
-/**
  * Load blanks square which represent the word to guess
  */
 function loadBlanks() {
@@ -340,14 +298,14 @@ function checkAnswer(uGuess) {
 	// letter user guessed
 	let letterGuessed = uGuess;
 	// word user is trying to guess
-	let wordGuessArray = wordToGuess.split("");
+	let wordGuessArray = wordToGuess;
 	// print blank squares on webpage
 	let blankSquares = document.getElementsByClassName("blankSquares-letters");
 
 	for (let prop in wordGuessArray) {
 		if (wordGuessArray[prop] === letterGuessed) {
 			// updates blank square in specific index with correct user letter guess
-			blankSquares[prop].innerHTML = letterGuessed.toUpperCase();
+			blankSquares[prop - 2].innerHTML = letterGuessed.toUpperCase();
 			// reduces letters lettersLeftToGuess counter by one
 			lettersLeftToGuess--;
 		}
@@ -361,14 +319,35 @@ function checkAnswer(uGuess) {
 }
 
 /**
+ * function uses an API to return a word the user will guess, length of word decided by user
+ */
+async function wordGuess() {
+	// returns the length of word number
+	let wordNumLength = document.getElementById("guess-word").value;
+	// api with word length value
+	let file = `https://random-word-api.herokuapp.com/word?length=${wordNumLength}`;
+
+	// fetch request and error catch
+	try {
+		const response = await fetch(file);
+		const returnWord = await response.text();
+		console.log(typeof returnWord);
+		return returnWord;
+	} catch (error) {
+		console.log("error on fetch", error);
+		return "";
+	}
+}
+
+/**
  * function checks users answer against word to guess
  */
-function checkLetterGuess(uGuess, checkGame, e) {
+async function checkLetterGuess(uGuess, checkGame, e) {
 	// gets word to be guessed
 	if (checkGame === "start") {
-		wordToGuess = wordGuess();
+		wordToGuess = await wordGuess();
 	}
-
+	console.log(wordToGuess);
 	// current game lives counter
 	let currentGameLives = document.getElementById("gameLives").innerHTML;
 	// checks if user guess is in word to guess
