@@ -95,9 +95,10 @@ function startTimer() {
 }
 
 //creates alphabet letters
-function createLetters() {
+function createLetters(word) {
+	let li = document.getElementsByClassName("play-area-letters")[0];
+	li.innerHTML += `<div class="end-game-message display-none"></div>`;
 	for (let i = 0; i < 26; i++) {
-		let li = document.getElementsByClassName("play-area-letters")[0];
 		li.innerHTML += `<button class="letterBtn btn btn-padding" 
 		value="${(i + 10).toString(36)}">${(i + 10)
 			.toString(36)
@@ -175,8 +176,11 @@ function loadBlanks() {
 }
 
 // loose game function
-function looseGame() {
+function looseGame(word) {
 	console.log("game over");
+	let winnerMessage = document.getElementsByClassName("end-game-message")[0];
+	winnerMessage.innerHTML += `Unlucky you did guess the word which was ${word} <br> Press Restart to play again`;
+	winnerMessage.classList.remove("display-none");
 	let looseSound = new Audio("../assests/audio/wah-wah-sad-trombone-6347.mp3");
 	looseSound.play();
 }
@@ -184,8 +188,11 @@ function looseGame() {
 // win game function
 function winGame() {
 	console.log("game won");
-	let looseSound = new Audio("../assests/audio/user-wins.mp3");
-	looseSound.play();
+	let winnerMessage = document.getElementsByClassName("end-game-message")[0];
+	winnerMessage.innerHTML += `Congratluations you won <br> Press Restart to play again`;
+	winnerMessage.classList.remove("display-none");
+	let winSound = new Audio("../assests/audio/user-wins.mp3");
+	winSound.play();
 }
 
 // fucntion reduce lives counter on wrong guess
@@ -253,7 +260,7 @@ function reduceLives(lives) {
 
 	if (lives == 1) {
 		document.getElementById("gameLives").innerHTML = lives - 1;
-		looseGame();
+		looseGame(wordToGuess);
 	} else {
 		document.getElementById("gameLives").innerHTML = lives - 1;
 	}
@@ -268,6 +275,7 @@ function disableLetter(e) {
 
 // updates blank squares on page
 let lettersLeftToGuess = document.getElementById("guess-word");
+
 lettersLeftToGuess.addEventListener("change", () => {
 	lettersLeftToGuess = parseInt(document.getElementById("guess-word").value);
 });
@@ -342,6 +350,7 @@ function startGame(e) {
 }
 
 window.onload = function () {
+	lettersLeftToGuess = parseInt(document.getElementById("guess-word").value);
 	loadBlanks();
-	createLetters();
+	createLetters(wordToGuess);
 };
