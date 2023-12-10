@@ -1,8 +1,6 @@
-// play and stop music
-let musicStart = document.getElementById("play-btn");
-let musicStop = document.getElementById("stop-btn");
-musicStart.addEventListener("click", play);
-musicStop.addEventListener("click", stop);
+// toggle game music on and off
+let playMusic = document.getElementById("toggle-music-btn");
+playMusic.addEventListener("click", togglePlay);
 
 // game background music
 let mySound = new Audio("../assests/audio/gameplay-soundtrack.mp3");
@@ -41,27 +39,29 @@ let wordToGuess;
 let gameStarted = false;
 
 /**
- * function plays game music when called
+ * function plays and stop music depending on valur attribute
  */
-function play() {
-	// add and remove class to show or hide element
-	musicStop.classList.remove("hidden");
-	musicStart.classList.add("hidden");
-	console.log("sound");
-	// plays sound
-	mySound.play();
-}
-
-/**
- * function stops game music when called
- */
-function stop() {
-	// add and remove class to show or hide element
-	musicStop.classList.add("hidden");
-	musicStart.classList.remove("hidden");
-	console.log("sound stop");
-	// plays sound
-	mySound.pause();
+function togglePlay() {
+	// selects button by ID
+	let playMusic = document.getElementById("toggle-music-btn");
+	// checks the value attribute
+	if (playMusic.value === "play-music") {
+		// updates button inner image
+		playMusic.innerHTML = '<i class="fa-solid fa-volume-high"></i>';
+		// updates value attribute
+		playMusic.setAttribute("value", "stop-music");
+		console.log("sound on");
+		// plays sound
+		mySound.play();
+	} else if (playMusic.value === "stop-music") {
+		// updates button inner image
+		playMusic.innerHTML = '<i class="fa-solid fa-volume-xmark"></i>';
+		// updates value attribute
+		playMusic.setAttribute("value", "play-music");
+		console.log("sound off");
+		// plays sound
+		mySound.pause();
+	}
 }
 
 /**
