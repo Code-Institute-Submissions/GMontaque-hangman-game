@@ -123,6 +123,14 @@ h1 {
 	line-height: 1.6;
 }
 
+.icon {
+	margin-right: 1rem;
+}
+
+.text-decoration {
+	text-decoration: none;
+}
+
 /****************** Game Page *******************/
 
 .play-area-top {
