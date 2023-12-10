@@ -31,6 +31,7 @@ article {
 	background-color: rgba(36, 11, 103, 0.7);
 	overflow: hidden;
 	padding: 0rem 1rem;
+	position: relative;
 }
 
 /* styling for music buttons */
@@ -194,6 +195,28 @@ h1 {
 	width: 100%;
 	height: 100%;
 	background-color: grey;
+}
+
+/* game rules overlay */
+
+.play-area-main-gameRules {
+	position: absolute;
+	z-index: 99;
+	background: rgba(36, 11, 103, 0.9);
+	padding: 5rem;
+	width: 50%;
+	right: 0;
+	top: 162px;
+	border: 2px solid #fee086;
+}
+
+.rules-text-width {
+	width: 100% !important;
+}
+
+.play-area-main-gameRules-header {
+	margin-top: 0rem;
+	font-size: 4rem;
 }
 
 /* media query */
