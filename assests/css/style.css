@@ -36,7 +36,7 @@ article {
 
 /* styling for music buttons */
 .display-none {
-	display: none;
+	display: none !important;
 }
 
 .hidden {
@@ -179,7 +179,7 @@ h1 {
 }
 
 .blankSquares-letters {
-	border: 2px solid black;
+	border: 2px solid #fee086;
 	font-size: 3rem;
 	padding: 1rem;
 }
@@ -217,6 +217,14 @@ h1 {
 .play-area-main-gameRules-header {
 	margin-top: 0rem;
 	font-size: 4rem;
+}
+
+/* end game message */
+
+.end-game-message {
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 /* media query */

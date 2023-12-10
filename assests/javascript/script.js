@@ -187,7 +187,7 @@ function looseGame(word) {
 	console.log("game over");
 	// prints message tell user they lost and the word they didn't guess
 	let winnerMessage = document.getElementsByClassName("end-game-message")[0];
-	winnerMessage.innerHTML += `Unlucky you did guess the word which was ${word} <br> Press Restart to play again`;
+	winnerMessage.innerHTML += `<p>Unlucky you did guess the word which was ${word} <br> Press Restart to play again</p>`;
 	winnerMessage.classList.remove("display-none");
 	// plays loosing sound
 	let looseSound = new Audio("../assests/audio/wah-wah-sad-trombone-6347.mp3");
@@ -201,7 +201,7 @@ function winGame() {
 	console.log("game won");
 	// prints message tell user they lost and the word they didn't guess
 	let winnerMessage = document.getElementsByClassName("end-game-message")[0];
-	winnerMessage.innerHTML += `Congratluations you won <br> Press Restart to play again`;
+	winnerMessage.innerHTML += `<p>Congratluations you won <br> Press Restart to play again</p>`;
 	winnerMessage.classList.remove("display-none");
 	// plays winning sound
 	let winSound = new Audio("../assests/audio/user-wins.mp3");
