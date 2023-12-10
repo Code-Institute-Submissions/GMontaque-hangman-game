@@ -318,8 +318,12 @@ function checkAnswer(uGuess) {
 			// updates blank square in specific index with correct user letter guess
 			blankSquares[prop - 2].innerHTML = letterGuessed.toUpperCase();
 			// reduces letters lettersLeftToGuess counter by one
-			lettersLeftToGuess--;
 		}
+	}
+
+	let pete = document.getElementById(letterGuessed);
+	if (!pete.hasAttribute("disabled")) {
+		lettersLeftToGuess--;
 	}
 
 	// check if lettersLeftToGuess is zero, user wins
