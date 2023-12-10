@@ -113,11 +113,6 @@ h1 {
 .play-game-button-inner {
 	margin: auto;
 	display: block;
-	padding: 16px 39px;
-}
-
-.play-game-button-inner a {
-	text-decoration: none;
 }
 
 .line-height {
@@ -130,6 +125,9 @@ h1 {
 
 .text-decoration {
 	text-decoration: none;
+	display: block;
+	padding: 20px 39px;
+	width: 200px;
 }
 
 /****************** Game Page *******************/
