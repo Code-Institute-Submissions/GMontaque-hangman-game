@@ -38,6 +38,9 @@ let wordToGuess;
 // counter used by startGame function to check if game is already running
 let gameStarted = false;
 
+// listens for user keyboard press
+document.addEventListener("keyup", keyboardPress);
+
 /**
  * function plays and stop music depending on valur attribute
  */
@@ -139,7 +142,9 @@ function createLetters() {
 	li.innerHTML += `<div class="end-game-message display-none"></div>`;
 	// loops to create letters
 	for (let i = 0; i < 26; i++) {
-		li.innerHTML += `<button class="letterBtn btn btn-padding" 
+		li.innerHTML += `<button id="${(i + 10).toString(
+			36
+		)}" class="letterBtn btn btn-padding" 
 		value="${(i + 10).toString(36)}">${(i + 10)
 			.toString(36)
 			.toUpperCase()}</button>`;
@@ -287,8 +292,14 @@ function reduceLives(lives) {
  */
 function disableLetter(e) {
 	// pass the inital click event when letter button pressed and adds class and attribute to that element
-	e.target.classList.add("btnPressed");
-	e.target.setAttribute("disabled", "");
+	if (typeof e == "string") {
+		let guessMade = document.getElementById(e);
+		guessMade.classList.add("btnPressed");
+		guessMade.setAttribute("disabled", "");
+	} else {
+		e.target.classList.add("btnPressed");
+		e.target.setAttribute("disabled", "");
+	}
 }
 
 /**
@@ -315,7 +326,7 @@ function checkAnswer(uGuess) {
 	if (lettersLeftToGuess == 0) {
 		winGame();
 	}
-	console.log("letter geuss:", letterGuessed, "word to guess", wordGuessArray);
+	console.log("letter guess:", letterGuessed, "word to guess", wordGuessArray);
 }
 
 /**
@@ -331,7 +342,6 @@ async function wordGuess() {
 	try {
 		const response = await fetch(file);
 		const returnWord = await response.text();
-		console.log(typeof returnWord);
 		return returnWord;
 	} catch (error) {
 		console.log("error on fetch", error);
@@ -347,18 +357,29 @@ async function checkLetterGuess(uGuess, checkGame, e) {
 	if (checkGame === "start") {
 		wordToGuess = await wordGuess();
 	}
-	console.log(wordToGuess);
+
 	// current game lives counter
 	let currentGameLives = document.getElementById("gameLives").innerHTML;
 	// checks if user guess is in word to guess
 	if (wordToGuess.includes(uGuess)) {
-		alert(uGuess);
 		checkAnswer(uGuess);
+		// alert(uGuess);
 	} else {
 		reduceLives(currentGameLives);
 	}
 	// disables letter that user pressed
 	disableLetter(e);
+}
+
+/**
+ * allows user to play the game using keyboard
+ */
+function keyboardPress(event) {
+	if (event.keyCode >= 65 && event.keyCode <= 90) {
+		startGame(event.key, "keyboard");
+	} else {
+		console.log("not a letter");
+	}
 }
 
 /**
@@ -374,12 +395,17 @@ function activateLetter() {
 /**
  * when called function starts the game
  */
-function startGame(e) {
+function startGame(e, checker) {
 	// disable word length drop down
 	let wordNumLength = document.getElementById("guess-word");
 	wordNumLength.setAttribute("disabled", "");
 	// letter user has selected
-	let userGuess = e.target.value;
+	let userGuess;
+	if (checker == "keyboard") {
+		userGuess = e;
+	} else {
+		userGuess = e.target.value;
+	}
 	// checks if the gamme has started
 	if (gameStarted === false) {
 		// starts clock timer
