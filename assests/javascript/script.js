@@ -189,6 +189,11 @@ function looseGame(word) {
 	let winnerMessage = document.getElementsByClassName("end-game-message")[0];
 	winnerMessage.innerHTML += `<p>Unlucky you did guess the word which was ${word} <br> Press Restart to play again</p>`;
 	winnerMessage.classList.remove("display-none");
+	// stops stopwatch and displays time
+	clearInterval(Interval);
+	appendTens.innerHTML = document.getElementById("tens").innerHTML;
+	appendSeconds.innerHTML = document.getElementById("seconds").innerHTML;
+	appendMinutes.innerHTML = document.getElementById("minutes").innerHTML;
 	// plays loosing sound
 	let looseSound = new Audio("../assests/audio/wah-wah-sad-trombone-6347.mp3");
 	looseSound.play();
@@ -203,6 +208,11 @@ function winGame() {
 	let winnerMessage = document.getElementsByClassName("end-game-message")[0];
 	winnerMessage.innerHTML += `<p>Congratluations you won <br> Press Restart to play again</p>`;
 	winnerMessage.classList.remove("display-none");
+	// stops stopwatch and displays time
+	clearInterval(Interval);
+	appendTens.innerHTML = document.getElementById("tens").innerHTML;
+	appendSeconds.innerHTML = document.getElementById("seconds").innerHTML;
+	appendMinutes.innerHTML = document.getElementById("minutes").innerHTML;
 	// plays winning sound
 	let winSound = new Audio("../assests/audio/user-wins.mp3");
 	winSound.play();
