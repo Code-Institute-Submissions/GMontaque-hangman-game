@@ -185,6 +185,7 @@ function loadBlanks() {
  */
 function looseGame(word) {
 	console.log("game over");
+	console.log("the word type is:", typeof word);
 	// prints message tell user they lost and the word they didn't guess
 	let winnerMessage = document.getElementsByClassName("end-game-message")[0];
 	winnerMessage.innerHTML += `<p>Unlucky you did guess the word which was ${word} <br> Press Restart to play again</p>`;
@@ -326,7 +327,7 @@ function checkAnswer(uGuess) {
 	for (let prop in wordGuessArray) {
 		if (wordGuessArray[prop] === letterGuessed) {
 			// updates blank square in specific index with correct user letter guess
-			blankSquares[prop - 2].innerHTML = letterGuessed.toUpperCase();
+			blankSquares[prop].innerHTML = letterGuessed.toUpperCase();
 			// reduces letters lettersLeftToGuess counter by one
 		}
 	}
@@ -370,6 +371,8 @@ async function checkLetterGuess(uGuess, checkGame, e) {
 	// gets word to be guessed
 	if (checkGame === "start") {
 		wordToGuess = await wordGuess();
+		wordToGuess = wordToGuess.slice(2, -2);
+		console.log(wordToGuess);
 	}
 
 	// current game lives counter
