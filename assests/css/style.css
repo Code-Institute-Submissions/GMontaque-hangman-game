@@ -69,8 +69,8 @@ article {
 	top: 0.2em;
 }
 
-.game-area-inner-music {
-	margin-left: 5rem;
+.mobile-margin {
+	margin-left: 0rem;
 }
 
 /****************** Index Page ******************/
@@ -101,7 +101,7 @@ h1 {
 }
 
 .game-area-inner-img-self {
-	width: 65%;
+	width: 100%;
 	margin: auto;
 	display: block;
 }
@@ -245,24 +245,26 @@ h1 {
 
 @media (min-width: 426px) {
 	.game-area-inner-img-self {
-		width: 55%;
+		width: 60%;
 	}
 
 	article {
-		height: 93vh;
-		margin: 3rem auto auto auto;
+		margin: 5rem auto 5rem auto;
 	}
 }
 
 @media (min-width: 769px) {
 	article {
 		width: 80%;
-		height: 93vh;
 	}
 
 	h1 {
 		font-size: 5rem;
 		margin-top: 4rem;
+	}
+
+	.game-area-inner-music {
+		margin-left: 2rem;
 	}
 
 	.game-area-inner-mainStyling {
@@ -310,6 +312,6 @@ h1 {
 
 	article {
 		width: 70%;
-		height: 93vh;
+		padding-bottom: 5rem;
 	}
 }
