@@ -95,7 +95,7 @@ function stopReset() {
 	// reset canvas
 	const canvas = document.getElementById("hangman");
 	const context = canvas.getContext("2d");
-	context.clearRect(0, 0, canvas.width, canvas.height);
+	context.clearRect(0, 0, (canvas.width = "300"), (canvas.height = "500"));
 	// reset letters left to guess
 	lettersLeftToGuess = parseInt(document.getElementById("guess-word").value);
 }
@@ -231,6 +231,7 @@ function reduceLives(lives) {
 			context.strokeStyle = "#444";
 			context.lineWidth = 10;
 			context.beginPath();
+			context.scale(2, 2);
 			context.moveTo(175, 225);
 			context.lineTo(5, 225);
 			context.moveTo(40, 225);

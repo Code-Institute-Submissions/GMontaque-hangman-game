@@ -176,6 +176,7 @@ h1 {
 #hangman {
 	margin: auto;
 	display: block;
+	width: 260px;
 }
 
 .play-area-letters {
@@ -288,6 +289,10 @@ h1 {
 
 	.game-area-inner-music {
 		margin-left: 2rem;
+	}
+
+	#hangman {
+		width: 300px;
 	}
 
 	.game-area-inner-mainStyling {
