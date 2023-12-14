@@ -4,9 +4,9 @@
 
 ![picture of the mockup of the website](assets/images/mockup.PNG)
 
-o Here I have re-created one of the classic games that I think everybody has either heard about or played, hangman. The idea of the game is quite simply, you are presenting with a number of blank squares or lines which represent the letters in the word that you need to guess. You then have to pick a letter and if the word contains the letter, then it will appear on the screen but be careful as if the letter is not included then you’ll be one set closer to loosing and the man being hung.
+- Here I have re-created one of the classic games that I think everybody has either heard about or played, hangman. The idea of the game is quite simply, you are presenting with a number of blank squares or lines which represent the letters in the word that you need to guess. You then have to pick a letter and if the word contains the letter, then it will appear on the screen but be careful as if the letter is not included then you’ll be one set closer to loosing and the man being hung.
 
-To add in some extra level of complexity and to give the game more features and replay ability I have added in a number of features and extra elements which the user can interact with. To also improve the immersion sound tracks have been added to the site as well as the visual aspect has been created to feel like an 80’s arcade game.
+- To add in some extra level of complexity and to give the game more features and replay ability I have added in a number of features and extra elements which the user can interact with. To also improve the immersion sound tracks have been added to the site as well as the visual aspect has been created to feel like an 80’s arcade game.
 
 [Live Website Link](https://gmontaque.github.io/hangman-game/)
 
@@ -310,32 +310,32 @@ To add in some extra level of complexity and to give the game more features and 
 
 ### Deploying the Website to GitHub Pages
 
-• The website was deployed to GitHub Pages using the following steps:
-• In the GitHub repository, go to the "Settings" tab.
-• From the left-side menu, select 'Pages.'
-• In the source section drop-down menu, choose the 'main' branch.
-• Click 'Save.'
-• Upon successful publishing, a live link will be displayed in a green banner.
+- The website was deployed to GitHub Pages using the following steps:
+- In the GitHub repository, go to the "Settings" tab.
+- From the left-side menu, select 'Pages.'
+- In the source section drop-down menu, choose the 'main' branch.
+- Click 'Save.'
+- Upon successful publishing, a live link will be displayed in a green banner.
 
 ### Cloning the Repository
 
-• Click on the "Code" button located near the top right corner of the page.
-• Copy the HTTPS or SSH URL displayed.
-• Open your terminal (or Git Bash on Windows) and navigate to your desired directory.
-• Enter "git clone" followed by a space, and paste the copied URL.
-• Press enter to execute the command, creating a local copy of the GitHub repository.
-• You now have the GitHub repository cloned to your local machine.
+- Click on the "Code" button located near the top right corner of the page.
+- Copy the HTTPS or SSH URL displayed.
+- Open your terminal (or Git Bash on Windows) and navigate to your desired directory.
+- Enter "git clone" followed by a space, and paste the copied URL.
+- Press enter to execute the command, creating a local copy of the GitHub repository.
+- You now have the GitHub repository cloned to your local machine.
 
 ### Forking the Repository
 
-• Click the "Fork" button found near the top right corner of the page. This duplicates the repository into your GitHub account.
-• After forking, you will be redirected to your forked repository.
-• If not already done, clone the forked repository to your local machine, using the instructions mentioned earlier.
-• Make any desired changes or additions to the code in your local copy of the repository.
-• Commit your changes to your local repository using the "git commit" command.
-• Push your changes to the forked repository on GitHub with the "git push" command.
-• If you intend to contribute your changes back to the original repository, initiate a pull request. You can do this by going to the original repository's page and selecting the "New pull request" button. From there, you can compare your changes to the original repository and request a merge.
-• You now have a forked copy of the GitHub repository in your account, allowing you to make changes and contribute back to the original repository if desired.
+- Click the "Fork" button found near the top right corner of the page. This duplicates the repository into your GitHub account.
+- After forking, you will be redirected to your forked repository.
+- If not already done, clone the forked repository to your local machine, using the instructions mentioned earlier.
+- Make any desired changes or additions to the code in your local copy of the repository.
+- Commit your changes to your local repository using the "git commit" command.
+- Push your changes to the forked repository on GitHub with the "git push" command.
+- If you intend to contribute your changes back to the original repository, initiate a pull request. You can do this by going to the original repository's page and selecting the "New pull request" button. From there, you can compare your changes to the original repository and request a merge.
+- You now have a forked copy of the GitHub repository in your account, allowing you to make changes and contribute back to the original repository if desired.
 
 ## Credit and content
 
@@ -355,11 +355,11 @@ To add in some extra level of complexity and to give the game more features and 
 
 #### button style
 
--     https://codepen.io/reulison/pen/WNNVPZq?editors=1100
+- https://codepen.io/reulison/pen/WNNVPZq?editors=1100
 
 #### random word api generator
 
--     https://random-word-api.herokuapp.com/home
+- https://random-word-api.herokuapp.com/home
 
 ### Media and Images
 
