@@ -25,7 +25,7 @@ body {
 }
 
 article {
-	border: 2px solid black;
+	border: 2px solid #fee086;
 	width: 90%;
 	margin: 5rem auto 5rem auto;
 	background-color: rgba(36, 11, 103, 0.7);
@@ -132,11 +132,16 @@ h1 {
 
 /****************** Game Page *******************/
 
+.play-area {
+	padding-bottom: 3rem;
+}
+
 .play-area-top {
 	display: flex;
 	justify-content: space-between;
 	flex-wrap: wrap;
 	align-items: center;
+	margin-bottom: 2rem;
 }
 
 .play-area-main-wrapper {
@@ -145,12 +150,27 @@ h1 {
 	align-items: center;
 }
 
+.play-area-top-word-select {
+	width: 100%;
+}
+
+.stopwatch-header {
+	display: block;
+	padding: 0rem 0rem 1rem 0rem;
+}
+
+#minutes {
+	padding-left: 0.5rem;
+}
+
 #guess-word {
 	background: #fee086;
 	color: #240b67;
 	padding: 0.5rem;
 	border-radius: 5rem;
 	font-weight: 800;
+	margin: auto;
+	display: block;
 }
 
 #hangman {
@@ -172,13 +192,14 @@ h1 {
 
 .blankSquares {
 	display: flex;
-	justify-content: center;
+	justify-content: space-evenly;
 	margin-top: 2rem;
+	border: 2px solid #fee086;
+	align-items: end;
 }
 
 .blankSquares-letters {
-	border: 2px solid #fee086;
-	font-size: 3rem;
+	font-size: 2rem;
 	padding: 1rem;
 }
 
@@ -226,18 +247,8 @@ h1 {
 }
 
 /* media query */
-@media (max-width: 321px) {
-	.play-area-top-word-select {
-		display: block;
-		margin: auto;
-	}
-}
 
 @media (max-width: 376px) {
-	.play-area-top {
-		justify-content: space-around;
-	}
-
 	.play-area-top-word-select {
 		padding-top: 1rem;
 	}
@@ -248,16 +259,28 @@ h1 {
 		width: 60%;
 	}
 
-	article {
-		margin: 5rem auto 5rem auto;
+	.play-area-top {
+		justify-content: space-around;
+	}
+
+	.play-area-top-word-select {
+		width: inherit;
+	}
+
+	#guess-word {
+		background: #fee086;
+		color: #240b67;
+		padding: 0.5rem;
+		border-radius: 5rem;
+		font-weight: 800;
+	}
+
+	.blankSquares-letters {
+		font-size: 3rem;
 	}
 }
 
 @media (min-width: 769px) {
-	article {
-		width: 80%;
-	}
-
 	h1 {
 		font-size: 5rem;
 		margin-top: 4rem;
@@ -289,10 +312,7 @@ h1 {
 	.play-area-main {
 		float: left;
 		width: 50%;
-	}
-
-	.blankSquares-letters {
-		font-size: 4rem;
+		padding-right: 1rem;
 	}
 
 	.play-area-letters {
@@ -300,7 +320,6 @@ h1 {
 		width: 50%;
 	}
 	.blankSquares {
-		width: 5rem;
 		width: 50%;
 	}
 }
