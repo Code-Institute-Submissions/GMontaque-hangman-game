@@ -3,7 +3,7 @@ let playMusic = document.getElementById("toggle-music-btn");
 playMusic.addEventListener("click", togglePlay);
 
 // game background music
-let mySound = new Audio("../assests/audio/gameplay-soundtrack.mp3");
+let mySound = new Audio("./assests/audio/gameplay-soundtrack.mp3");
 
 // variables for stopwatch
 let seconds = 0;
