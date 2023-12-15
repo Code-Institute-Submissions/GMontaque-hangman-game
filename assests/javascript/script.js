@@ -188,7 +188,7 @@ function looseGame(word) {
 	console.log("the word type is:", typeof word);
 	// prints message tell user they lost and the word they didn't guess
 	let winnerMessage = document.getElementsByClassName("end-game-message")[0];
-	winnerMessage.innerHTML += `<p>Unlucky you did guess the word which was ${word} <br> Press Restart to play again</p>`;
+	winnerMessage.innerHTML += `<p>O dear... the word you were looking to guess was <span class="underline">${word}</span>. <br> Press Restart to play again</p>`;
 	winnerMessage.classList.remove("display-none");
 	// stops stopwatch and displays time
 	clearInterval(Interval);
