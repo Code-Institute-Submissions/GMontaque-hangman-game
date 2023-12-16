@@ -32,6 +32,8 @@ article {
 	overflow: hidden;
 	padding: 0rem 1rem;
 	position: relative;
+	display: flex;
+	flex-direction: column;
 }
 
 .display-none {
@@ -136,6 +138,10 @@ h1 {
 	flex-wrap: wrap;
 	align-items: center;
 	margin-bottom: 2rem;
+}
+
+.play-area-main {
+	order: 3;
 }
 
 .play-area-main-wrapper {
@@ -257,6 +263,10 @@ h1 {
 		width: 60%;
 	}
 
+	.play-area-main {
+		order: 0;
+	}
+
 	.play-area-top {
 		justify-content: space-around;
 	}
@@ -279,6 +289,10 @@ h1 {
 }
 
 @media (min-width: 769px) {
+	article {
+		display: block;
+	}
+
 	h1 {
 		font-size: 5rem;
 		margin-top: 4rem;
