@@ -1,7 +1,7 @@
 /******************* Website Font *******************/
 @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 
-/******************* basic website styling *******************/
+/******************* General website styling *******************/
 html {
 	box-sizing: border-box;
 	font-size: 62.5%; /*1rem = 10px, 10px/16px = 62.5%*/
@@ -34,21 +34,12 @@ article {
 	position: relative;
 }
 
-/* styling for music buttons */
 .display-none {
 	display: none !important;
 }
 
-.hidden {
-	visibility: hidden;
-	float: right;
-}
+/* Button Styling */
 
-.btn-padding {
-	padding: 10px;
-}
-
-/* general button styling */
 .btn {
 	text-align: center;
 	display: inline-block;
@@ -69,6 +60,10 @@ article {
 	top: 0.2em;
 }
 
+.btn-padding {
+	padding: 10px;
+}
+
 .mobile-margin {
 	margin-left: 0rem;
 }
@@ -87,23 +82,27 @@ h1 {
 	flex-direction: column;
 }
 
-.game-area-inner-img {
-	width: 100%;
-}
-
-.game-area-inner-rules {
-	width: 100%;
-}
-
 .game-area-inner-mainStyling {
 	display: flex;
 	flex-direction: column;
+}
+
+.game-area-inner-img {
+	width: 100%;
 }
 
 .game-area-inner-img-self {
 	width: 100%;
 	margin: auto;
 	display: block;
+}
+
+.game-area-inner-rules {
+	width: 100%;
+}
+
+.line-height {
+	line-height: 1.6;
 }
 
 .play-game-button {
@@ -114,20 +113,15 @@ h1 {
 	margin: auto;
 	display: block;
 }
-
-.line-height {
-	line-height: 1.6;
-}
-
-.icon {
-	margin-right: 1rem;
-}
-
 .text-decoration {
 	text-decoration: none;
 	display: block;
 	padding: 20px 39px;
 	width: 200px;
+}
+
+.icon {
+	margin-right: 1rem;
 }
 
 /****************** Game Page *******************/
@@ -191,6 +185,7 @@ h1 {
 	background-color: blue;
 }
 
+/* button style for on screen letters */
 .blankSquares {
 	display: flex;
 	justify-content: space-evenly;
@@ -245,11 +240,11 @@ h1 {
 	left: 0px;
 }
 
-.underline{
+.underline {
 	text-decoration: underline;
 }
 
-/* media query */
+/******************** media query ********************/
 
 @media (max-width: 376px) {
 	.play-area-top-word-select {
