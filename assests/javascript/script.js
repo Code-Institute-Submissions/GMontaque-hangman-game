@@ -149,10 +149,9 @@ function loadBlanks() {
 
 /**
  * function called when user looses game
+ * @param word - The word the user was trying to guesss.
  */
 function looseGame(word) {
-	console.log("game over");
-	console.log("the word type is:", typeof word);
 	// prints message tell user they lost and the word they didn't guess
 	let winnerMessage = document.getElementsByClassName("end-game-message")[0];
 	winnerMessage.innerHTML += `<p>O dear... the word you were looking to guess was <span class="underline">${word}</span>. <br> Press Restart to play again</p>`;
@@ -171,7 +170,6 @@ function looseGame(word) {
  * function called when user wins game
  */
 function winGame() {
-	console.log("game won");
 	// prints message tell user they lost and the word they didn't guess
 	let winnerMessage = document.getElementsByClassName("end-game-message")[0];
 	winnerMessage.innerHTML += `<p>Congratluations you won <br> Press Restart to play again</p>`;
@@ -188,6 +186,7 @@ function winGame() {
 
 /**
  * function reduces lives counter for a wrong guess and creates hangman
+ * @param lives - number of lives/wrong guesses remaining.
  */
 function reduceLives(lives) {
 	const canvas = document.getElementById("hangman");
@@ -268,6 +267,7 @@ function reduceLives(lives) {
 
 /**
  * disables the letter the user has clicked
+ * @param e - value from triggered event when onscreen letter button is pressed.
  */
 function disableLetter(e) {
 	// pass the inital click event when letter button pressed and adds class and attribute to that element
@@ -283,6 +283,7 @@ function disableLetter(e) {
 
 /**
  * checks if the user has guessed all correct letters - using variable lettersLeftToGuess as counter
+ * @param uGuess - the the letter the user pressed.
  */
 function checkAnswer(uGuess) {
 	// letter user guessed
@@ -330,13 +331,15 @@ async function wordGuess() {
 
 /**
  * function checks users answer against word to guess
+ * @param uGuess - the the letter the user pressed.
+ * @param checkGame - value used to check if game start or is running.
+ * @param e - value from triggered event when onscreen letter button is pressed.
  */
 async function checkLetterGuess(uGuess, checkGame, e) {
 	// gets word to be guessed
 	if (checkGame === "start") {
 		wordToGuess = await wordGuess();
 		wordToGuess = wordToGuess.slice(2, -2);
-		console.log(wordToGuess);
 	}
 
 	// current game lives counter
@@ -354,12 +357,11 @@ async function checkLetterGuess(uGuess, checkGame, e) {
 
 /**
  * allows user to play the game using keyboard
+ * @param event - value from triggered keyboard key press.
  */
 function keyboardPress(event) {
 	if (event.keyCode >= 65 && event.keyCode <= 90) {
 		startGame(event.key, "keyboard");
-	} else {
-		console.log("not a letter");
 	}
 }
 
@@ -375,6 +377,8 @@ function activateLetter() {
 
 /**
  * when called function starts the game
+ * @param e - value from triggered event when onscreen letter button is pressed.
+ * @param checker - checks for keyboard event or onscreen button event press.
  */
 function startGame(e, checker) {
 	// disable word length drop down
