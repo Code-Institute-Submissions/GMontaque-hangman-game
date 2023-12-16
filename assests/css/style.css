@@ -250,6 +250,29 @@ h1 {
 	text-decoration: underline;
 }
 
+/******************** 404 error page ********************/
+
+#page-404 {
+	height: 90vh;
+}
+
+.page-404-inner {
+	text-align: center;
+	margin-top: 18rem;
+}
+
+.page-404-inner-title {
+	font-size: 9rem;
+}
+
+.page-404-inner-text {
+	font-size: 2rem;
+}
+.page-404-inner-title,
+.page-404-inner-text {
+	margin-bottom: 3rem;
+}
+
 /******************** media query ********************/
 
 @media (max-width: 376px) {
