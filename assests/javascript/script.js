@@ -76,32 +76,36 @@ function stopReset() {
  * function works with stopwatch updates number values
  */
 function startTimer() {
-	tens++;
+	try {
+		tens++;
 
-	if (tens <= 9) {
-		appendTens.innerHTML = "0" + tens;
-	}
+		if (tens <= 9) {
+			appendTens.innerHTML = "0" + tens;
+		}
 
-	if (tens > 9) {
-		appendTens.innerHTML = tens;
-	}
+		if (tens > 9) {
+			appendTens.innerHTML = tens;
+		}
 
-	if (tens > 99) {
-		seconds++;
-		appendSeconds.innerHTML = "0" + seconds;
-		tens = 0;
-		appendTens.innerHTML = "0" + 0;
-	}
+		if (tens > 99) {
+			seconds++;
+			appendSeconds.innerHTML = "0" + seconds;
+			tens = 0;
+			appendTens.innerHTML = "0" + 0;
+		}
 
-	if (seconds > 9) {
-		appendSeconds.innerHTML = seconds;
-	}
+		if (seconds > 9) {
+			appendSeconds.innerHTML = seconds;
+		}
 
-	if (seconds == 60) {
-		minutes++;
-		appendMinutes.innerHTML = "0" + minutes;
-		seconds = 0;
-		appendSeconds.innerHTML = "0" + 0;
+		if (seconds == 60) {
+			minutes++;
+			appendMinutes.innerHTML = "0" + minutes;
+			seconds = 0;
+			appendSeconds.innerHTML = "0" + 0;
+		}
+	} catch (error) {
+		console.log("Error has occured: " + error.stack);
 	}
 }
 
@@ -128,14 +132,18 @@ function createLetters() {
  * creates game rules overlay on game page
  */
 function displayGameRules() {
-	let gameRules = document.getElementsByClassName(
-		"play-area-main-gameRules"
-	)[0];
+	try {
+		let gameRules = document.getElementsByClassName(
+			"play-area-main-gameRules"
+		)[0];
 
-	if (gameRules.classList.contains("display-none")) {
-		gameRules.classList.remove("display-none");
-	} else {
-		gameRules.classList.add("display-none");
+		if (gameRules.classList.contains("display-none")) {
+			gameRules.classList.remove("display-none");
+		} else {
+			gameRules.classList.add("display-none");
+		}
+	} catch (error) {
+		console.log("Error has occured: " + error.stack);
 	}
 }
 
@@ -291,27 +299,36 @@ function disableLetter(e) {
  * @param uGuess - the the letter the user pressed.
  */
 function checkAnswer(uGuess) {
-	// letter user guessed
-	let letterGuessed = uGuess;
-	// word user is trying to guess
-	let wordGuessArray = wordToGuess;
-	// print blank squares on webpage
-	let blankSquares = document.getElementsByClassName("blankSquares-letters");
+	try {
+		// letter user guessed
+		let letterGuessed = uGuess;
+		// word user is trying to guess
+		let wordGuessArray = wordToGuess;
+		// print blank squares on webpage
+		let blankSquares = document.getElementsByClassName("blankSquares-letters");
 
-	for (let prop in wordGuessArray) {
-		if (wordGuessArray[prop] === letterGuessed) {
-			// updates blank square in specific index with correct user letter guess
-			blankSquares[prop].innerHTML = letterGuessed.toUpperCase();
-			// reduces letters lettersLeftToGuess counter by one
-			lettersLeftToGuess--;
+		for (let prop in wordGuessArray) {
+			if (wordGuessArray[prop] === letterGuessed) {
+				// updates blank square in specific index with correct user letter guess
+				blankSquares[prop].innerHTML = letterGuessed.toUpperCase();
+				// reduces letters lettersLeftToGuess counter by one
+				lettersLeftToGuess--;
+			}
 		}
-	}
 
-	// check if lettersLeftToGuess is zero, user wins
-	if (lettersLeftToGuess == 0) {
-		winGame();
+		// check if lettersLeftToGuess is zero, user wins
+		if (lettersLeftToGuess == 0) {
+			winGame();
+		}
+		console.log(
+			"letter guess:",
+			letterGuessed,
+			"word to guess",
+			wordGuessArray
+		);
+	} catch (error) {
+		console.log("Error has occured: " + error.stack);
 	}
-	console.log("letter guess:", letterGuessed, "word to guess", wordGuessArray);
 }
 
 /**
@@ -341,23 +358,27 @@ async function wordGuess() {
  * @param e - value from triggered event when onscreen letter button is pressed.
  */
 async function checkLetterGuess(uGuess, checkGame, e) {
-	// gets word to be guessed
-	if (checkGame === "start") {
-		wordToGuess = await wordGuess();
-		wordToGuess = wordToGuess.slice(2, -2);
-	}
+	try {
+		// gets word to be guessed
+		if (checkGame === "start") {
+			wordToGuess = await wordGuess();
+			wordToGuess = wordToGuess.slice(2, -2);
+		}
 
-	// current game lives counter
-	let currentGameLives = document.getElementById("gameLives").innerHTML;
-	// checks if user guess is in word to guess
-	if (wordToGuess.includes(uGuess)) {
-		checkAnswer(uGuess);
-		// alert(uGuess);
-	} else {
-		reduceLives(currentGameLives);
+		// current game lives counter
+		let currentGameLives = document.getElementById("gameLives").innerHTML;
+		// checks if user guess is in word to guess
+		if (wordToGuess.includes(uGuess)) {
+			checkAnswer(uGuess);
+			// alert(uGuess);
+		} else {
+			reduceLives(currentGameLives);
+		}
+		// disables letter that user pressed
+		disableLetter(e);
+	} catch (error) {
+		console.log("Error has occured: " + error.stack);
 	}
-	// disables letter that user pressed
-	disableLetter(e);
 }
 
 /**
@@ -386,27 +407,31 @@ function activateLetter() {
  * @param checker - checks for keyboard event or onscreen button event press.
  */
 function startGame(e, checker) {
-	// disable word length drop down
-	let wordNumLength = document.getElementById("guess-word");
-	wordNumLength.setAttribute("disabled", "");
-	// letter user has selected
-	let userGuess;
-	if (checker == "keyboard") {
-		userGuess = e;
-	} else {
-		userGuess = e.target.value;
-	}
-	// checks if the gamme has started
-	if (gameStarted === false) {
-		// starts clock timer
-		clearInterval(Interval);
-		Interval = setInterval(startTimer, 10);
-		gameStarted = true;
-		// clicked letter passed in funtion with user guess value
-		checkLetterGuess(userGuess, "start", e);
-	} else {
-		// clicked letter passed in funtion with user guess value
-		checkLetterGuess(userGuess, "gameRunning", e);
+	try {
+		// disable word length drop down
+		let wordNumLength = document.getElementById("guess-word");
+		wordNumLength.setAttribute("disabled", "");
+		// letter user has selected
+		let userGuess;
+		if (checker == "keyboard") {
+			userGuess = e;
+		} else {
+			userGuess = e.target.value;
+		}
+		// checks if the gamme has started
+		if (gameStarted === false) {
+			// starts clock timer
+			clearInterval(Interval);
+			Interval = setInterval(startTimer, 10);
+			gameStarted = true;
+			// clicked letter passed in funtion with user guess value
+			checkLetterGuess(userGuess, "start", e);
+		} else {
+			// clicked letter passed in funtion with user guess value
+			checkLetterGuess(userGuess, "gameRunning", e);
+		}
+	} catch (error) {
+		console.log("Error has occured: " + error.stack);
 	}
 }
 
@@ -414,7 +439,11 @@ function startGame(e, checker) {
  * loads functions when page loads
  */
 window.onload = function () {
-	lettersLeftToGuess = parseInt(document.getElementById("guess-word").value);
-	loadBlanks();
-	createLetters(wordToGuess);
+	try {
+		lettersLeftToGuess = parseInt(document.getElementById("guess-word").value);
+		loadBlanks();
+		createLetters(wordToGuess);
+	} catch (error) {
+		console.log("Error has occured: " + error.stack);
+	}
 };
