@@ -119,6 +119,11 @@ function createLetters() {
 	activateLetter();
 }
 
+// when clicked button closes game rules overlay
+let close = document
+	.getElementsByClassName("play-area-main-gameRules-closeBtn")[0]
+	.addEventListener("click", displayGameRules);
+
 /**
  * creates game rules overlay on game page
  */

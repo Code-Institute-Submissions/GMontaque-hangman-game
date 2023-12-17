@@ -216,11 +216,14 @@ h1 {
 	position: absolute;
 	z-index: 99;
 	background: rgba(36, 11, 103, 0.9);
-	padding: 5rem;
-	width: 50%;
+	padding: 2rem;
+	max-width: 100%;
 	right: 0;
-	top: 162px;
+	top: 100px;
 	border: 2px solid #fee086;
+	height: min-content;
+	line-height: 1.4;
+	padding-bottom: 5rem;
 }
 
 .rules-text-width {
@@ -228,8 +231,22 @@ h1 {
 }
 
 .play-area-main-gameRules-header {
-	margin-top: 0rem;
-	font-size: 4rem;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+}
+
+.play-area-main-gameRules-header-title {
+	margin: 2rem 0rem;
+	font-size: 2rem;
+	text-align: center;
+	width: 100%;
+}
+
+.play-area-main-gameRules-closeBtn {
+	margin: 0px 0px 0px 16px;
+	padding: 7px;
 }
 
 /* end game message */
@@ -363,8 +380,16 @@ h1 {
 		width: 50%;
 		margin-top: 11rem;
 	}
+	.play-area-main-gameRules {
+		margin: 0rem 6rem;
+	}
 }
 
+@media (min-width: 1026px) {
+	.play-area-main-gameRules {
+		margin: 0rem 10rem;
+	}
+}
 @media (min-width: 1441px) {
 	.play-game-button {
 		padding: 0;
