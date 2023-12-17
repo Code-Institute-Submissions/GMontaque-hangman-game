@@ -406,6 +406,10 @@ h1 {
 
 	article {
 		width: 70%;
-		padding-bottom: 5rem;
+		padding-bottom: 3rem;
+	}
+
+	.play-game-button {
+		margin-top: 2rem;
 	}
 }
