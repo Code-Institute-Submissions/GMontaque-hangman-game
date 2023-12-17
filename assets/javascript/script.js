@@ -175,7 +175,7 @@ function looseGame(word) {
 	appendSeconds.innerHTML = document.getElementById("seconds").innerHTML;
 	appendMinutes.innerHTML = document.getElementById("minutes").innerHTML;
 	// plays loosing sound
-	let looseSound = new Audio("./assests/audio/wah-wah-sad-trombone-6347.mp3");
+	let looseSound = new Audio("./assets/audio/wah-wah-sad-trombone-6347.mp3");
 	looseSound.play();
 }
 
@@ -193,7 +193,7 @@ function winGame() {
 	appendSeconds.innerHTML = document.getElementById("seconds").innerHTML;
 	appendMinutes.innerHTML = document.getElementById("minutes").innerHTML;
 	// plays winning sound
-	let winSound = new Audio("./assests/audio/user-wins.mp3");
+	let winSound = new Audio("./assets/audio/user-wins.mp3");
 	winSound.play();
 }
 

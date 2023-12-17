@@ -3,7 +3,7 @@ let playMusic = document.getElementById("toggle-music-btn");
 playMusic.addEventListener("click", togglePlay);
 
 // game background music
-let mySound = new Audio("./assests/audio/gameplay-soundtrack.mp3");
+let mySound = new Audio("./assets/audio/gameplay-soundtrack.mp3");
 /**
  * function plays and stop music depending on valur attribute
  */
