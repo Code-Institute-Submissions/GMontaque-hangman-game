@@ -2,7 +2,7 @@
 
 ## About the Project
 
-![picture of the mockup of the website](assets/images/mockup.PNG)
+![picture of the mockup of the website](assets/img/website-mockup.PNG)
 
 - Here I have re-created one of the classic games that I think everybody has either heard about or played, hangman. The idea of the game is quite simply, you are presenting with a number of blank squares or lines which represent the letters in the word that you need to guess. You then have to pick a letter and if the word contains the letter, then it will appear on the screen but be careful as if the letter is not included then you’ll be one set closer to loosing and the man being hung.
 
@@ -54,23 +54,27 @@
 
 ### Page Features
 
-![Nav Bar](assets/images/navbar-mockup.PNG)
-![Mobile Nav Bar](assets/images/mobile-navbar-mockup.PNG)
-
 **Game rules**
 
 - this is a feature which can be found on the initial loading game, the purpose of this feature is to provide the users with a descrciption of the game and the game rules.
 - As well as the text there is also an image included to give a visual aid as some user find it easier to absorb information when viewed in an image rather than reading it.
+
+![Game Rules](assets/img/game-rules.PNG)
 
 **Game music**
 
 - Include on both the index page and game page on the top left can be found the music button
 - When pressed this will play the theme tune which I have added in for the game, the theme tune used is one from the 80’s innkeeping with the 80’s theme
 
+![Game Music on](assets/img/game-music-on.PNG)
+![Game Music Off](assets/img/game-music-off.PNG)
+
 **Game page**
 
 - Here you will find the main game the user can play
 - They will buttons they an interact with and a range of features for their enjoyment
+
+![Game Page](assets/img/gamepage.PNG)
 
 **Game sounds**
 
@@ -84,11 +88,15 @@
 - This is activated when the user starts the game as is there to add another level of complexity and challenge to the game
 - The stop watch will run until the user either wins or loose and will show the user the length of time they took
 
+![Game Stopwatch](assets/img/stopwatch.PNG)
+
 **Word length generator**
 
 - I have created here a drop down where the user can select the length of word that they wish to guess
 - If the user does not make a selection, then the a default word length has been included
 - The word length selector is links to an API which when called will return a word of the length that was specified in the selector element
+
+![Word Length Generator](assets/img/word-length-generator.PNG)
 
 **Lives left**
 
@@ -96,17 +104,24 @@
 - The value of lives left will reduce for every wrong guess that the user makes until zero
 - Once lives left his zero the game will end and a game over overlay will appear followed by a sound track
 
-**Game rules gears button**
+![Lives Left](assets/img/live-left-count.PNG)
 
-- If a user needs to look up the rules again this can be done by clicking on the gear button
+**Game rules overlay**
+
+- If a user needs to look up the rules again this can be done by clicking on the rules button
 - When clicked the gear button will show an overlay which will contain the games rules
 - The gear button is a toggle button allowing the user to open and close with ease
+
+![Game Rules](assets/img/game-rules-button.PNG)
+![Game Rules](assets/img/game-rules-overlay.PNG)
 
 **Blank squares**
 
 - When the user first loads onto the game page they will be greeted by a number of blank squares with question marks inside them
 - These are auto generated when the page loads by calling the API and printing a blank square for each letter within the returned API word
 - If the different length of word is selected from the selector element then the API is called again and the blank squares will update to the new word length to be guessed
+
+![Blank Letter Squares](assets/img/blank-squares.PNG)
 
 **Alphabet letters**
 
@@ -115,6 +130,8 @@
 - When a user clicks a letter they will see that it changes colour and is disabled to visual show the user the letters that they have left to guess
 - An added feature is that the user can click a letter key on their keyboard and this will always work and the game will run
 
+![Alphabet letters](assets/img/alphabet-letters.PNG)
+
 **Restart game**
 
 - This function will restart the entire game without the user having to refresh the page
@@ -122,10 +139,14 @@
 - It will reset the cavanas area
 - It will reset the stop watch and produce the blank squares
 
+![Alphabet letters](assets/img/restart-game-button.PNG)
+
 **Hangman canvas**
 
 - The canvas area is a visual area which will show the hangman as it progresses to being fully hung
 - Depending on if the user guesses a correct or wrong letter it will update the image
+
+![Alphabet letters](assets/img/hangman-canvas.PNG)
 
 ## Page Breakdown
 
@@ -138,8 +159,7 @@
   - Contains the game tile
   - Contains a button which will take the user to the game page
 
-[St Nazaire Raid Homepage](https://gmontaque.github.io/project1-st-nazaire-raid/)
-![battle information](assets/images/battle-information-timeline-mockup.PNG)
+![Home Page](assets/img/homepage.PNG)
 
 #### Game Page
 
@@ -154,10 +174,9 @@
   - Contains blank squares representing letters to guess
   - Contains 26 alphabet letters
 
-[St Nazaire raid gallery page](https://gmontaque.github.io/project1-st-nazaire-raid/gallery.html)
-![gallery snapshot](assets/images/gallery-mockup.PNG)
+![Game Page](assets/img/gamepage.PNG)
 
-### technologies section
+### Technologies Section
 
 - HTML5 – used to creat the content and structure of the website
 - CSS – used to add styling to the html structure
@@ -176,7 +195,8 @@
   - I have used this font as I was looking for a style that would link with my 80’s gaem theme
   - I have also look to copy and mimic the background which has some text
   - I also wanted the text to add to the feeling of a classic game
-    [St Nazaire raid gallery page](https://gmontaque.github.io/project1-st-nazaire-raid/gallery.html)
+
+![Game text example](assets/img/hangman-title.PNG)
 
 - Colour Scheme
   - The theme of the website is 80s, arcade and classic gaming
@@ -184,8 +204,10 @@
   - For the main text colour I have used #fee086
   - For the background colour I have used #240B67 and them in some areas added in opacity as well
   - I have checked it against a colour contrast checker and it passed
-    [St Nazaire raid gallery page](https://gmontaque.github.io/project1-st-nazaire-raid/gallery.html)
-    [St Nazaire raid gallery page](https://gmontaque.github.io/project1-st-nazaire-raid/gallery.html)
+
+![Colour Scheme test 1](assets/img/Typography-test.PNG)
+
+![Colour Scheme test 1](assets/img/Typography-test-2.PNG)
 
 ### WIREFRAMES
 
@@ -196,8 +218,9 @@
 - The page was to contain the rules of the game, explain the game page and icons
 - Homepage was to have a visual aspect to go with the written explanation
 - As you can see in the images depending on the screen size there were different styles to follow
+- Image includes desktop and mobile wireframe exmaple
 
-![homepage wireframe](assets/images/homepage-wireframe.PNG)
+![homepage wireframe desktop and mobile](assets/img/homepage-wireframe.PNG)
 
 #### Game Page
 
@@ -208,14 +231,9 @@
 - The main game area contains the image of the hangman made using canvans, a lives left counter, gear button for games rules overlay and a reset button
 - Next to the hangman image can be found a section of blank square which represent the letters to be guess
 - There is also a full 26 letter keyboard the user can click to guess or then can click a letter on their keyboard
+- Image includes desktop and mobile wireframe exmaple
 
-![Gallery wireframe](assets/images/gallery-wireframe.PNG)
-
-### Mobile Wireframe
-
-- Here i have created the wireframe for how the website should look on mobile
-
-![Mobile wireframe](assets/images/mobile-wireframe.PNG)
+![gamepage wireframe desktop and mobile](assets/img/gamepage-wireframe.PNG)
 
 ## Testing
 
@@ -224,9 +242,11 @@
 - I have tested the website in different broswers such as google, firefox and Edge
 - On each browser, I have gone into the dev tools and tested the website at different screen sizes, from mobile to full size. Examples below from Firefox and Edge:
 
-![image test in edge](assets/images/edge-website-test.PNG)
-![image test in firefox](assets/images/firefox-website-test.PNG)
-![image test in chrome](assets/images/firefox-website-test.PNG)
+![image test in edge](assets/img/edge-website-example.PNG)
+
+![image test in firefox](assets/img/firebox-website-example.PNG)
+
+![image test in chrome](assets/img/chrome-website-example.PNG)
 
 #### lighthouse test
 
