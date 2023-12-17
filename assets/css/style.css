@@ -192,6 +192,7 @@ h1 {
 	padding: 1rem;
 	text-align: center;
 	position: relative;
+	margin-bottom: 2rem;
 }
 
 /* apply when user selects a letter guess */
@@ -270,6 +271,11 @@ h1 {
 	height: 100%;
 	background-color: grey;
 	left: 0px;
+}
+
+.end-game-message-inner {
+	line-height: 1.6;
+	padding: 2rem;
 }
 
 .underline {
