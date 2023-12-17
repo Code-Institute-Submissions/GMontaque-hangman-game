@@ -364,18 +364,20 @@ async function checkLetterGuess(uGuess, checkGame, e) {
 			wordToGuess = await wordGuess();
 			wordToGuess = wordToGuess.slice(2, -2);
 		}
-
-		// current game lives counter
-		let currentGameLives = document.getElementById("gameLives").innerHTML;
-		// checks if user guess is in word to guess
-		if (wordToGuess.includes(uGuess)) {
-			checkAnswer(uGuess);
-			// alert(uGuess);
-		} else {
-			reduceLives(currentGameLives);
+		let dis = document.getElementById(uGuess).hasAttribute("disabled");
+		if (!dis) {
+			// current game lives counter
+			let currentGameLives = document.getElementById("gameLives").innerHTML;
+			// checks if user guess is in word to guess
+			if (wordToGuess.includes(uGuess)) {
+				checkAnswer(uGuess);
+				// alert(uGuess);
+			} else {
+				reduceLives(currentGameLives);
+			}
+			// disables letter that user pressed
+			disableLetter(e);
 		}
-		// disables letter that user pressed
-		disableLetter(e);
 	} catch (error) {
 		console.log("Error has occured: " + error.stack);
 	}
