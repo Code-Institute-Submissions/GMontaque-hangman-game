@@ -205,9 +205,9 @@
   - For the background colour I have used #240B67 and them in some areas added in opacity as well
   - I have checked it against a colour contrast checker and it passed
 
-![Colour Scheme test 1](assets/img/Typography-test.PNG)
+![Colour Scheme test 1](assets/img/typography-test.PNG)
 
-![Colour Scheme test 1](assets/img/Typography-test-2.PNG)
+![Colour Scheme test 1](assets/img/typography-test-2.PNG)
 
 ### WIREFRAMES
 
@@ -252,14 +252,23 @@
 
 - I have used lighthouse to test the website as per the image below:
 
-![iamge showing page speed report pc result](assets/images/pagespeed-report-pc.PNG)
-![iamge showing page speed report mobile  result](assets/images/pagespeed-report-mobile.PNG)
+**Home Page**
 
-- lighthouse broswer test result for homepage
-  ![iamge showing homepage result](assets/images/lighthouse-indexpage.PNG)
+![image showing page speed report pc result](assets/img/lighthouse-desktop-homepage.PNG)
 
-- lighthouse broswer test result for game page
-  ![iamge showing gallery result](assets/images/lighthouse-gallerypage.PNG)
+![image showing page speed report mobile  result](assets/img/lighthouse-mobile-homepage.PNG)
+
+**Game Page**
+
+![image showing page speed report pc result](assets/img/lighthouse-desktop-gamepage.PNG)
+
+![image showing page speed report mobile  result](assets/img/lighthouse-mobile-gamepage.PNG)
+
+**404 Page**
+
+![image showing page speed report pc result](assets/img/lighthouse-desktop-404page.PNG)
+
+![image showing page speed report mobile  result](assets/img/lighthouse-mobile-404page.PNG)
 
 #### Validator Testing
 
@@ -269,22 +278,34 @@
 
   - No errors were returned when passing through the official [W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fcode-institute-org.github.io%2Flove-running-2.0%2Findex.html)
 
-  ![html validator results](assets/images/html-validator.PNG)
+  ![prettier validator results](assets/img/prettier-warning.PNG)
+
+  **Home Page**
+  ![homepage validator results](assets/img/homepage-validator-html.PNG)
+
+  **Game Page**
+  ![homepage validator results](assets/img/gamepage-validator-html.PNG)
+
+  **404 Page**
+  ![homepage validator results](assets/img/page404-validator-html.PNG)
 
 - When testing my CSS as you can see from the below image there are no errors
 
   - No errors were found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator)
 
-![CSS validator results](assets/images/css-validator.PNG)
+  ![CSS validator results](assets/img/css-validator-result.PNG)
 
 - When testing the website on different devices i have used the pre-defined dimensions that come with the developer tools on Google Chrome
 - I have also researched several websites which have described the most common screen size for devices in 2023 for desktop and mobile - https://www.designrush.com/agency/web-development-companies/trends/website-dimensions
 
-![Media Page wireframe](assets/images/most-common-screen-resolutions-worldwide-content.jpg)
+![Media Page wireframe](assets/img/most-common-screen-resolutions-worldwide-content.jpg)
 
 **performance improvements**
 
-- To help with loading times and to improve the speed of the website all images have been converted to webp format
+- When testing the website on Pagespeed I found there was a reduction in performance, to resolve this I updated all images to webp
+- The reason for this is that there is a signification reduction in the size of the image without a loss of quality which results in a faster website loading time
+- Other benefits include reduced bandwidth
+- Another performance imrpovement made was with the sound files, all sound files were compresed in size to improve performance.
 
 ### SEO
 
@@ -295,23 +316,20 @@
 
   ```
   <!-- title and tab icon -->
-
-    <link
-      rel="icon"
-      type="images/x-icon"
-      href="assets/images/commando-insignia.jpg" />
-
-    <title>St Nazaire Raid</title>
-
-    <!-- Meta tags for search engines -->
-
-    <meta
-      name="description"
-      content="WW2, France, British, Germans, st nazaire, royal navy"  />
-    <meta name="keywords" content="WW2, raid, British, Commando, Raid" />
+  	<link
+  		rel="icon"
+  		type="images/x-icon"
+  		href="assets/img/hangman-placeholder-img.webp"
+  	/>
+  	<title>Hangman</title>
+  	<!-- Meta tags for search engines -->
+  	<meta
+  		name="description"
+  		content="hangman, classic games, 80s games, fun games, quick games"/>
+  	<meta
+  		name="keywords"
+  		content="80's, classic games, hangman, single platyer"/>
   ```
-
-![CSS validator results](assets/images/css-validator.PNG)
 
 ### Issues and Bugs
 
@@ -326,7 +344,8 @@
   - I had initial tried to turn the value to a string but as it was already a string it did not change the output value. Instead the solution came when I used the splice function on the initial value to remove the first to element in the printed result with was the square bracket and the quotation mark which resolved the issue.
 
 - Error 3
-  - Issue with the stopwatch and pausing the time when the user finishes the game so they can see how long they took before the stopwatch resets
+  - When the user finsihed the game the stopwatch is meant to pause and show the current length of time that has elapised since the suer started playing tyhe game. the idea being that tehy can see how long it took for them to solve the word guess and add a level of competivence about them if they trry again. The issue i was having is that when the user finished the game and then wanted to restart the stop watch would also restart and would not store the value.
+  - to solve this issue i had to add in some code into the win or loose function, the code would take the current value of each set of numbers i.e minutes, seconds and miliseconds and would update the stop watch with those static figures. then when the user wants to restart the game it will reset to zero.
 
 ### Deploying the Website to GitHub Pages
 
