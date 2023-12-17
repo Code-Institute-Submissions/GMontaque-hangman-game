@@ -132,6 +132,15 @@ h1 {
 	padding-bottom: 3rem;
 }
 
+.play-area-main-header {
+	display: flex;
+	align-items: center;
+}
+
+#play-area-title-text {
+	width: 90%;
+}
+
 .play-area-top {
 	display: flex;
 	justify-content: space-between;
