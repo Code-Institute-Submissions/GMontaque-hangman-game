@@ -1,4 +1,4 @@
-// variables for stopwatch
+// Variables for stopwatch
 let seconds = 0;
 let tens = 0;
 let minutes = 0;
@@ -6,41 +6,41 @@ let appendTens = document.getElementById("tens");
 let appendSeconds = document.getElementById("seconds");
 let appendMinutes = document.getElementById("minutes");
 let Interval;
-// button resets game
+// Button resets game
 let buttonReset = document.getElementsByClassName(
 	"play-area-top-restart-btn"
 )[0];
 buttonReset.addEventListener("click", stopReset);
-// button to show game rules
+// Button to show game rules
 let gameRules = document.getElementsByClassName("play-area-main-rules-btn")[0];
 gameRules.addEventListener("click", displayGameRules);
 
-// when clicked button closes game rules overlay
+// When clicked button closes game rules overlay
 let gameRulesClose = document
 	.getElementsByClassName("play-area-main-gameRules-closeBtn")[0]
 	.addEventListener("click", displayGameRules);
 
-// checks value of select element for any change
+// Checks value of select element for any change
 let autoGuessWord = document.getElementById("guess-word");
 autoGuessWord.addEventListener("change", loadBlanks);
 
-// counter of letters left to guess - used by checkAnswer function
+// Counter of letters left to guess - used by checkAnswer function
 let lettersLeftToGuess = document.getElementById("guess-word");
 lettersLeftToGuess.addEventListener("change", () => {
 	lettersLeftToGuess = parseInt(document.getElementById("guess-word").value);
 });
 
-// stores word to guess - used by checkLetterGuess function
+// Stores word to guess - used by checkLetterGuess function
 let wordToGuess;
 
-// counter used by startGame function to check if game is already running
+// Counter used by startGame function to check if game is already running
 let gameStarted = false;
 
-// listens for user keyboard press
+// Listens for user keyboard press
 document.addEventListener("keyup", keyboardPress);
 
 /**
- * function creates stopwatch
+ * Function creates stopwatch
  */
 function stopReset() {
 	// reset stop watch
@@ -73,7 +73,7 @@ function stopReset() {
 }
 
 /**
- * function works with stopwatch updates number values
+ * Function works with stopwatch updates number values
  */
 function startTimer() {
 	try {
@@ -110,10 +110,10 @@ function startTimer() {
 }
 
 /**
- * creates 26 alphabet letters which are displayed to play the game
+ * Creates 26 alphabet letters which are displayed to play the game
  */
 function createLetters() {
-	// creates overlay to display win or loose message at end of game
+	// creates overlay to display win or lose message at end of game
 	let li = document.getElementsByClassName("play-area-letters")[0];
 	li.innerHTML += `<div class="end-game-message display-none"></div>`;
 	// loops to create letters
@@ -125,11 +125,12 @@ function createLetters() {
 			.toString(36)
 			.toUpperCase()}</button>`;
 	}
+	// call function containing event listener for when a letter is pressed
 	activateLetter();
 }
 
 /**
- * creates game rules overlay on game page
+ * Creates game rules overlay on game page
  */
 function displayGameRules() {
 	try {
@@ -148,7 +149,7 @@ function displayGameRules() {
 }
 
 /**
- * Load blanks square which represent the word to guess
+ * Load blanks square which represents the word to guess
  */
 function loadBlanks() {
 	let guess = document.getElementById("guess-word").value;
@@ -157,11 +158,10 @@ function loadBlanks() {
 	for (let i = 0; i < guess; i++) {
 		blankSquares.innerHTML += `<div class="blankSquares-letters"><i class="fa-solid fa-question"></i></div>`;
 	}
-	console.log(guess);
 }
 
 /**
- * function called when user looses game
+ * Function called when user loses game
  * @param word - The word the user was trying to guesss.
  */
 function looseGame(word) {
@@ -174,13 +174,13 @@ function looseGame(word) {
 	appendTens.innerHTML = document.getElementById("tens").innerHTML;
 	appendSeconds.innerHTML = document.getElementById("seconds").innerHTML;
 	appendMinutes.innerHTML = document.getElementById("minutes").innerHTML;
-	// plays loosing sound
+	// plays losing sound
 	let looseSound = new Audio("./assets/audio/wah-wah-sad-trombone-6347.mp3");
 	looseSound.play();
 }
 
 /**
- * function called when user wins game
+ * Function called when user wins game
  */
 function winGame() {
 	// prints message tell user they lost and the word they didn't guess
@@ -198,10 +198,11 @@ function winGame() {
 }
 
 /**
- * function reduces lives counter for a wrong guess and creates hangman
+ * Function reduces lives counter for a wrong guess and creates hangman
  * @param lives - number of lives/wrong guesses remaining.
  */
 function reduceLives(lives) {
+	// hangman canvas
 	const canvas = document.getElementById("hangman");
 	const context = canvas.getContext("2d");
 	// depending on number of lives updates hangman in webpage
@@ -262,14 +263,14 @@ function reduceLives(lives) {
 			break;
 
 		case 1:
-			// display hangman left right
+			// display hangman right leg
 			context.beginPath();
 			context.moveTo(100, 140);
 			context.lineTo(125, 190);
 			context.stroke();
 			break;
 	}
-
+	// checks if game is over depending on game lives counter
 	if (lives == 1) {
 		document.getElementById("gameLives").innerHTML = lives - 1;
 		looseGame(wordToGuess);
@@ -279,11 +280,11 @@ function reduceLives(lives) {
 }
 
 /**
- * disables the letter the user has clicked
+ * Disables the letter the user has clicked
  * @param e - value from triggered event when onscreen letter button is pressed.
  */
 function disableLetter(e) {
-	// pass the inital click event when letter button pressed and adds class and attribute to that element
+	// pass the initial click event when letter button pressed and adds class and attribute to that element
 	if (typeof e == "string") {
 		let guessMade = document.getElementById(e);
 		guessMade.classList.add("btnPressed");
@@ -306,7 +307,7 @@ function checkAnswer(uGuess) {
 		let wordGuessArray = wordToGuess;
 		// print blank squares on webpage
 		let blankSquares = document.getElementsByClassName("blankSquares-letters");
-
+		// checks if letter is in the word to guess
 		for (let prop in wordGuessArray) {
 			if (wordGuessArray[prop] === letterGuessed) {
 				// updates blank square in specific index with correct user letter guess
@@ -320,19 +321,13 @@ function checkAnswer(uGuess) {
 		if (lettersLeftToGuess == 0) {
 			winGame();
 		}
-		console.log(
-			"letter guess:",
-			letterGuessed,
-			"word to guess",
-			wordGuessArray
-		);
 	} catch (error) {
 		console.log("Error has occured: " + error.stack);
 	}
 }
 
 /**
- * function uses an API to return a word the user will guess, length of word decided by user
+ * Function uses an API to return a word the user will guess, length of word decided by user
  */
 async function wordGuess() {
 	// returns the length of word number
@@ -353,7 +348,7 @@ async function wordGuess() {
 
 /**
  * function checks users answer against word to guess
- * @param uGuess - the the letter the user pressed.
+ * @param uGuess - the letter the user pressed.
  * @param checkGame - value used to check if game start or is running.
  * @param e - value from triggered event when onscreen letter button is pressed.
  */
@@ -364,6 +359,7 @@ async function checkLetterGuess(uGuess, checkGame, e) {
 			wordToGuess = await wordGuess();
 			wordToGuess = wordToGuess.slice(2, -2);
 		}
+		// checks if letter pressed doesn't has attribute disabled before running inner code
 		let dis = document.getElementById(uGuess).hasAttribute("disabled");
 		if (!dis) {
 			// current game lives counter
@@ -371,7 +367,6 @@ async function checkLetterGuess(uGuess, checkGame, e) {
 			// checks if user guess is in word to guess
 			if (wordToGuess.includes(uGuess)) {
 				checkAnswer(uGuess);
-				// alert(uGuess);
 			} else {
 				reduceLives(currentGameLives);
 			}
@@ -384,7 +379,7 @@ async function checkLetterGuess(uGuess, checkGame, e) {
 }
 
 /**
- * allows user to play the game using keyboard
+ * Allows user to play the game using keyboard
  * @param event - value from triggered keyboard key press.
  */
 function keyboardPress(event) {
@@ -394,7 +389,7 @@ function keyboardPress(event) {
 }
 
 /**
- * adds event listener to all letters user can press, starts the game
+ * Adds event listener to all letters user can press, starts the game
  */
 function activateLetter() {
 	let buttonLetter = document.getElementsByClassName("letterBtn");
@@ -404,7 +399,7 @@ function activateLetter() {
 }
 
 /**
- * when called function starts the game
+ * When called function starts the game
  * @param e - value from triggered event when onscreen letter button is pressed.
  * @param checker - checks for keyboard event or onscreen button event press.
  */
@@ -420,16 +415,16 @@ function startGame(e, checker) {
 		} else {
 			userGuess = e.target.value;
 		}
-		// checks if the gamme has started
+		// checks if the game has started
 		if (gameStarted === false) {
 			// starts clock timer
 			clearInterval(Interval);
 			Interval = setInterval(startTimer, 10);
 			gameStarted = true;
-			// clicked letter passed in funtion with user guess value
+			// clicked letter passed in function with user guess value
 			checkLetterGuess(userGuess, "start", e);
 		} else {
-			// clicked letter passed in funtion with user guess value
+			// clicked letter passed in function with user guess value
 			checkLetterGuess(userGuess, "gameRunning", e);
 		}
 	} catch (error) {
@@ -438,12 +433,15 @@ function startGame(e, checker) {
 }
 
 /**
- * loads functions when page loads
+ * Loads functions when page loads
  */
 window.onload = function () {
 	try {
+		// gets the value of select element
 		lettersLeftToGuess = parseInt(document.getElementById("guess-word").value);
+		// create blank squares
 		loadBlanks();
+		// create on screen alphabet letters
 		createLetters(wordToGuess);
 	} catch (error) {
 		console.log("Error has occured: " + error.stack);

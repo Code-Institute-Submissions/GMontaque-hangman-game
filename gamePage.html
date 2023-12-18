@@ -73,8 +73,9 @@
 					</select>
 				</form>
 			</section>
-			<!-- inner game area with hangman image -->
+			<!-- inner game area with hangman canvas -->
 			<section class="play-area-main">
+				<!-- game area header -->
 				<h2 class="display-none">game area main section</h2>
 				<div class="play-area-main-wrapper">
 					<!-- remaining live/guess counter -->
@@ -91,7 +92,7 @@
 						</button>
 					</div>
 				</div>
-				<!-- hangman image -->
+				<!-- hangman canvas -->
 				<canvas id="hangman" height="500"></canvas>
 				<!-- restart game button -->
 				<div class="play-area-top-restart">
@@ -103,12 +104,16 @@
 					</button>
 				</div>
 			</section>
+			<!-- blank letter squares -->
 			<section class="blankSquares">
 				<h2 class="display-none">blank sqaures</h2>
 			</section>
+			<!-- game rules overlay -->
 			<section class="play-area-main-gameRules display-none">
 				<div class="play-area-main-gameRules-header">
+					<!-- game rules overlay title-->
 					<h2 class="play-area-main-gameRules-header-title">Game Rules</h2>
+					<!-- game rules overlay close button -->
 					<button
 						class="play-area-main-gameRules-closeBtn btn btn-padding"
 						aria-label="button closes game rules"
