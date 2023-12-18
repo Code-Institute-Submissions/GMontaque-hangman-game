@@ -1,11 +1,11 @@
-// toggle game music on and off
+// Toggle game music on and off
 let playMusic = document.getElementById("toggle-music-btn");
 playMusic.addEventListener("click", togglePlay);
 
-// game background music
+// Game background music
 let mySound = new Audio("./assets/audio/gameplay-soundtrack.mp3");
 /**
- * function plays and stop music depending on valur attribute
+ * Function plays and stop music depending on value attribute
  */
 function togglePlay() {
 	// selects button by ID
