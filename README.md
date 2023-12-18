@@ -4,9 +4,9 @@
 
 ![picture of the mockup of the website](assets/img/website-mockup.PNG)
 
-- Here I have re-created one of the classic games that I think everybody has either heard about or played, hangman. The idea of the game is quite simply, you are presenting with a number of blank squares or lines which represent the letters in the word that you need to guess. You then have to pick a letter and if the word contains the letter, then it will appear on the screen but be careful as if the letter is not included then you’ll be one set closer to loosing and the man being hung.
+- Here I have re-created one of the classic games that I think everybody has either heard about or played, hangman. The idea of the game is quite simply, you are presented with a number of blank squares which represent the letters in the word that you need to guess. You then have to pick a letter and if the word contains the letter, then it will appear on the screen but be careful as if the letter is not included then you’ll be one step closer to loosing and the man being hung.
 
-- To add in some extra level of complexity and to give the game more features and replay ability I have added in a number of features and extra elements which the user can interact with. To also improve the immersion sound tracks have been added to the site as well as the visual aspect has been created to feel like an 80’s arcade game.
+- To add in some extra level of complexity and to give the game more features and replability I have added in a number of features and extra elements which the user can interact with. To also improve the immersion sound tracks have been added to the site, that can be played as you are playing and that also play when you loose and win. There is also the visual aspect that have been created to make the game feel like an 80’s arcade game.
 
 [Live Website Link](https://gmontaque.github.io/hangman-game/)
 
@@ -15,7 +15,7 @@
 **What was the idea behind building the product?**
 
 - To allows user to be able to play hangman in a fun environment
-- To allow users to play a relax game
+- To allow users to play a relaxed game
 - Allow users to unlock fun memories of playing hangman
 - Make new memories and to allow them to play the game with others
 
@@ -29,7 +29,7 @@
 
 - Game must be easy to navigate
 - Game must have simple controls and so that all ages can use the site and play
-- Game must be replay able
+- Game must be replayable
 - Game must cater to different skills levels
 - User is not looking for something technical
 
@@ -37,7 +37,7 @@
 
 - To create a game that users enjoy
 - A game that users want to come back and play again and again
-- A game users do not get bored or lose interest
+- A game that the users do not get bored or lose interest
 - Game should feel fresh to users each time
 - Game should be immersive for the user through sounds and images
 
@@ -45,9 +45,9 @@
 
 - A person with an interest in classic games will find the site interesting and engaging due to the visual and sound cures
 - The game has been made easy to play with simple buttons and icons
-- A decrepitation /game rules have been including so that the business can easily and effectively describe the site and explain how to use it
+- A description/game rules have been included so that the business can easily and effectively describe the site and explain how to use it
 - SEO has been included through the site to make it easier for users to find and allow the business to better describe the site
-- The game has been create so that it can be played again and again helping to keep the user engaged
+- The game has been created so that it can be played again and again helping to keep the user engaged
 - Difficulty level has also been included to add a challenge for users and give them a goal
 
 ## Features
@@ -56,8 +56,8 @@
 
 **Game rules**
 
-- this is a feature which can be found on the initial loading game, the purpose of this feature is to provide the users with a descrciption of the game and the game rules.
-- As well as the text there is also an image included to give a visual aid as some user find it easier to absorb information when viewed in an image rather than reading it.
+- This is a feature which can be found on the initial webpage when the site loads, the purpose of this feature is to provide the users with a descrciption of the game and the game rules.
+- As well as the text there is also an image included to give a visual aid as some user find it easier to absorb information when viewed in an image rather than reading it, the image is of a hangman.
 
 ![Game Rules](assets/img/game-rules.PNG)
 
@@ -78,23 +78,24 @@
 
 **Game sounds**
 
-- Included in the website are 2 different game sounds
+- Included in the website are 3 different game sounds
 - These sounds have been included to give the user an auditorial confirmation of how well they have done
 - The sounds are also used to add immersion and to improvement enjoyment when playing
+- one sounds is the game soundtrack which can be played as the user plays the game, the other two sound tracks are for when the user wins or looses
 
 **Stop watch**
 
 - The stop watch appears at the top of the game page
-- This is activated when the user starts the game as is there to add another level of complexity and challenge to the game
-- The stop watch will run until the user either wins or loose and will show the user the length of time they took
+- This is activated when the user starts the game and provides an added level of complexity and challenge to the game
+- The stop watch will run until the user either wins or loose and will show the user the length of time they took to guess the word
 
 ![Game Stopwatch](assets/img/stopwatch.PNG)
 
 **Word length generator**
 
-- I have created here a drop down where the user can select the length of word that they wish to guess
-- If the user does not make a selection, then the a default word length has been included
-- The word length selector is links to an API which when called will return a word of the length that was specified in the selector element
+- I have created a drop down where the user can select the length of word that they wish to guess
+- If the user does not make a selection, then there is a default word length which has been included
+- The word length selector is linked to an API which when called will return a word of the length that was specified in the selector element
 
 ![Word Length Generator](assets/img/word-length-generator.PNG)
 
@@ -102,7 +103,8 @@
 
 - This function is linked to a letter checker function which checks if the letter selected is in the word to guess
 - The value of lives left will reduce for every wrong guess that the user makes until zero
-- Once lives left his zero the game will end and a game over overlay will appear followed by a sound track
+- Once lives left hits zero the game will end and a game over overlay will appear followed by a sound track to make it clear to the user they have lost
+- The end game message also shows the user the word they were trying to guess
 
 ![Lives Left](assets/img/live-left-count.PNG)
 
@@ -110,7 +112,8 @@
 
 - If a user needs to look up the rules again this can be done by clicking on the rules button
 - When clicked the gear button will show an overlay which will contain the games rules
-- The gear button is a toggle button allowing the user to open and close with ease
+- To then close the rules overlay there is a included button which can be pressed
+- The overlay allows users to check the rules without having to go back to the homepage
 
 ![Game Rules](assets/img/game-rules-button.PNG)
 ![Game Rules](assets/img/game-rules-overlay.PNG)
@@ -125,9 +128,9 @@
 
 **Alphabet letters**
 
-- When the page loads a function is called with prints all 26 letters
+- When the page loads a function is called which prints all 26 letters to the screen
 - These are the letters that the user will click to start the game
-- When a user clicks a letter they will see that it changes colour and is disabled to visual show the user the letters that they have left to guess
+- When a user clicks a letter they will see that it changes colour and is disabled to visually show the user the letters they have left to guess
 - An added feature is that the user can click a letter key on their keyboard and this will always work and the game will run
 
 ![Alphabet letters](assets/img/alphabet-letters.PNG)
@@ -148,11 +151,19 @@
 
 ![Alphabet letters](assets/img/hangman-canvas.PNG)
 
+**404 Page**
+
+- This page has been added to improve user experince
+- If the user in error types an incorrect web address they will be greeted with this page
+- The page will re-direct the user back to the offical website page
+
+![404 page](assets/img/page-404.PNG)
+
 ## Page Breakdown
 
-#### HOME Page
+### HOME Page
 
-- Below you will find a direct link to the page, which contains the follow features:
+- Below you will an image of the inital page when the user loads up the site, which contains the follow features:
   - Contains the rules of the game
   - Contains the toggle game music button which plays the game tune
   - Contains a visdual image of the game to be played
@@ -161,12 +172,12 @@
 
 ![Home Page](assets/img/homepage.PNG)
 
-#### Game Page
+### Game Page
 
-- Below you will find a direct link to the page, which contains the follow features:
-  - Include the title of the game
+- The game page is what the user will see once they navigate from the home page, the page contains the follow features:
+  - Includes the title of the game
   - There is a toggle game music button which plays the game tune
-  - Included is a stopwatch
+  - Includes is a stopwatch
   - Contains a selector drop down allowing user to choose word length
   - Contains a counter for the number of lives left
   - Contains a icon which shows the games rules
@@ -176,7 +187,14 @@
 
 ![Game Page](assets/img/gamepage.PNG)
 
-### Technologies Section
+### 404 Page
+
+- this is the 404 page which has been added in
+  - purpose of the page is to direct user back to the main website
+
+![Game Page](assets/img/gamepage.PNG)
+
+## Technologies Section
 
 - HTML5 – used to creat the content and structure of the website
 - CSS – used to add styling to the html structure
@@ -188,43 +206,46 @@
 - Google fonts – this was used to import and used for the website font
 - Font awesome – this was used to add icons to the website
 
-### Typography and Colour Scheme
+## Typography and Colour Scheme
 
-- • For the font i have used Press Start 2P google font link [google font link](https://fonts.google.com/specimen/Press+Start+2P?preview.text=A%20B%20C%20D%20E)
+**Font**
 
-  - I have used this font as I was looking for a style that would link with my 80’s gaem theme
-  - I have also look to copy and mimic the background which has some text
+- For the font I have used Press Start 2P google font link [google font link](https://fonts.google.com/specimen/Press+Start+2P?preview.text=A%20B%20C%20D%20E)
+  - I have used this font as I was looking for a style that would link with my 80’s game theme
+  - I have also lookED to copy and mimic the background which has some text
   - I also wanted the text to add to the feeling of a classic game
 
 ![Game text example](assets/img/hangman-title.PNG)
 
-- Colour Scheme
-  - The theme of the website is 80s, arcade and classic gaming
-  - Following this theme I used colours and images which would display with
-  - For the main text colour I have used #fee086
-  - For the background colour I have used #240B67 and them in some areas added in opacity as well
-  - I have checked it against a colour contrast checker and it passed
+**Colour Scheme**
+
+- The theme of the website is 80s, arcade and classic gaming
+- Following this theme I used colours and images which would display with
+- For the main text colour I have used #fee086
+- For the background colour I have used #240B67 and them in some areas added in opacity as well
+- I have checked it against a colour contrast checker and it passed
 
 ![Colour Scheme test 1](assets/img/typography-test.PNG)
 
-![Colour Scheme test 1](assets/img/typography-test-2.PNG)
+![Colour Scheme test 2](assets/img/typography-test-2.PNG)
 
-### WIREFRAMES
+## WIREFRAMES
 
-#### HOME PAGE
+### HOME PAGE
 
 - The idea of the homepage was to make sure that the user was aware what website they had clicked on and what to expect
 - It also included important information so the user was aware how to play the game and also what to expect
 - The page was to contain the rules of the game, explain the game page and icons
-- Homepage was to have a visual aspect to go with the written explanation
-- As you can see in the images depending on the screen size there were different styles to follow
+- The homepage was to have a visual aspect to go with the written explanation
+- The image below shows the different styling and orientation of the homepage depending on if the user is on molid or Deskstop or other device
 - Image includes desktop and mobile wireframe exmaple
 
 ![homepage wireframe desktop and mobile](assets/img/homepage-wireframe.PNG)
 
-#### Game Page
+### Game Page
 
-- This is the page that the user would actually play the game after going through the homepage and reading the rules
+- This is the page that the user will play the game on after going through the homepage and reading the rules
+- next to the title can be found the home button to go back to the first page
 - Going from top left to right there is first a music button allowing the user to play game music
 - There is also a timer included for an added challenge to allow the user to time how long it takes them to solves a word
 - Then far right there is a drop down where the user can select the word length
@@ -237,9 +258,9 @@
 
 ## Testing
 
-#### Browser Compatibility
+### Browser Compatibility
 
-- I have tested the website in different broswers such as google, firefox and Edge
+- I have tested the website in different browsers such as google, firefox and Edge
 - On each browser, I have gone into the dev tools and tested the website at different screen sizes, from mobile to full size. Examples below from Firefox and Edge:
 
 ![image test in edge](assets/img/edge-website-example.PNG)
@@ -248,7 +269,7 @@
 
 ![image test in chrome](assets/img/chrome-website-example.PNG)
 
-#### lighthouse test
+### Lighthouse Test
 
 - I have used lighthouse to test the website as per the image below:
 
@@ -270,7 +291,7 @@
 
 ![image showing page speed report mobile  result](assets/img/lighthouse-mobile-404page.PNG)
 
-#### Validator Testing
+### Validator Testing
 
 - I have tested all HTML pages on the HTML validator and there are no errors
 
@@ -289,9 +310,9 @@
   **404 Page**
   ![homepage validator results](assets/img/page404-validator-html.PNG)
 
-- When testing my CSS as you can see from the below image there are no errors
+- When testing the CSS on ym webiste there are no errors
 
-  - No errors were found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator)
+  - Result from the CSS validator [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator)
 
   ![CSS validator results](assets/img/css-validator-result.PNG)
 
@@ -300,14 +321,14 @@
 
 ![Media Page wireframe](assets/img/most-common-screen-resolutions-worldwide-content.jpg)
 
-**performance improvements**
+## Performance Improvements
 
 - When testing the website on Pagespeed I found there was a reduction in performance, to resolve this I updated all images to webp
 - The reason for this is that there is a signification reduction in the size of the image without a loss of quality which results in a faster website loading time
 - Other benefits include reduced bandwidth
-- Another performance imrpovement made was with the sound files, all sound files were compresed in size to improve performance.
+- Another performance imrpovement I made was with the sound files, all sound files were compresed in size to improve performance.
 
-### SEO
+## SEO
 
 - To improve the SEO side of the webiste i have included the follow code below.
 
@@ -331,7 +352,7 @@
   		content="80's, classic games, hangman, single platyer"/>
   ```
 
-### Issues and Bugs
+## Issues and Bugs
 
 - Error 1
 
@@ -346,6 +367,8 @@
 - Error 3
   - When the user finsihed the game the stopwatch is meant to pause and show the current length of time that has elapised since the suer started playing tyhe game. the idea being that tehy can see how long it took for them to solve the word guess and add a level of competivence about them if they trry again. The issue i was having is that when the user finished the game and then wanted to restart the stop watch would also restart and would not store the value.
   - to solve this issue i had to add in some code into the win or loose function, the code would take the current value of each set of numbers i.e minutes, seconds and miliseconds and would update the stop watch with those static figures. then when the user wants to restart the game it will reset to zero.
+
+## Website Deployment
 
 ### Deploying the Website to GitHub Pages
 
@@ -378,25 +401,25 @@
 
 ## Credit and content
 
-#### Icons
+### Icons
 
 - All icons used in the website were taken from Fontawesome [Font Awesome](https://fontawesome.com/)
 
-#### Sound tracks
+### Sound tracks
 
 - Main game music - https://www.fesliyanstudios.com/royalty-free-music/download/retro-platforming/454
 - The loosing sound track - https://pixabay.com/sound-effects/wah-wah-sad-trombone-6347/
 - Winning sounds track - https://pixabay.com/sound-effects/tadaa-47995/
 
-#### Stop watch
+### Stop watch
 
 - For the stop watch I took inspiration from the following code example - https://codepen.io/cathydutton/pen/xxpOOw
 
-#### button style
+### button style
 
 - https://codepen.io/reulison/pen/WNNVPZq?editors=1100
 
-#### random word api generator
+### random word api generator
 
 - https://random-word-api.herokuapp.com/home
 
