@@ -269,6 +269,32 @@
 
 ![image test in chrome](assets/img/chrome-website-example.PNG)
 
+### Detailed Testing
+
+| Test                                       | Test Description                                                                                                                                                                                                                                                                                                     | Result |
+| ------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ |
+| Website loads                              | When the URL is entered the website should load the homepage and all its content correctly                                                                                                                                                                                                                           | Pass   |
+| Homepage music button                      | When the button is click it should play the game sound track and it should also change the icon image. The button should toggle between off and on.                                                                                                                                                                  | Pass   |
+| Homepage play game button                  | When the button is clicked it should take the user to the game page                                                                                                                                                                                                                                                  | Pass   |
+| Homepage Responsiveness                    | When the screen size is changed the website should change and update with the site                                                                                                                                                                                                                                   | Pass   |
+| Gamepage – music button                    | When the button is click it should play the game sound track and it should also change the icon image. The button should toggle between off and on.                                                                                                                                                                  | Pass   |
+| Gamepage – home button                     | When the button is click it should take the user back to the home page                                                                                                                                                                                                                                               | Pass   |
+| Gamepage - stopwatch                       | When the game is started the stop watch should start, it should then pause when the game ends and store the result. When the game is restarted it should reset to zero                                                                                                                                               | Pass   |
+| Gamepage – word length                     | It should return a default value when the gamepage loads to be sued by the api, if updated by the user it should also update the return value.                                                                                                                                                                       | Pass   |
+| Gamepage – lives left                      | This should track the number of wrong guess, if this value goes to zero the user should lose the game and an overlay should be displayed along with a loose sound played                                                                                                                                             | Pass   |
+| Gamepage – game rules                      | When the user clicks on the button an overlay should appear with the game rules, and all the content should be styled and appear correctly                                                                                                                                                                           | Pass   |
+| Gamepage – game rules overlay close button | When the game rules overlay is open you should be able to close this using the close button in the overlay                                                                                                                                                                                                           | Pass   |
+| Gamepage – game restart button             | Click on the button should restart the game, this means resetting the stopwatch, resetting the alphabet letter buttons, the blank squares section, getting a new word to guess from the api, remove disable attribute from word length select element and resetting the canvas                                       | Pass   |
+| Gamepage – canvas                          | When the user guesses a wrong letter the canvas image should update                                                                                                                                                                                                                                                  | Pass   |
+| Gamepage – Blank Squares                   | When the game page loads it should load in an x number of blank square with a question mark inside depending on the value of the word length select element                                                                                                                                                          | Pass   |
+| Gamepage – Alphabet letters                | When the game page loads it should load in the 26 alphabet letters                                                                                                                                                                                                                                                   | Pass   |
+| Gamepage – Alphabet letters function       | When a letter is pressed it should be checked to see if the letter is contained in the word to guess, if it is the blank squares should be updated with the letter. If an incorrect guess is made the canvas image should be updated and lives left reduced. It should also disable the word length selector element | Pass   |
+| Gamepage – keyboard letter press           | When a keyboard alphabet letter is pressed the game should work the same and start just as if one of the onscreen button letters had been pressed                                                                                                                                                                    | Pass   |
+| Gamepage responsiveness                    | When the screen size is changed the website should change and update with the site                                                                                                                                                                                                                                   | Pass   |
+| 404 page                                   | When the incorrect web address is entered the user should be re-directed to the 404 page                                                                                                                                                                                                                             | Pass   |
+| 404 page – home button                     | When clicked the user should be return to the homepage of the website                                                                                                                                                                                                                                                | Pass   |
+| Gamepage responsiveness                    | When the screen size is changed the website should change and update with the site                                                                                                                                                                                                                                   | Pass   |
+
 ### Lighthouse Test
 
 - I have used lighthouse to test the website as per the image below:
@@ -321,6 +347,14 @@
 
 ![Media Page wireframe](assets/img/most-common-screen-resolutions-worldwide-content.jpg)
 
+### Game Testing
+
+- When testing the website to confirm the correct answer and also confirm the letter that the user pressed the following code can be added to the `checkLetterGuess` function inside the try statment.
+
+  ```
+  console.log("Word to guess is:",wordToGuess,",","User Letter guess is:",uGuess);
+  ```
+
 ## Performance Improvements
 
 - When testing the website on Pagespeed I found there was a reduction in performance, to resolve this I updated all images to webp
@@ -354,19 +388,20 @@
 
 ## Issues and Bugs
 
-- Error 1
+**Error 1**
 
-  - When the user plays the game there is a counter that records the number of correct letters that the user has guessed and this is compared against the word length to be guessed. When they match it confirms that the user has guessed the full word and for the counter to increase by one the letter the user selected must be within the word to guess.
-    The issue that was being faced was that the could would run and the user could get the full word but once the user had guessed all the letters the game would keep running and would not show the winner screen.
+- When the user plays the game there is a counter that records the number of correct letters that the user has guessed and this is compared against the word length to be guessed. When they match it confirms that the user has guessed the full word and for the counter to increase by one the letter the user selected must be within the word to guess.
+  The issue that was being faced was that the could would run and the user could get the full word but once the user had guessed all the letters the game would keep running and would not show the winner screen.
 
-- Error 2
+**Error 2**
 
-  - Included in the website is an API, the purpose of the API is to return a word that the user then has to attempt to guess within the hangman game. If the user then lost the game the word the user was trying to guess was meant to be shown within the website, but when the value was printed to the screen it would show as an array, but when checked using “typeof” it stated that the value was a string.
-  - I had initial tried to turn the value to a string but as it was already a string it did not change the output value. Instead the solution came when I used the splice function on the initial value to remove the first to element in the printed result with was the square bracket and the quotation mark which resolved the issue.
+- Included in the website is an API, the purpose of the API is to return a word that the user then has to attempt to guess within the hangman game. If the user then lost the game the word the user was trying to guess was meant to be shown within the website, but when the value was printed to the screen it would show as an array, but when checked using “typeof” it stated that the value was a string.
+- I had initial tried to turn the value to a string but as it was already a string it did not change the output value. Instead the solution came when I used the splice function on the initial value to remove the first to element in the printed result with was the square bracket and the quotation mark which resolved the issue.
 
-- Error 3
-  - When the user finsihed the game the stopwatch is meant to pause and show the current length of time that has elapised since the suer started playing tyhe game. the idea being that tehy can see how long it took for them to solve the word guess and add a level of competivence about them if they trry again. The issue i was having is that when the user finished the game and then wanted to restart the stop watch would also restart and would not store the value.
-  - to solve this issue i had to add in some code into the win or loose function, the code would take the current value of each set of numbers i.e minutes, seconds and miliseconds and would update the stop watch with those static figures. then when the user wants to restart the game it will reset to zero.
+**Error 3**
+
+- When the user finsihed the game the stopwatch is meant to pause and show the current length of time that has elapised since the suer started playing tyhe game. the idea being that tehy can see how long it took for them to solve the word guess and add a level of competivence about them if they trry again. The issue i was having is that when the user finished the game and then wanted to restart the stop watch would also restart and would not store the value.
+- to solve this issue i had to add in some code into the win or loose function, the code would take the current value of each set of numbers i.e minutes, seconds and miliseconds and would update the stop watch with those static figures. then when the user wants to restart the game it will reset to zero.
 
 ## Website Deployment
 
