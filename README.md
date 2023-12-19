@@ -2,7 +2,7 @@
 
 ## About the Project
 
-![picture of website mock up on different devices](assets/img/website-mockup.PNG)
+![picture of website mock up on different devices](assets/img/website-mockup.png)
 
 - I have re-created one of the classic games that everybody has either heard about or played - hangman. The idea of the game is quite simply, you are presented with a number of blank squares which represent the letters in the word that you need to guess. You then have to pick a letter and if the word contains the letter, then it will appear on the screen but be careful, if the letter is not included then you’ll be one step closer to losing and the man being hung.
 
@@ -57,29 +57,30 @@
 - This is a feature which can be found on the initial webpage when the site loads. The purpose of this feature is to provide the users with a description of the game and the game rules.
 - As well as the text, there is also an image included to provide a visual aid as some users find it easier to absorb information when viewed as an image rather than reading it. The image used is a hangman image.
 
-![Game Rules](assets/img/game-rules.PNG)
+![Game Rules](assets/img/game-rules.png)
 
 **Game Music**
 
-- The music button is included on both the index page and game page and can be found top left.
+- The music button is included on the game page and can be found top left.
 - When pressed this will play the theme tune which from the 80’s and is in keeping with the 80’s feel
 
-![Game Music On](assets/img/game-music-on.PNG)
-![Game Music Off](assets/img/game-music-off.PNG)
+![Game Music On](assets/img/game-music-on.png)
+
+![Game Music Off](assets/img/game-music-off.png)
 
 **Game Page**
 
 - Access to the game is on this page
 - The page includes buttons that the user can interact with and a range of features for their enjoyment
 
-![Game Page](assets/img/gamepage.PNG)
+![Game Page](assets/img/gamepage.png)
 
 **Home Page Button**
 
 - Takes the user back to the homepage
 - a icon of a house has been used as a visual effect to denote a home button
 
-![Home Page Button](assets/img/gamepage.PNG)
+![Home Page Button](assets/img/gamepage.png)
 
 **Game Sounds**
 
@@ -94,7 +95,7 @@
 - This is activated when the user starts the game and provides an added level of complexity and challenge to the game
 - The stop watch will run until the user either wins or loses and will show the user the length of time they took to guess the word
 
-![Game Stopwatch](assets/img/stopwatch.PNG)
+![Game Stopwatch](assets/img/stopwatch.png)
 
 **Word length generator**
 
@@ -102,7 +103,7 @@
 - If the user does not make a selection, then there is a default word length which has been included
 - The word length selector is linked to an API which when called upon will return a word of the length that was specified in the selector element
 
-![Word Length Generator](assets/img/word-length-generator.PNG)
+![Word Length Generator](assets/img/word-length-generator.png)
 
 **Lives Left**
 
@@ -111,7 +112,7 @@
 - Once lives left hits zero the game will end and a ‘game over’ overlay element will appear followed by a sound track to make it clear to the user they have lost
 - The end game message also shows the user the word they were trying to guess
 
-![Lives Left](assets/img/live-left-count.PNG)
+![Lives Left](assets/img/live-left-count.png)
 
 **Game Rules Overlay**
 
@@ -120,8 +121,9 @@
 - To close the game rules overlay, the user must click on the button displayed.
 - The overlay allows users to check the rules without having to go back to the homepage
 
-![Game Rules](assets/img/game-rules-button.PNG)
-![Game Rules](assets/img/game-rules-overlay.PNG)
+![Game Rules](assets/img/game-rules-button.png)
+
+![Game Rules](assets/img/game-rules-overlay.png)
 
 **Blank Squares**
 
@@ -129,7 +131,7 @@
 - These are auto-generated when the page loads, by calling the API and printing a blank square for each letter within the returned API word
 - If a different length of word is selected from the selector element, then the API is called again and the blank squares will update to the new word length to be guessed
 
-![Blank Letter Squares](assets/img/blank-squares.PNG)
+![Blank Letter Squares](assets/img/blank-squares.png)
 
 **Alphabet Letters**
 
@@ -138,7 +140,7 @@
 - When a user clicks a letter, they will see that it changes colour and is disabled to visually show the user which letters they have left to guess from
 - An added feature is that the user can choose to select their letter using the keyboard instead of selecting one from the screen. This will work just as well and the game will run
 
-![Alphabet Letters](assets/img/alphabet-letters.PNG)
+![Alphabet Letters](assets/img/alphabet-letters.png)
 
 **Restart Game**
 
@@ -147,14 +149,14 @@
 - It will reset the canvas area
 - It will reset the stop watch and reproduce the blank squares
 
-![Alphabet Letters](assets/img/restart-game-button.PNG)
+![Alphabet Letters](assets/img/restart-game-button.png)
 
 **Hangman Canvas**
 
 - The canvas area is a visual area which will show the hangman image as it progresses to being fully complete
 - Depending on if the user guesses a correct or incorrect letter, the hagman image is updated accordingly
 
-![Hangman Canvas](assets/img/hangman-canvas.PNG)
+![Hangman Canvas](assets/img/hangman-canvas.png)
 
 **404 Page**
 
@@ -162,7 +164,7 @@
 - If the user types an incorrect web address they will be greeted with this page
 - The page will re-direct the user back to the official website page
 
-![404 Page](assets/img/page-404.PNG)
+![404 Page](assets/img/page-404.png)
 
 ## Page Breakdown
 
@@ -170,12 +172,11 @@
 
 - Below you will see an image of the landing page when the user loads up the site. It contains the following features:
   - the rules of the game
-  - the toggle music button which plays the game tune
   - a visual image of the game to be played
   - the game title
   - a button which will take the user to the game page
 
-![Home Page](assets/img/homepage.PNG)
+![Home Page](assets/img/homepage.png)
 
 ### Game Page
 
@@ -190,13 +191,13 @@
   - blank squares representing letters to guess
   - 26 alphabet letters
 
-![Game Page](assets/img/gamepage.PNG)
+![Game Page](assets/img/gamepage.png)
 
 ### 404 Page
 
 - This is the 404 page which has been added to direct users back to the main website when they input the incorrect web address
 
-![404 Page](assets/img/page-404.PNG)
+![404 Page](assets/img/page-404.png)
 
 ## Technologies Section
 
@@ -219,7 +220,7 @@
   - I also sought to copy and mimic the background which has some text in a certain style
   - I also wanted the text to add to the feeling of a classic, retro game
 
-![Game Text Example](assets/img/hangman-title.PNG)
+![Game Text Example](assets/img/hangman-title.png)
 
 **Colour Scheme**
 
@@ -229,9 +230,9 @@
 - For the background colour I have used #240B67 and in some areas added in opacity as well, to make the text clear to read
 - I have checked it against a colour contrast checker and it passed
 
-![Colour Scheme test 1](assets/img/typography-test.PNG)
+![Colour Scheme test 1](assets/img/typography-test.png)
 
-![Colour Scheme test 2](assets/img/typography-test-2.PNG)
+![Colour Scheme test 2](assets/img/typography-test-2.png)
 
 ## Wireframes
 
@@ -244,7 +245,7 @@
 - The image below shows the different styling and orientation of the homepage depending on if the user is on a mobile, Desktop or another device
 - Image includes desktop and mobile wireframe examples
 
-![Homepage Wireframe desktop and mobile](assets/img/homepage-wireframe.PNG)
+![Homepage Wireframe desktop and mobile](assets/img/homepage-wireframe.png)
 
 ### Game Page
 
@@ -260,107 +261,12 @@
 - There is also a full 26 letter keyboard the user can click to select their next guess or they could choose to use their keyboard
 - Image includes desktop and mobile wireframe example
 
-![gamepage wireframe desktop and mobile](assets/img/gamepage-wireframe.PNG)
+![gamepage wireframe desktop and mobile](assets/img/gamepage-wireframe.png)
 
 ## Testing
 
-### Browser Compatibility
-
-- I have tested the website in different browsers such as google, Firefox and Edge
-- On each browser, I have gone into the dev tools and tested the website at different screen sizes, from mobile to full size. Examples below from Firefox and Edge:
-
-![Image test in edge](assets/img/edge-website-example.PNG)
-
-![Image test in firefox](assets/img/firebox-website-example.PNG)
-
-![Image test in chrome](assets/img/chrome-website-example.PNG)
-
-### Detailed Testing
-
-| Test                                       | Test Description                                                                                                                                                                                                                                                                                                           | Result |
-| ------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ |
-| Website loads                              | When the URL is entered the website should load the homepage and all its content correctly                                                                                                                                                                                                                                 | Pass   |
-| Homepage music button                      | When the button is clicked it should play the game sound track and it should also change the icon image. The button should toggle between off and on.                                                                                                                                                                      | Pass   |
-| Homepage play game button                  | When the button is clicked it should take the user to the game page                                                                                                                                                                                                                                                        | Pass   |
-| Homepage responsiveness                    | When the screen size is changed the website should change and update with the correct sizing                                                                                                                                                                                                                               | Pass   |
-| Gamepage – music button                    | When the button is clicked it should play the game sound track and it should also change the icon image. The button should toggle between off and on.                                                                                                                                                                      | Pass   |
-| Gamepage – home button                     | When the button is click it should take the user back to the home page                                                                                                                                                                                                                                                     | Pass   |
-| Gamepage - stopwatch                       | When the game is started the stop watch should start, it should then pause when the game ends and store the result. When the game is restarted, it should reset to zero                                                                                                                                                    | Pass   |
-| Gamepage – word length                     | It should return a default number value when the game page loads to be used by the api, if updated by the user it should also update the return value.                                                                                                                                                                     | Pass   |
-| Gamepage – lives left                      | This should track the number of wrong guesses, if this value goes to zero the user should lose the game and an overlay should be displayed along with a game lost sound played                                                                                                                                             | Pass   |
-| Gamepage – game rules                      | When the user clicks on the button, an overlay should appear with the game rules, and all the content should be styled and appear correctly                                                                                                                                                                                | Pass   |
-| Gamepage – game rules overlay close button | When the game rules overlay is open, you should be able to close this using the close button in the overlay                                                                                                                                                                                                                | Pass   |
-| Gamepage – game restart button             | Clicking on the button should restart the game, this means resetting the stopwatch, resetting the alphabet letter buttons and the blank squares, getting a new word to guess from the api, remove the disable attribute from alphabet buttons, get number value from word length select element and reset the canvas       | Pass   |
-| Gamepage – canvas                          | When the user guesses a wrong letter the canvas image should update                                                                                                                                                                                                                                                        | Pass   |
-| Gamepage – Blank Squares                   | When the game page loads it should load in an x number of blank squares with a question mark inside. Length is dependant on the value of the word length select element                                                                                                                                                    | Pass   |
-| Gamepage – Alphabet letters                | When the game page loads it should load up the 26 alphabet letters                                                                                                                                                                                                                                                         | Pass   |
-| Gamepage – Alphabet letters function       | When a letter is pressed it should be checked to see if the letter is contained in the word being guessed. If it is, the blank squares should be updated with the letter. If an incorrect guess is made the canvas image should be updated and lives left reduced. It should also disable the word length selector element | Pass   |
-| Gamepage – disable letter                  | After a user presses a letter, they wish to guess, the button should be disabled and the user should not be able to guess or select that letter again until the game resets.                                                                                                                                               | Pass   |
-| Gamepage – keyboard letter press           | When a keyboard alphabet letter is pressed, the game should work the same and start - just as if one of the onscreen button letters had been pressed                                                                                                                                                                       | Pass   |
-| Gamepage responsiveness                    | When the screen size is changed the website should change and update with the site                                                                                                                                                                                                                                         | Pass   |
-| 404 page                                   | When the incorrect web address is entered the user should be re-directed to the 404 page                                                                                                                                                                                                                                   | Pass   |
-| 404 page – home button                     | When clicked the user should be return to the homepage of the website                                                                                                                                                                                                                                                      | Pass   |
-| Gamepage responsiveness                    | When the screen size is changed the website should change and update with the site                                                                                                                                                                                                                                         | Pass   |
-
-### Lighthouse Test
-
-- I have used lighthouse to test the website as per the image below:
-
-**Home Page**
-
-![Image showing page speed report pc result](assets/img/lighthouse-desktop-homepage.PNG)
-
-![Image showing page speed report mobile result](assets/img/lighthouse-mobile-homepage.PNG)
-
-**Game Page**
-
-![Image showing page speed report pc result](assets/img/lighthouse-desktop-gamepage.PNG)
-
-![Image showing page speed report mobile  result](assets/img/lighthouse-mobile-gamepage.PNG)
-
-**404 Page**
-
-![Image showing page speed report pc result](assets/img/lighthouse-desktop-404page.PNG)
-
-![Image showing page speed report mobile  result](assets/img/lighthouse-mobile-404page.PNG)
-
-### Validator Testing
-
-- I have tested all HTML pages on the HTML validator and there are no errors
-
-- When building the website, I have used an extension called prettier which has resulted in the warnings that you can see on each screenshot below:
-
-  - No errors were returned when passing through the official [W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fcode-institute-org.github.io%2Flove-running-2.0%2Findex.html)
-
-  ![Prettier validator results](assets/img/prettier-warning.PNG)
-
-  **Home Page**
-  ![Homepage validator results](assets/img/homepage-validator-html.PNG)
-
-  **Game Page**
-  ![Gamepage validator results](assets/img/gamepage-validator-html.PNG)
-
-  **404 Page**
-  ![Page 404 validator results](assets/img/page404-validator-html.PNG)
-
-- When testing the website there are no errors
-
-  - Result from the CSS validator [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator)
-
-  ![CSS validator results](assets/img/css-validator-result.PNG)
-
-- When testing the website on different devices I have used the pre-defined dimensions that come with the developer tools on Google Chrome
-- I have also researched several websites which have described the most common screen size for devices in 2023 for desktop and mobile - https://www.designrush.com/agency/web-development-companies/trends/website-dimensions
-
-![Most common screen size](assets/img/most-common-screen-resolutions-worldwide-content.jpg)
-
-### Game Testing
-
-- When testing the website, to confirm the correct word to be guessed and also confirm the letter that the user pressed, the following code can be added to the `checkLetterGuess` function inside the try statement.
-
-  ```
-  console.log("Word to guess is:",wordToGuess,",","User Letter guess is:",uGuess);
-  ```
+- The testing that i have completed for can be found in the following file
+  - [Website Testing](webpageTesting)
 
 ## Performance Improvements
 
@@ -392,24 +298,6 @@
       content="80's, classic games, hangman, single platyer"/>
   ```
 
-## Issues and Bugs
-
-**Error 1**
-
-- When the user plays the game there is a counter that records the number of correct letters that the user has guessed and this is compared against the word length to be guessed. When they match it confirms that the user has guessed the full word, the counter is decreased by one each time the user guesses a correct letter. The issue that was being faced was that the counter was not updating correctly, the user could get the full word correct, but the game would keep running and would not show the winner screen.
-
-- The issue was related to how the checkAnswer function. It was meant to reduce the lettersleftoguess variable by one when a certain condition was met. I found that I had not correctly added the variable name to the correct “IF” statement, so was not running at the correct point in the function.
-
-**Error 2**
-
-- Included in the website is an API, the purpose of the API is to return a word that the user has to guess to win the hangman game. If the user lost the game, the word the user was trying to guess was meant to show within the website, but when the value was printed to the screen it would show as an array. When checked using “typeof” it stated that the value was a string.
-- I had initially tried to turn the value to a string but as it was already a string it did not change the output value. Instead, the solution came when I used the splice function on the initial value to remove the first two values in the printed result which was a square bracket and the quotation mark which resolved the issue.
-
-**Error 3**
-
-- When the user finishes the game, the stopwatch is meant to pause and show the current length of time that has elapsed since the user started playing the game. The idea being, that the user can see how long it took for them to guess the word and by adding this level of complexity, make them want to try again. The issue I was having is that when the user finished the game and then wanted to restart the game, the stop watch would also restart and would not store the value.
-- To solve this issue, I had to add some code into the win or lose function. The code would take the current value of each set of numbers i.e. minutes, seconds and milliseconds and would update the stop watch with those static figures.
-
 ## Website Deployment
 
 ### Deploying the Website to GitHub Pages
@@ -429,6 +317,7 @@
 - Enter "git clone" followed by a space, and paste the copied URL.
 - Press enter to execute the command, creating a local copy of the GitHub repository.
 - You now have the GitHub repository cloned to your local machine.
+- Cloned local repo can be run in your browser
 
 ### Forking the Repository
 
