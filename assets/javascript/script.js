@@ -211,6 +211,7 @@ function reduceLives(lives) {
 			context.strokeStyle = "#444";
 			context.lineWidth = 10;
 			context.beginPath();
+			context.strokeStyle = "#fee086";
 			context.scale(2, 2);
 			context.moveTo(175, 225);
 			context.lineTo(5, 225);
