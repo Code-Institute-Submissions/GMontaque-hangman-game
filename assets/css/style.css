@@ -308,12 +308,14 @@ h1 {
 /******************** media query ********************/
 
 @media (max-width: 376px) {
+	/* Game Page - select element */
 	.play-area-top-word-select {
 		padding-top: 1rem;
 	}
 }
 
 @media (min-width: 426px) {
+	/* Game Page */
 	.game-area-inner-img-self {
 		width: 60%;
 	}
@@ -344,6 +346,7 @@ h1 {
 }
 
 @media (min-width: 769px) {
+	/* General stlying */
 	article {
 		display: block;
 	}
@@ -353,6 +356,7 @@ h1 {
 		margin-top: 4rem;
 	}
 
+	/* Game Page */
 	.game-area-inner-music {
 		margin-left: 2rem;
 	}
@@ -391,30 +395,37 @@ h1 {
 		width: 50%;
 		margin-top: 1rem;
 	}
+
 	.blankSquares {
 		width: 50%;
 		margin-top: 11rem;
 	}
+
+	/* Game Page - rules overlay */
 	.play-area-main-gameRules {
 		margin: 0rem 6rem;
 	}
 }
 
 @media (min-width: 1026px) {
+	/* Game Page */
 	.play-area-main-gameRules {
 		margin: 0rem 10rem;
 	}
 }
 @media (min-width: 1441px) {
-	.play-game-button {
-		padding: 0;
-	}
-
+	/* General styling */
 	article {
 		width: 70%;
 		padding-bottom: 3rem;
 	}
 
+	/* Home Page */
+	.play-game-button {
+		padding: 0;
+	}
+
+	/* Game Page */
 	.play-game-button {
 		margin-top: 2rem;
 	}
