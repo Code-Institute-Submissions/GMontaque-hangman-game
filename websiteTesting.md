@@ -55,6 +55,15 @@
 - When the user finishes the game, the stopwatch is meant to pause and show the current length of time that has elapsed since the user started playing the game. The idea being, that the user can see how long it took for them to guess the word and by adding this level of complexity, make them want to try again. The issue I was having is that when the user finished the game and then wanted to restart the game, the stop watch would also restart and would not store the value.
 - To solve this issue, I had to add some code into the win or lose function. The code would take the current value of each set of numbers i.e. minutes, seconds and milliseconds and would update the stop watch with those static figures.
 
+**Error / Bug**
+
+- This error was first found by my mentor when testing the website, the error would occur when rapidly press a letter key on the keyboard and it would then print an error to the console.
+- The error was intemitemtn and it was unclear the reason for the error.
+- on further testing it looked to happen when refreshing the webpage by press control shift and R, the issue seem to be that by pressing R it was calling an event listener on keyboard letter presses
+- to resolve this i added the keyboard event listner to the window.onload function so that it will not run until the page is fully loaded, this seems to solve the issue but i have had difficutly replciating the issue as it does not fully occur on my system.
+
+![Image showing console error](assets/img/letter-press-error.png)
+
 **Select Element Bug**
 
 - When running my code through the PageSpeed my accessibility score for the game page returns 95 and it states the reason being that “Select elements do not have associated label elements.”. I have spoken to my mentor and he suggested wrapping the select element inside a form element along with the label but the bug still persists, the JavaScript code validates 100%.
