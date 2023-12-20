@@ -205,20 +205,24 @@ function loadBlanks() {
  * updates sound effect varible depending if user wants sound effects on or off
  */
 function playEffect() {
-	let soundEffectBtn = document.getElementById("toggle-sound-effects");
-	if (effectSound) {
-		// updates button inner image
-		soundEffectBtn.innerHTML =
-			'<i class="fa-solid fa-volume-xmark" ></i> Sound Effect';
-		// updates value attribute
-		effectSound = false;
-	} else {
-		effectSound = true;
-		soundEffectBtn.innerHTML =
-			'<i class="fa-solid fa-volume-high"></i> Sound Effect';
-	}
+	try {
+		let soundEffectBtn = document.getElementById("toggle-sound-effects");
+		if (effectSound) {
+			// updates button inner image
+			soundEffectBtn.innerHTML =
+				'<i class="fa-solid fa-volume-xmark" ></i> Sound Effect';
+			// updates value attribute
+			effectSound = false;
+		} else {
+			effectSound = true;
+			soundEffectBtn.innerHTML =
+				'<i class="fa-solid fa-volume-high"></i> Sound Effect';
+		}
 
-	return effectSound;
+		return effectSound;
+	} catch (error) {
+		console.log("Error has occured: " + error.stack);
+	}
 }
 
 /**
