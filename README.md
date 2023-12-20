@@ -86,7 +86,7 @@
 - 3 different game sounds have been incorporated into the game.
 - These sounds have been included to give the user auditory confirmation of how well they have done
 - The sounds are also used to increase immersion and to improve enjoyment when playing
-- the 3 sounds indicate game play, game won or game lost
+- The 3 sounds indicate game play, game won or game lost
 
 **Stop Watch**
 
@@ -179,24 +179,24 @@
 ### HOME Page
 
 - Below you will see an image of the landing page when the user loads up the site. It contains the following features:
-  - the rules of the game
-  - a visual image of the game to be played
-  - the game title
-  - a button which will take the user to the game page
+  - The rules of the game
+  - A visual image of the game to be played
+  - The game title
+  - A button which will take the user to the game page
 
 ![Home Page](assets/img/homepage.png)
 
 ### Game Page
 
 - The game page is what the user sees when they navigate from the home page to the game page. It contains the following features:
-  - the title of the game
-  - the toggle music button which plays the game tune
-  - a stopwatch
-  - a selector drop-down, allowing the user to choose the word length
-  - a counter for the number of lives left
-  - an icon which shows the games rules when clicked
-  - a game reset button
-  - blank squares representing letters to guess
+  - The title of the game
+  - The toggle music button which plays the game tune
+  - A stopwatch
+  - A selector drop-down, allowing the user to choose the word length
+  - A counter for the number of lives left
+  - An icon which shows the games rules when clicked
+  - A game reset button
+  - Blank squares representing letters to guess
   - 26 alphabet letters
 
 ![Game Page](assets/img/gamepage.png)
@@ -233,7 +233,7 @@
 **Colour Scheme**
 
 - The theme of the website is 80s, arcade and classic gaming
-- in keeping with this theme, I used colours and images reminiscent of that era
+- In keeping with this theme, I used colours and images reminiscent of that era
 - For the main text colour, I have used #fee086
 - For the background colour I have used #240B67 and in some areas added in opacity as well, to make the text clear to read
 - I have checked it against a colour contrast checker and it passed
@@ -260,9 +260,9 @@
 - This is the page on which the user will play the game, after going through the homepage and reading the rules
 - The home button is next to the title and is used to go back to the home page
 - Going from top left to right there is:
-- a music button allowing the user to play game music
-- a timer, included for an added challenge to allow the user to time how long it takes them to guess a word
-- on the far right is a drop down, where the user can select the word length to guess
+- A music button allowing the user to play game music
+- A timer, included for an added challenge to allow the user to time how long it takes them to guess a word
+- An the far right is a drop down, where the user can select the word length to guess
 
 - The main game area contains the image of the hangman made using canvas, then a lives left counter, a gear button to access the games rules overlay and a reset button
 - Next to the hangman image are a selection of blank squares which represent the letters to be guessed
