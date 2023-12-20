@@ -77,7 +77,7 @@
 **Home Page Button**
 
 - Takes the user back to the homepage
-- a icon of a house has been used as a visual effect to denote a home button
+- A icon of a house has been used as a visual effect to denote a home button
 
 ![Home Page Button](assets/img/homepage-button.png)
 
@@ -178,10 +178,10 @@
 
 ### HOME Page
 
-- Below you will see an image of the landing page when the user loads up the site. It contains the following features:
-  - The rules of the game
-  - A visual image of the game to be played
-  - The game title
+- Below you will see an image of the landing page which the user will see when loading up the webpage. It contains the following features:
+  - The rules of the game, this will allow users to understand how to play the game
+  - A visual image of the game to be played is displayed making it easier for the user to understand the game along with the written rules
+  - The title of the game
   - A button which will take the user to the game page
 
 ![Home Page](assets/img/homepage.png)
@@ -189,15 +189,17 @@
 ### Game Page
 
 - The game page is what the user sees when they navigate from the home page to the game page. It contains the following features:
+  - The game page is what the user sees when they navigate from the home page. It contains the following features:
   - The title of the game
-  - The toggle music button which plays the game tune
-  - A stopwatch
-  - A selector drop-down, allowing the user to choose the word length
-  - A counter for the number of lives left
-  - An icon which shows the games rules when clicked
-  - A game reset button
-  - Blank squares representing letters to guess
-  - 26 alphabet letters
+  - The toggle music button which plays the game tune which will allow the user a higher level of immersion in the game and improve their enjoyment
+  - A stopwatch will add a challenge to the game
+  - A selector drop-down, allowing the user to choose the word length and provide more variety to the game
+  - A counter for the number of lives left which will add a challenge as the user will not have unlimited guesses
+  - An icon which shows the games rules when clicked, which will allow the user to refresh their memory of the rules if needed
+  - A game reset button will make sure the game is replayable
+  - Blank squares representing letters to guess, visually indicates to the user the length of the word and letters to guess
+  - 26 alphabet letters which are buttons that the user can click to play the game have been included, they provide feedback when pressed as they will change colour depending on if the letter guessed is correct or not. This will visually show to the user which letters have already been guessed
+  - Sound effects have been included as a toggle button option which are played at the end of the game, this adds a fun aspect to the game as well as auditory feedback on how well they have done
 
 ![Game Page](assets/img/gamepage.png)
 
