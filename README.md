@@ -223,7 +223,7 @@
 
 **Font**
 
-- For the font, I have used Press Start 2P google font link [google font link](https://fonts.google.com/specimen/Press+Start+2P?preview.text=A%20B%20C%20D%20E)
+- For the font, I have used Press Start 2P google font link [Google Font Link](https://fonts.google.com/specimen/Press+Start+2P?preview.text=A%20B%20C%20D%20E)
   - I have used this font because it complemented my 80’s game theme
   - I also sought to copy and mimic the background which has some text in a certain style
   - I also wanted the text to add to the feeling of a classic, retro game
