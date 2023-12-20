@@ -68,7 +68,7 @@
 
 - When running my code through PageSpeed my accessibility score for the game page returns 95, when checking the accessibility section it states the reason for not getting 100 is that the “Select elements do not have associated label elements.”. I have spoken to my mentor and he suggested wrapping the select element inside a form element along with the label but the bug still persists, the JavaScript code validates 100%.
 
-![Image showing accessibility score](assets/img/accessibility-score.PNG)
+![Image showing accessibility score](assets/img/accessibility-score.png)
 
 - As you can see from the code snippet a label has been included correctly
 
