@@ -159,6 +159,10 @@ h1 {
 	align-items: center;
 }
 
+.play-area-top-music {
+	margin-bottom: 1rem;
+}
+
 .play-area-top-word-select {
 	width: 100%;
 }
@@ -186,6 +190,11 @@ h1 {
 	margin: auto;
 	display: block;
 	width: 260px;
+}
+
+.play-area-bottom {
+	display: flex;
+	justify-content: space-between;
 }
 
 .play-area-letters {
