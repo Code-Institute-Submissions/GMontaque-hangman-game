@@ -217,7 +217,7 @@ function playEffect() {
 		soundEffectBtn.innerHTML =
 			'<i class="fa-solid fa-volume-high"></i> Sound Effect';
 	}
-	console.log(effectSound);
+
 	return effectSound;
 }
 
@@ -454,13 +454,6 @@ async function checkLetterGuess(uGuess, checkGame, e) {
 			// disables letter that user pressed
 			disableLetter(e, correctLetter);
 		}
-		console.log(
-			"Word to guess is:",
-			wordToGuess,
-			",",
-			"User Letter guess is:",
-			uGuess
-		);
 	} catch (error) {
 		console.log("Error has occured: " + error.stack);
 	}
