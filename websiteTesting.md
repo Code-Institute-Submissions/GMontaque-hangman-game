@@ -57,16 +57,16 @@
 
 **Error / Bug**
 
-- This error was first found by my mentor when testing the website, the error would occur when rapidly press a letter key on the keyboard and it would then print an error to the console.
-- The error was intemitemtn and it was unclear the reason for the error.
-- on further testing it looked to happen when refreshing the webpage by press control shift and R, the issue seem to be that by pressing R it was calling an event listener on keyboard letter presses
-- to resolve this i added the keyboard event listner to the window.onload function so that it will not run until the page is fully loaded, this seems to solve the issue but i have had difficutly replciating the issue as it does not fully occur on my system.
+- This error was first found by my mentor when testing the website, the error would occur when rapidly pressing a letter key on the keyboard. It would then print an error to the console.
+- The error was intermittent and it was unclear the reason for the error.
+- On further testing it looked to happen when refreshing the webpage by pressing control, shift and R, the issue seemed to be that by pressing R it was calling an event listener on the keyboard letter press
+- To resolve this issue I added the keyboard event listener to the window.onload function so that it will not run until the page is fully loaded, this seemed to solve the issue but I have had difficulty replicating the issue as it does not fully occur on my system.
 
 ![Image showing console error](assets/img/letter-press-error.png)
 
 **Select Element Bug**
 
-- When running my code through the PageSpeed my accessibility score for the game page returns 95 and it states the reason being that “Select elements do not have associated label elements.”. I have spoken to my mentor and he suggested wrapping the select element inside a form element along with the label but the bug still persists, the JavaScript code validates 100%.
+- When running my code through PageSpeed my accessibility score for the game page returns 95, when checking the accessibility section it states the reason for not getting 100 is that the “Select elements do not have associated label elements.”. I have spoken to my mentor and he suggested wrapping the select element inside a form element along with the label but the bug still persists, the JavaScript code validates 100%.
 
 ![Image showing accessibility score](assets/img/accessibility-score.PNG)
 

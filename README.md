@@ -65,7 +65,6 @@
 - When pressed this will play the theme tune which from the 80’s and is in keeping with the 80’s feel
 
 ![Game Music On](assets/img/game-music-on.png)
-
 ![Game Music Off](assets/img/game-music-off.png)
 
 **Game Page**
@@ -80,7 +79,7 @@
 - Takes the user back to the homepage
 - a icon of a house has been used as a visual effect to denote a home button
 
-![Home Page Button](assets/img/gamepage.png)
+![Home Page Button](assets/img/homepage-button.png)
 
 **Game Sounds**
 
@@ -138,9 +137,18 @@
 - When the game page loads, a function is called upon which prints all 26 letters to the screen
 - These are the letters that the user will click to start the game
 - When a user clicks a letter, they will see that it changes colour and is disabled to visually show the user which letters they have left to guess from
+- Depending on if the user guesses the correct letter or incorrect letter the button will change to a specific colour.
 - An added feature is that the user can choose to select their letter using the keyboard instead of selecting one from the screen. This will work just as well and the game will run
 
 ![Alphabet Letters](assets/img/alphabet-letters.png)
+
+**Incorrect Letter Guess**
+
+![Alphabet Letters](assets/img/alphabet-letters-wrong-guess.png)
+
+**Correct Letter Guess**
+
+![Alphabet Letters](assets/img/alphabet-letters-correct-guess.png)
 
 **Restart Game**
 
