@@ -214,12 +214,12 @@
 - HTML5 – used to create the content and structure of the website
 - CSS – used to add styling to the html structure
 - JavaScript – used to provide functionality and make the site dynamic
-- Gitpod –
-- GitHub – used to host and edit website
+- Gitpod – a cloud development environment
+- GitHub – a code hosting platform for version control, collaboration and editing websites
 - Mockflow – used to create the wireframes
 - VS Code Desktop – IDE used to code the website
-- Google fonts –used for the website font
-- Font awesome – this was used to add icons to the website
+- Google fonts – used for importing website fonts
+- Font awesome – used to add icons to the website
 
 ## Typography and Colour Scheme
 
