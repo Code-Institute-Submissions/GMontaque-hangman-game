@@ -36,9 +36,6 @@ let wordToGuess;
 // Counter used by startGame function to check if game is already running
 let gameStarted = false;
 
-// Listens for user keyboard press
-document.addEventListener("keyup", keyboardPress);
-
 /**
  * Function creates stopwatch
  */
@@ -407,7 +404,7 @@ async function checkLetterGuess(uGuess, checkGame, e) {
  */
 function keyboardPress(event) {
 	if (event.keyCode >= 65 && event.keyCode <= 90) {
-		startGame(event.key, "keyboard");
+		startGame(event.key.toLowerCase(), "keyboard");
 	}
 }
 
@@ -466,6 +463,8 @@ window.onload = function () {
 		loadBlanks();
 		// create on screen alphabet letters
 		createLetters(wordToGuess);
+		// Listens for user keyboard press
+		document.addEventListener("keyup", keyboardPress);
 	} catch (error) {
 		console.log("Error has occured: " + error.stack);
 	}
