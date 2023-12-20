@@ -197,8 +197,13 @@ h1 {
 
 /* apply when user selects a letter guess */
 .btnPressed {
-	color: red;
+	color: #fee086;
 	background-color: blue;
+}
+
+.btnPressed-correct {
+	color: #240b67;
+	background-color: white;
 }
 
 /* button style for on screen letters */

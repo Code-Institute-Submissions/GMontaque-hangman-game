@@ -283,17 +283,38 @@ function reduceLives(lives) {
 /**
  * Disables the letter the user has clicked
  * @param e - value from triggered event when onscreen letter button is pressed.
+ * @param corrrect - passing a boolean value which confirms if the letter guessed was correct
  */
-function disableLetter(e) {
-	// pass the initial click event when letter button pressed and adds class and attribute to that element
-	if (typeof e == "string") {
-		let guessMade = document.getElementById(e);
-		guessMade.classList.add("btnPressed");
-		guessMade.setAttribute("disabled", "");
+function disableLetter(e, correct) {
+	// confirms if letter guessed is correct to then style and disable the button accordingly
+	if (correct) {
+		if (typeof e == "string") {
+			let guessMade = document.getElementById(e);
+			guessMade.classList.add("btnPressed-correct");
+			guessMade.setAttribute("disabled", "");
+		} else {
+			e.target.classList.add("btnPressed-correct");
+			e.target.setAttribute("disabled", "");
+		}
 	} else {
-		e.target.classList.add("btnPressed");
-		e.target.setAttribute("disabled", "");
+		if (typeof e == "string") {
+			let guessMade = document.getElementById(e);
+			guessMade.classList.add("btnPressed");
+			guessMade.setAttribute("disabled", "");
+		} else {
+			e.target.classList.add("btnPressed");
+			e.target.setAttribute("disabled", "");
+		}
 	}
+	// pass the initial click event when letter button pressed and adds class and attribute to that element
+	// if (typeof e == "string") {
+	// 	let guessMade = document.getElementById(e);
+	// 	guessMade.classList.add("btnPressed");
+	// 	guessMade.setAttribute("disabled", "");
+	// } else {
+	// 	e.target.classList.add("btnPressed");
+	// 	e.target.setAttribute("disabled", "");
+	// }
 }
 
 /**
@@ -362,18 +383,28 @@ async function checkLetterGuess(uGuess, checkGame, e) {
 		}
 		// checks if letter pressed doesn't has attribute disabled before running inner code
 		let dis = document.getElementById(uGuess).hasAttribute("disabled");
+		let correctLetter;
 		if (!dis) {
 			// current game lives counter
 			let currentGameLives = document.getElementById("gameLives").innerHTML;
 			// checks if user guess is in word to guess
 			if (wordToGuess.includes(uGuess)) {
 				checkAnswer(uGuess);
+				correctLetter = true;
 			} else {
 				reduceLives(currentGameLives);
+				correctLetter = false;
 			}
 			// disables letter that user pressed
-			disableLetter(e);
+			disableLetter(e, correctLetter);
 		}
+		console.log(
+			"Word to guess is:",
+			wordToGuess,
+			",",
+			"User Letter guess is:",
+			uGuess
+		);
 	} catch (error) {
 		console.log("Error has occured: " + error.stack);
 	}
