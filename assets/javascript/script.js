@@ -8,7 +8,7 @@ let appendMinutes = document.getElementById("minutes");
 let Interval;
 // Button resets game
 let buttonReset = document.getElementsByClassName(
-	"play-area-top-restart-btn"
+	"play-area-bottom-restart-btn"
 )[0];
 buttonReset.addEventListener("click", stopReset);
 // Button to show game rules
@@ -35,6 +35,50 @@ let wordToGuess;
 
 // Counter used by startGame function to check if game is already running
 let gameStarted = false;
+
+// Toggle sound effects music on and off
+let playSoundEffects = document.getElementById("toggle-sound-effects");
+playSoundEffects.addEventListener("click", playEffect);
+
+// stores the value of if user wants sound effects on or off
+let effectSound;
+
+// Toggle game music on and off
+let playMusic = document.getElementById("toggle-music-btn");
+playMusic.addEventListener("click", togglePlay);
+
+// Game background music
+let mySound = new Audio("./assets/audio/gameplay-soundtrack.mp3");
+
+/**
+ * Function plays and stop music depending on value attribute
+ */
+function togglePlay() {
+	// selects button by ID
+	let playMusic = document.getElementById("toggle-music-btn");
+	// checks the value attribute
+	try {
+		if (playMusic.value === "play-music") {
+			// updates button inner image
+			playMusic.innerHTML =
+				'<i class="fa-solid fa-volume-high"></i> Theme Tune';
+			// updates value attribute
+			playMusic.setAttribute("value", "stop-music");
+			// plays sound
+			mySound.play();
+		} else if (playMusic.value === "stop-music") {
+			// updates button inner image
+			playMusic.innerHTML =
+				'<i class="fa-solid fa-volume-xmark"></i> Theme Tune';
+			// updates value attribute
+			playMusic.setAttribute("value", "play-music");
+			// plays sound
+			mySound.pause();
+		}
+	} catch (error) {
+		console.log("Error has occured: " + error.stack);
+	}
+}
 
 /**
  * Function creates stopwatch
@@ -158,6 +202,26 @@ function loadBlanks() {
 }
 
 /**
+ * updates sound effect varible depending if user wants sound effects on or off
+ */
+function playEffect() {
+	let soundEffectBtn = document.getElementById("toggle-sound-effects");
+	if (effectSound) {
+		// updates button inner image
+		soundEffectBtn.innerHTML =
+			'<i class="fa-solid fa-volume-xmark" ></i> Sound Effect';
+		// updates value attribute
+		effectSound = false;
+	} else {
+		effectSound = true;
+		soundEffectBtn.innerHTML =
+			'<i class="fa-solid fa-volume-high"></i> Sound Effect';
+	}
+	console.log(effectSound);
+	return effectSound;
+}
+
+/**
  * Function called when user loses game
  * @param word - The word the user was trying to guesss.
  */
@@ -171,9 +235,11 @@ function looseGame(word) {
 	appendTens.innerHTML = document.getElementById("tens").innerHTML;
 	appendSeconds.innerHTML = document.getElementById("seconds").innerHTML;
 	appendMinutes.innerHTML = document.getElementById("minutes").innerHTML;
-	// plays losing sound
-	let looseSound = new Audio("./assets/audio/wah-wah-sad-trombone-6347.mp3");
-	looseSound.play();
+	if (effectSound) {
+		// plays losing sound
+		let looseSound = new Audio("./assets/audio/wah-wah-sad-trombone-6347.mp3");
+		looseSound.play();
+	}
 }
 
 /**
@@ -189,9 +255,11 @@ function winGame() {
 	appendTens.innerHTML = document.getElementById("tens").innerHTML;
 	appendSeconds.innerHTML = document.getElementById("seconds").innerHTML;
 	appendMinutes.innerHTML = document.getElementById("minutes").innerHTML;
-	// plays winning sound
-	let winSound = new Audio("./assets/audio/user-wins.mp3");
-	winSound.play();
+	if (effectSound) {
+		// plays winning sound
+		let winSound = new Audio("./assets/audio/user-wins.mp3");
+		winSound.play();
+	}
 }
 
 /**
