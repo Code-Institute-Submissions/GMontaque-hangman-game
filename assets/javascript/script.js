@@ -306,15 +306,6 @@ function disableLetter(e, correct) {
 			e.target.setAttribute("disabled", "");
 		}
 	}
-	// pass the initial click event when letter button pressed and adds class and attribute to that element
-	// if (typeof e == "string") {
-	// 	let guessMade = document.getElementById(e);
-	// 	guessMade.classList.add("btnPressed");
-	// 	guessMade.setAttribute("disabled", "");
-	// } else {
-	// 	e.target.classList.add("btnPressed");
-	// 	e.target.setAttribute("disabled", "");
-	// }
 }
 
 /**
