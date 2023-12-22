@@ -59,14 +59,6 @@
 
 ![Game Rules](assets/img/game-rules.png)
 
-**Game Music**
-
-- The music button is included on the game page and can be found top left.
-- When pressed this will play the theme tune which from the 80’s and is in keeping with the 80’s feel
-
-![Game Music On](assets/img/game-music-on.png)
-![Game Music Off](assets/img/game-music-off.png)
-
 **Game Page**
 
 - Access to the game is on this page
@@ -74,19 +66,37 @@
 
 ![Game Page](assets/img/gamepage.png)
 
-**Home Page Button**
-
-- Takes the user back to the homepage
-- A icon of a house has been used as a visual effect to denote a home button
-
-![Home Page Button](assets/img/homepage-button.png)
-
 **Game Sounds**
 
 - 3 different game sounds have been incorporated into the game.
 - These sounds have been included to give the user auditory confirmation of how well they have done
 - The sounds are also used to increase immersion and to improve enjoyment when playing
 - The 3 sounds indicate game play, game won or game lost
+
+**Game Music**
+
+- The music button is included on the game page and can be found top left.
+- When pressed this will play the theme tune which from the 80’s and is in keeping with the 80’s feel
+
+![Game Music On](assets/img/theme-tune-on.png)
+![Game Music Off](assets/img/theme-tune-off.png)
+
+**Sound Effect**
+
+- When playing the game, the user will find a toggle button for the game sound effects which they can turn on or off
+- The sound effects will play if the user wins or looses
+- The sound effects have been chosen as when played they will provide a clear indication if the user has won or lost
+- The sounds used are also synonymous with 80's classic games
+
+![Sound Effect on](assets/img/sound-effect-on.png)
+![Sound Effect off](assets/img/sound-effect-off.png)
+
+**Home Page Button**
+
+- Takes the user back to the homepage
+- A icon of a house has been used as a visual effect to denote a home button
+
+![Home Page Button](assets/img/homepage-button.png)
 
 **Stop Watch**
 
